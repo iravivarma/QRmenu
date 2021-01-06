@@ -9,7 +9,7 @@ from sqlalchemy.orm import Session
 from fastapi import status
 from fastapi.exceptions import HTTPException
 from fastapi.responses import Response
-
+import qrcode, os
 import models, schemas
 
 
@@ -67,12 +67,30 @@ def create_user_item(db: Session, item: schemas.HotelsCreate, user_name: str):
 
 def insert_into_hotel_menu(db: Session, menu_items, user_id: int):
 
+
     print(menu_items)
     item = {}
     item['hotel_id'] = user_id
     item['items'] = menu_items
     print(item)
-    db_menu_item = models.Menu(hotel_id = user_id, items = menu_items)
+    qr_code = qrcode.QRCode(version = 1,
+                        box_size=10,
+                        border = 4)
+    qr_code.add_data(menu_items)
+    qr_code.make(fit = True)
+    print('----------------------')
+    dir_path = '/'.join(os.path.abspath(os.getcwd()).split('\\'))
+    print(dir_path)
+    folders = [x[0] for x in os.walk(dir_path)]
+    print(folders)
+    print('----------------------')
+    qr_image = qr_code.make_image(fill = 'black', back_color = 'yellow')
+    qr_image.save(dir_path+'/'+'qr_menus'+'/'+str(item['hotel_id'])+'_'+"menu.png")
+    qr_path = dir_path+'/'+'qr_menus'+'/'+str(item['hotel_id'])+'_'+"menu.png"
+    print(qr_image)
+    
+    print(os.getcwd())
+    db_menu_item = models.Menu(hotel_id = user_id, items = menu_items, qr_menu_path = qr_path)
     print(db_menu_item)
     db.add(db_menu_item)
     db.commit()

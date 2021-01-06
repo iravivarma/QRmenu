@@ -15,6 +15,7 @@ import uvicorn
 from database import SessionLocal, engine
 from fastapi import Request
 import time
+import qrcode
 
 models.Base.metadata.create_all(bind=engine)
 
@@ -54,8 +55,9 @@ async def add_process_time_header(request: Request, call_next):
     print(request.scope)
     path = [route for route in request.scope['router'].routes if route.endpoint == request.scope['endpoint']][0].path
     #this path variable derives the route of the api that is being accessed currently
-    print(f'Path is: {path}')
     process_time = time.time() - start_time
+    print(f'Path is: {path}\nexecution time is {process_time}')
+    
     print(process_time)
     response.headers["X-Process-Time"] = str(process_time)
     #adds the total execution time to the response
@@ -113,6 +115,7 @@ async def delete_menu(menu_id: str, db: Session = Depends(get_db)):
 
 
 @app.get("/users/", response_model=List[schemas.Users])
+
 async def read_users(skip: int = 0, limit: int = 100, db: Session = Depends(get_db)):
     users = crud.get_users(db, skip=skip, limit=limit)
     return users
@@ -153,4 +156,4 @@ async def insert_menu_items(user_id: int, menu_items: schemas.MenuItems, db: Ses
 
 
 if __name__ == "__main__":
-    uvicorn.run(app, host="127.0.0.1", port=5000)
+    uvicorn.run(app, host="127.0.0.1", port=8000)

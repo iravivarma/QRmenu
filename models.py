@@ -34,7 +34,7 @@ class Users(Base):
     password = Column(String)
 
     hotels = relationship("Hotels", back_populates="owner")
-    FavMenu = relationship("CustomerFavMenu", back_populates="owner")
+    FavHotel = relationship("CustomerFavHotel", back_populates="owner")
 
 
 class Hotels(Base):
@@ -49,7 +49,7 @@ class Hotels(Base):
     city = Column(String, index = True)
 
     owner = relationship("Users", back_populates="hotels")
-    FavMenu = relationship("CustomerFavMenu", back_populates="hotels")
+    FavHotel = relationship("CustomerFavHotel", back_populates="hotels")
     menu = relationship("Menu", back_populates="hotels")
     
     
@@ -57,20 +57,21 @@ class Menu(Base):
     __tablename__ = "menu"
     id = Column(Integer, primary_key=True, index=True)
     hotel_id = Column(Integer, ForeignKey("hotels.id"), unique=True)
-    items = Column(JSON) 
+    items = Column(JSON)
+    qr_menu_path = Column(String)
 
     hotels = relationship("Hotels", back_populates="menu")
     
 
-class CustomerFavMenu(Base):
-    __tablename__ = "fav_menu"
+class CustomerFavHotel(Base):
+    __tablename__ = "fav_hotel"
     id = Column(Integer, primary_key=True, index=True)
     user_id =Column(Integer, ForeignKey("users.id"))
     hotel_id = Column(Integer, ForeignKey("hotels.id"), unique=True)
 
 
-    hotels = relationship("Hotels", back_populates="FavMenu")
-    owner = relationship("Users", back_populates="FavMenu")
+    hotels = relationship("Hotels", back_populates="FavHotel")
+    owner = relationship("Users", back_populates="FavHotel")
     
     
     
@@ -85,4 +86,4 @@ class CustomerFavMenu(Base):
 Users.__table__.create(bind=engine, checkfirst=True)
 Hotels.__table__.create(bind=engine, checkfirst=True)
 Menu.__table__.create(bind=engine, checkfirst=True)
-CustomerFavMenu.__table__.create(bind=engine, checkfirst=True)
+CustomerFavHotel.__table__.create(bind=engine, checkfirst=True)
