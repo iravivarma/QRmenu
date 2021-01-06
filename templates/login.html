@@ -1,0 +1,159 @@
+<html>
+<head>
+    <title>
+        User Login
+    </title>
+    </head>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="google-signin-client_id"
+            content="832502697558-dr0s5dcsg3j0oj273epsg1rssv4rmh9k.apps.googleusercontent.com">
+    <script src="https://apis.google.com/js/platform.js" async defer></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <!-- <title>Google SignIN</title> -->
+
+    <style>
+        body {
+            margin: 10rem;
+            align-items: center;
+        }
+    </style>
+
+</head>
+<body>
+    <h3>Hi, Welcome to Workeeper</h3><br>
+    <h3>Please login to your account</h3><br>
+    <script>
+            var url = "{{ redirect }}/"
+            function login() {
+                // var profile = googleUser.getBasicProfile();
+                var data = new FormData();
+                data.append('username', document.getElementById("username").value);
+                data.append('password', document.getElementById('password').value);
+
+                // var xhr = new XMLHttpRequest();
+
+                // ################# XmlHttpRequest #################
+                // xhr.open('POST', 'http://localhost:8000/api/v1/authenticate');
+                // xhr.onload = function () {
+                //     var url = "{{ redirect }}/"
+                //     if (url == "profile/") url+=document.getElementById("username").value;
+                //     //console.log('Signed in as: ' + xhr.responseText);
+                //     window.location.href = "http://localhost:8000/api/v1/" + url;
+                // };
+                // xhr.send(data);
+
+                // ################# FetchAPI #################
+                fetch("http://localhost:8000/api/v1/authenticate",
+                    {method: 'POST',body: data})
+                    .then(response => {
+                                        if (response.ok) {
+                                            return response.json();
+                                        } else {
+                                            document.getElementById("invalid").hidden = false;
+                                            throw new Error('Invalid Username or password');
+                                        }
+                                    })
+                    .then(redirect)
+                    .catch(console.error);
+                // console.log(xhr);
+                function redirect() {
+                    console.log(url);
+                    window.location.href = "http://localhost:8000/api/v1/" + url;
+                };
+            }
+    </script>
+    <div>
+        <form id="login_form">
+            <label for="login_form">Username : </label>
+            <input type="text" name="redirect_url" id="redirect_url" value="{{ redirect }}" hidden>
+            <input type="text" name="username" id="username" required><br>
+
+            <label for="login_form">Password : </label>
+            <input type="password" name="password" id="password" required><br>
+            <label id="invalid" hidden>INVALID USERNAME OR PASSWORD</label>
+
+            <br><br>
+            <input onclick="login()" type="button" value="Submit">
+            <br>
+            Create an account for free <a id="signup" href="/api/v1/new_user_signup">here</a>
+        </form>
+        <span>----------------Or login using 3rd party-----------------------</span>
+    </div>
+    <div>
+        <a href="{{ auth_url }}">LOGIN USING MICROSOFT</a>
+    </div>
+    <script>
+        const params = new URLSearchParams(document.location.search);
+        var link = params.get("redirect_url");
+        var r_url = "/api/v1/new_user_signup";
+        if (link != null) {
+            r_url += "/?redirect_url=" + link;
+            document.getElementById("signup").href = r_url;
+        }
+    </script>
+
+    <br />
+
+    <div class="g-signin2" data-onsuccess="onSignIn" data-theme="dark"></div>
+    <script>
+
+      function onSignIn(googleUser)
+      {
+        var profile = googleUser.getBasicProfile();
+        var xhr = new XMLHttpRequest();
+        var id_token = googleUser.getAuthResponse().id_token;
+
+        // ################# MODIFIED #################
+        //xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+        xhr.open('POST', 'http://localhost:8000/api/v1/swap_token');
+        xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+        xhr.setRequestHeader('X-Requested-With', 'XMLHttpRequest');
+        xhr.setRequestHeader('X-Google-OAuth2-Type', 'client');
+        console.log(profile)
+        // xhr.setRequestHeader('Content-Type', 'application/json');
+        // const params = { 'idtoken': id_token }
+        xhr.onload = function () {
+          const url = "{{ redirect }}";
+          console.log(url)
+          console.log('Signed in as: ' + xhr.responseText);
+          window.location.href = "http://localhost:8000/api/v1/" + url;
+        // console.log(xhr.responseText.redirect_url);
+        // window.alert(xhr.responseText)
+        // window.alert(xhr.responseXML)
+        // window.open("http://localhost:8000/api/v1/users/me", '_self');
+        };
+
+        //console.log(params)
+        xhr.send(id_token);       // this is sent at post("/google_signin")
+        // window.open(xhr.responseText['redirect_url'], '_self');
+
+        // $.ajax({
+        //     url: 'http://localhost:8000/api/v1/logout',
+        //     type: 'POST',
+        //     contentType: 'application/json',
+        //     data: JSON.stringify({ "id_token": id_token }),
+        //     dataType: 'json',
+        //     // headers: {'Authorization': 'Bearer johndoe'},
+        //     success: function(msg) {
+        //       $.ajax({
+        //           url: 'http://localhost:8000/api/v1/google_signin',
+        //           type: 'POST',
+        //           headers: {'Authorization': msg},
+        //           success: function(html_data) {
+        //             $("html").empty();
+        //             $("html").append(html_data);
+        //         }
+        //     });
+        //   }
+        // });
+
+
+      }
+
+
+
+    </script>
+</body>
+</html>

@@ -14,7 +14,7 @@ from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy.orm import sessionmaker
 
 # SQLALCHEMY_DATABASE_URL = "sqlite:///./sql_app.db"
-SQLALCHEMY_DATABASE_URL = "postgresql://postgres:qwerty@localhost:5432/mymenu"
+SQLALCHEMY_DATABASE_URL = "postgresql://postgres:postgres@localhost:5432/mymenu"
 
 engine = create_engine(
     SQLALCHEMY_DATABASE_URL
@@ -34,6 +34,7 @@ class Users(Base):
     password = Column(String)
 
     hotels = relationship("Hotels", back_populates="owner")
+    FavMenu = relationship("CustomerFavMenu", back_populates="owner")
 
 
 class Hotels(Base):
@@ -48,6 +49,8 @@ class Hotels(Base):
     city = Column(String, index = True)
 
     owner = relationship("Users", back_populates="hotels")
+    FavMenu = relationship("CustomerFavMenu", back_populates="hotels")
+    menu = relationship("Menu", back_populates="hotels")
     
     
 class Menu(Base):
@@ -55,13 +58,19 @@ class Menu(Base):
     id = Column(Integer, primary_key=True, index=True)
     hotel_id = Column(Integer, ForeignKey("hotels.id"), unique=True)
     items = Column(JSON) 
+
+    hotels = relationship("Hotels", back_populates="menu")
     
 
 class CustomerFavMenu(Base):
-    __tablename__ = "FavMenu"
+    __tablename__ = "fav_menu"
     id = Column(Integer, primary_key=True, index=True)
     user_id =Column(Integer, ForeignKey("users.id"))
     hotel_id = Column(Integer, ForeignKey("hotels.id"), unique=True)
+
+
+    hotels = relationship("Hotels", back_populates="FavMenu")
+    owner = relationship("Users", back_populates="FavMenu")
     
     
     

@@ -5,7 +5,7 @@ Created on Sat Jan  2 17:43:53 2021
 @author: Ravi Varma Injeti
 """
 
-from typing import List, Optional
+from typing import List, Optional, Dict
 
 from pydantic import BaseModel
 
@@ -19,12 +19,12 @@ class HotelsBase(BaseModel):
 
 
 class HotelsCreate(HotelsBase):
-    user_id : str
+    name : str
 
 
-class Hotels(HotelsBase):
+class Hotels(HotelsCreate):
     id: int
-    name: str
+    user_id: int
 
     class Config:
         orm_mode = True
@@ -55,7 +55,11 @@ class Users(UserCreate):
         orm_mode = True
         
         
-        
 
-    
-    
+
+class MenuItems(BaseModel):
+    items = dict()
+
+    def __repr__(self):
+        return items.__dict__
+
