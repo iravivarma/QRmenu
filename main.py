@@ -8,16 +8,63 @@ Created on Sat Jan  2 18:51:28 2021
 
 from typing import List
 
-from fastapi import Depends, FastAPI, HTTPException
+from fastapi import Depends, FastAPI, HTTPException, Request
 from sqlalchemy.orm import Session
 import crud, models, schemas
 import uvicorn
 from database import SessionLocal, engine
 from fastapi import Request
+import time
 
 models.Base.metadata.create_all(bind=engine)
 
 app = FastAPI()
+
+@app.middleware("http")
+async def add_process_time_header(request: Request, call_next):
+    """
+    a middleware to find the time required for an api to process the data and
+    getting the route of the api which is being executed...
+    @parameters:
+    request: contains all the details of the api requested
+    ex:
+        {'type': 'http', 'asgi': {'version': '3.0', 'spec_version': '2.1'}, 'http_version': '1.1', 
+        'server': ('127.0.0.1', 5000), 'client': ('127.0.0.1', 61833), 'scheme': 'http', 'method': 'POST',
+        'root_path': '', 'path': '/users', 'raw_path': b'/users', 'query_string': b'', 
+        'headers': [(b'host', b'127.0.0.1:5000'), (b'connection', b'keep-alive'), (b'content-length', b'58'), 
+        (b'accept', b'application/json'), (b'user-agent', b'Mozilla/5.0 (Windows NT 10.0; Win64; x64) 
+        AppleWebKit/537.36 (KHTML, like Gecko) Chrome/87.0.4280.88 Safari/537.36'), (b'content-type',
+        b'application/json'), (b'origin', b'http://127.0.0.1:5000'), (b'sec-fetch-site', b'same-origin'), 
+        (b'sec-fetch-mode', b'cors'), (b'sec-fetch-dest', b'empty'), (b'referer', b'http://127.0.0.1:5000/docs'),
+        (b'accept-encoding', b'gzip, deflate, br'), (b'accept-language', b'en-US,en;q=0.9')], 
+        'fastapi_astack': <contextlib.AsyncExitStack object at 0x00000185C3501088>, 
+        'app': <fastapi.applications.FastAPI object at 0x00000185C08C2908>,
+        'router': <fastapi.routing.APIRouter object at 0x00000185C33E8D88>, 
+        'endpoint': <function create_user at 0x00000185C33CDE58>, 'path_params': {}}
+    call_next: call_next starts analysing the request and the entire process of repsonse.
+
+    @returns:
+    response: just returns the api response and its execution time appended
+    """
+    start_time = time.time()
+    response = await call_next(request)
+    print(request.body())
+    print(request.headers)
+    print("printing the scopes.......")
+    print(request.scope)
+    path = [route for route in request.scope['router'].routes if route.endpoint == request.scope['endpoint']][0].path
+    #this path variable derives the route of the api that is being accessed currently
+    print(f'Path is: {path}')
+    process_time = time.time() - start_time
+    print(process_time)
+    response.headers["X-Process-Time"] = str(process_time)
+    #adds the total execution time to the response
+    print(response)
+    print(response.headers)
+    return response
+
+
+
 
 def get_db():
     db = SessionLocal()
