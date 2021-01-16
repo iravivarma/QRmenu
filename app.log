@@ -1,0 +1,59 @@
+uvicorn.error - INFO - Started server process [36812]
+uvicorn.error - INFO - Waiting for application startup.
+uvicorn.error - INFO - Application startup complete.
+uvicorn.error - INFO - Uvicorn running on http://127.0.0.1:8000 (Press CTRL+C to quit)
+uvicorn.error - INFO - Shutting down
+uvicorn.error - INFO - Waiting for application shutdown.
+uvicorn.error - INFO - Application shutdown complete.
+uvicorn.error - INFO - Finished server process [36812]
+uvicorn.error - INFO - Started server process [49832]
+uvicorn.error - INFO - Waiting for application startup.
+uvicorn.error - INFO - Application startup complete.
+uvicorn.error - INFO - Uvicorn running on http://127.0.0.1:8000 (Press CTRL+C to quit)
+root - WARNING - Path is: /users/
+execution time is 0.04616951942443848
+uvicorn.error - INFO - Shutting down
+uvicorn.error - INFO - Waiting for application shutdown.
+uvicorn.error - INFO - Application shutdown complete.
+uvicorn.error - INFO - Finished server process [49832]
+uvicorn.error - INFO - Started server process [3516]
+uvicorn.error - INFO - Waiting for application startup.
+uvicorn.error - INFO - Application startup complete.
+uvicorn.error - INFO - Uvicorn running on http://127.0.0.1:8000 (Press CTRL+C to quit)
+uvicorn.error - INFO - Shutting down
+uvicorn.error - INFO - Waiting for application shutdown.
+uvicorn.error - INFO - ASGI 'lifespan' protocol appears unsupported.
+uvicorn.error - INFO - Application shutdown complete.
+uvicorn.error - INFO - Finished server process [3516]
+uvicorn.error - INFO - Started server process [44356]
+uvicorn.error - INFO - Waiting for application startup.
+uvicorn.error - INFO - Application startup complete.
+uvicorn.error - INFO - Uvicorn running on http://127.0.0.1:8000 (Press CTRL+C to quit)
+root - WARNING - Path is: /users/
+execution time is 0.028405189514160156
+uvicorn.error - INFO - Shutting down
+uvicorn.error - INFO - Waiting for application shutdown.
+root - WARNING - 
+
+
+
+
+
+uvicorn.error - INFO - ASGI 'lifespan' protocol appears unsupported.
+uvicorn.error - INFO - Application shutdown complete.
+uvicorn.error - INFO - Finished server process [44356]
+uvicorn.error - INFO - Started server process [46488]
+uvicorn.error - INFO - Waiting for application startup.
+uvicorn.error - INFO - Application startup complete.
+uvicorn.error - INFO - Uvicorn running on http://127.0.0.1:8000 (Press CTRL+C to quit)
+uvicorn.error - INFO - Shutting down
+uvicorn.error - INFO - Waiting for application shutdown.
+root - WARNING - 
+
+
+
+
+
+uvicorn.error - INFO - ASGI 'lifespan' protocol appears unsupported.
+uvicorn.error - INFO - Application shutdown complete.
+uvicorn.error - INFO - Finished server process [46488]

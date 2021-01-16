@@ -44,6 +44,14 @@ def get_items(db: Session, skip: int = 0, limit: int = 100):
     return db.query(models.Hotels).offset(skip).limit(limit).all()
 
 
+def get_qr_image(db: Session, hotel_id):
+    menu_details= db.query(models.Menu).filter(models.Menu.hotel_id == hotel_id).first()
+    menu_details = menu_details.qr_menu_path
+
+    return menu_details
+
+
+
 def create_user_item(db: Session, item: schemas.HotelsCreate, user_name: str):
     
     get_id = get_user(db, user_name)
@@ -163,3 +171,10 @@ def authenticate_user_username_password(db: Session, username: str,password: str
 
 
 
+def authenticate_user_email(db: Session, email: str):
+    """
+    useful when authenticating email to identify if the user is already present or not
+    """
+
+    details = db.query(models.Users).filter(models.Users.email == email).first()
+    return details

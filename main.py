@@ -16,10 +16,44 @@ from database import SessionLocal, engine
 from fastapi import Request
 import time
 import qrcode
+import io, cv2
+from starlette.responses import StreamingResponse, JSONResponse
+from fastapi.responses import FileResponse
+from PIL import Image
+import logging, os
+
+
+app = FastAPI()
+
+
+
+filename = 'app.log'
+
+if os.path.exists(filename):
+    logging.basicConfig(filename=filename, filemode='a', format='%(name)s - %(levelname)s - %(message)s')
+else:
+    logging.basicConfig(filename=filename, filemode='w', format='%(name)s - %(levelname)s - %(message)s')
+
+
+@app.on_event("shutdown")
+async def on_shutdown():
+    logging.warning("\n\n\n\n\n")
+    logging.close()
+
+
+# try:
+#     logging.basicConfig(filename='app.log', filemode='w+', format='%(name)s - %(levelname)s - %(message)s')
+# except:
+#     logging.basicConfig(filename='app.log', filemode='a', format='%(name)s - %(levelname)s - %(message)s')
+
+logging.getLogger(__name__)
+logging.debug('This will get logged to a file')
+
+
 
 models.Base.metadata.create_all(bind=engine)
 
-app = FastAPI()
+
 
 @app.middleware("http")
 async def add_process_time_header(request: Request, call_next):
@@ -49,20 +83,21 @@ async def add_process_time_header(request: Request, call_next):
     """
     start_time = time.time()
     response = await call_next(request)
-    print(request.body())
-    print(request.headers)
-    print("printing the scopes.......")
-    print(request.scope)
+    #print(request.body())
+    #print(request.headers)
+    #print("printing the scopes.......")
+    #print(request.scope)
     path = [route for route in request.scope['router'].routes if route.endpoint == request.scope['endpoint']][0].path
     #this path variable derives the route of the api that is being accessed currently
     process_time = time.time() - start_time
     print(f'Path is: {path}\nexecution time is {process_time}')
+    logging.warning(f'Path is: {path}\nexecution time is {process_time}')
     
-    print(process_time)
+    #print(process_time)
     response.headers["X-Process-Time"] = str(process_time)
     #adds the total execution time to the response
-    print(response)
-    print(response.headers)
+    #print(response)
+    #print(response.headers)
     return response
 
 
@@ -73,6 +108,7 @@ def get_db():
     try:
         yield db
     finally:
+        logging.info("database is closed.....")
         db.close()
         
         
@@ -82,6 +118,7 @@ async def create_user(user: schemas.NewUser, db: Session = Depends(get_db)):
     print(temp)
     db_user = crud.get_user_by_email(db, email=user.email)
     if db_user:
+        logging.exception(f"email already registered for {user.email}")
         raise HTTPException(status_code=400, detail="Email already registered")
     
     insert_status = crud.create_user(db=db, user=user)
@@ -153,6 +190,22 @@ async def insert_menu_items(user_id: int, menu_items: schemas.MenuItems, db: Ses
 
 
 
+@app.get("/display_qr/{hotel_id}")
+async def get_menu_qr_code(hotel_id: str,  db: Session = Depends(get_db)):
+
+    get_image = crud.get_qr_image(db=db, hotel_id = hotel_id)
+    print(get_image)
+    im = Image.open(get_image)  
+    return StreamingResponse(im, media_type="image/png")
+
+
+@app.get("/check_log")
+async def check_log():
+    try:
+        x = 1/0
+    except Exception as e:
+        logging.error(repr(e))
+        return JSONResponse(content={"code": 99, "message": repr(e)})
 
 
 if __name__ == "__main__":
