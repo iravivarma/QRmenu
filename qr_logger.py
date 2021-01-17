@@ -16,6 +16,24 @@ def create_or_get_logger(filename):
 	return logging
 
 
+def log_exception(logger, message):
+	logger.exception(message)
+
+
+def log_error(logger, message):
+	logger.error(message)
+
+
+def log_warning(logger, message):
+	logger.error(message)
+
+
+def log_info(logger, message):
+	logger.info(message)
+
+
+
+
 
 
 
