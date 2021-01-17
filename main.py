@@ -21,6 +21,7 @@ from starlette.responses import StreamingResponse, JSONResponse
 from fastapi.responses import FileResponse
 from PIL import Image
 import logging, os
+from qr_logger import create_or_get_logger
 
 
 app = FastAPI()
@@ -28,16 +29,17 @@ app = FastAPI()
 
 
 filename = 'app.log'
-
-if os.path.exists(filename):
-    logging.basicConfig(filename=filename, filemode='a', format='%(name)s - %(levelname)s - %(message)s')
-else:
-    logging.basicConfig(filename=filename, filemode='w', format='%(name)s - %(levelname)s - %(message)s')
+logging = create_or_get_logger(filename)
+# if os.path.exists(filename):
+#     logging.basicConfig(filename=filename, filemode='a', format='%(asctime)s.%(msecs)03d %(levelname)s %(module)s - %(funcName)s: %(message)s',
+#     datefmt='%Y-%m-%d %H:%M:%S',)
+# else:
+#     logging.basicConfig(filename=filename, filemode='w', format='%(name)s - %(levelname)s - %(message)s')
 
 
 @app.on_event("shutdown")
 async def on_shutdown():
-    logging.warning("\n\n\n\n\n")
+    logging.warning("\n\n\n\n")
     logging.close()
 
 

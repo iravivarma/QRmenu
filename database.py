@@ -8,10 +8,19 @@ Created on Fri Dec  4 18:43:52 2020
 from sqlalchemy import create_engine
 from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy.orm import sessionmaker
+from qr_logger import create_or_get_logger
+
 
 # SQLALCHEMY_DATABASE_URL = "sqlite:///./sql_app.db"
-SQLALCHEMY_DATABASE_URL = "postgresql://postgres:postgres@localhost:5432/mymenu"
-
+filename = 'database.log'
+#logging = create_or_get_logger(filename)
+username = 'postgres'
+password = 'postgres'
+ip_address = 'localhost'
+port = '5432'
+db = 'mymenu'
+SQLALCHEMY_DATABASE_URL = f"postgresql://{username}:{password}@{ip_address}:{port}/{db}"
+#logging.info(SQLALCHEMY_DATABASE_URL)
 engine = create_engine(
     SQLALCHEMY_DATABASE_URL
 )
