@@ -11,6 +11,11 @@ from fastapi.exceptions import HTTPException
 from fastapi.responses import Response
 import qrcode, os
 import models, schemas
+import qr_logger as qrl
+
+
+filename = 'crud.log'
+logging = qrl.create_or_get_logger(filename)
 
 
 def get_user(db: Session, user_name: str):
@@ -62,14 +67,19 @@ def create_user_item(db: Session, item: schemas.HotelsCreate, user_name: str):
     #item.user_id = my_id
     #print(item.dict())
     print(item.__dict__)
-    db_item = models.Hotels(name = item.name, user_id = my_id, contact_email = item.contact_email,
-        location = item.location, pincode = item.pincode, city = item.city)
+    try:
+        db_item = models.Hotels(name = item.name, user_id = my_id, contact_email = item.contact_email,
+            location = item.location, pincode = item.pincode, city = item.city)
+        
+        print(item.dict())
+        db.add(db_item)
+        db.commit()
+        db.refresh(db_item)
+        return db_item
+    except Exception as e:
+        qrl.log_exception(logging, repr(e))
+        return repr(e)
     
-    print(item.dict())
-    db.add(db_item)
-    db.commit()
-    db.refresh(db_item)
-    return db_item
 
 
 
@@ -98,20 +108,31 @@ def insert_into_hotel_menu(db: Session, menu_items, user_id: int):
     print(qr_image)
     
     print(os.getcwd())
-    db_menu_item = models.Menu(hotel_id = user_id, items = menu_items, qr_menu_path = qr_path)
-    print(db_menu_item)
-    db.add(db_menu_item)
-    db.commit()
-    db.refresh(db_menu_item)
-    return db_menu_item
+    try:
+        db_menu_item = models.Menu(hotel_id = user_id, items = menu_items, qr_menu_path = qr_path)
+        qrl.log_info(logging, f'hotel_id: {user_id},\nmenu_items: {menu_items},\nqr_menu_path:{qr_path}')
+        print(db_menu_item)
+        db.add(db_menu_item)
+        db.commit()
+        db.refresh(db_menu_item)
+        return db_menu_item
+    except Exception as e:
+        qrl.log_exception(logging, repr(e))
+        return repr(e)
 
 
 def add_hotel_to_favourite(db: Session, user_id, hotel_id):
-    db_fav_hotel = models.CustomerFavMenu(user_id = user_id, hotel_id = hotel_id)
-    db.add(db_fav_hotel)
-    db.commit()
-    db.refresh(db_fav_hotel)
-    return db_fav_hotel
+    try:
+        db_fav_hotel = models.CustomerFavMenu(user_id = user_id, hotel_id = hotel_id)
+        qrl.log_info(f'user_id: {user_id} and hotel_id: {hotel_id}')
+        db.add(db_fav_hotel)
+        db.commit()
+        db.refresh(db_fav_hotel)
+        return db_fav_hotel
+
+    except Exception as e:
+        qrl_log_exception(logging, repr(e))
+        return repr(e)
 
 
 
@@ -120,8 +141,10 @@ def delete_hotel(db: Session, hotel_name):
     #print(result.id)
 
     if result is None:
+        qrl.log_exception(logging, status.HTTP_404_NOT_FOUND)
         return HTTPException(status.HTTP_404_NOT_FOUND)
     else:
+
         print(result)
         print(result.id)
         db.delete(result)
@@ -131,6 +154,7 @@ def delete_hotel(db: Session, hotel_name):
         del_menu = db.query(models.Menu).filter(models.Menu.hotel_id == result.id).delete()
         #print(del_menu.id)
         if del_menu is None:
+            qrl.log_exception(logging, status.HTTP_404_NOT_FOUND)
             return HTTPException(status.HTTP_404_NOT_FOUND)
         else:
             #db.delete(del_menu)
@@ -143,9 +167,11 @@ def delete_menu(db: Session, menu_id):
     try:
         db.query(models.Menu).filter(models.Menu.id == menu_id).delete()
         db.commit()
+        qrl.log_info(logging, f'deleted records of menu records :{menu_id}')
         return status.HTTP_200_OK
 
     except:
+        qrl.log_exception(logging, status.HTTP_404_NOT_FOUND)
         return HTTPException(status.HTTP_404_NOT_FOUND)
 
 

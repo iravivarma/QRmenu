@@ -21,7 +21,7 @@ from starlette.responses import StreamingResponse, JSONResponse
 from fastapi.responses import FileResponse
 from PIL import Image
 import logging, os
-from qr_logger import create_or_get_logger
+from qr_logger import create_or_get_logger, log_warning
 
 
 app = FastAPI()
@@ -39,7 +39,7 @@ logging = create_or_get_logger(filename)
 
 @app.on_event("shutdown")
 async def on_shutdown():
-    logging.warning("\n\n\n\n")
+    log_warning(logging, "quitting the application now\n\n\n\n")
     logging.close()
 
 
