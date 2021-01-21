@@ -5,7 +5,7 @@ Created on Mon Dec  7 21:48:41 2020
 @author: Ravi Varma Injeti
 """
 from sqlalchemy.dialects.postgresql import JSON
-from sqlalchemy import Boolean, Column, ForeignKey, Integer, String
+from sqlalchemy import Boolean, Column, ForeignKey, Integer, String, DateTime
 from sqlalchemy.orm import relationship
 # from database import Base, engine
 
@@ -72,8 +72,49 @@ class CustomerFavHotel(Base):
 
     hotels = relationship("Hotels", back_populates="FavHotel")
     owner = relationship("Users", back_populates="FavHotel")
+
+
+
+'''
+1. origins/same or different
+2. request packet size - content length
+3. response packet size
+4. type of request
+5. request_method
+6. content type
+7. origin
+8. referrer
+9. browser name
+10. destination path
+11. device name
+12. device ip address
+13. if such api is called again and already stored in table, increment the count
+14. datetime the request is requested.
+15. reponse time
+'''
+
+
+class RequestResponseDetails(Base):
+    __tablename__ = 'request_response_details'
+    id = Column(Integer, primary_key=True, index=True)
+    same_origin_yn = Column(Boolean)
+    request_size = Column(Integer)
+    response_size = Column(Integer)
+    request_type = Column(String)
+    request_method = Column(String)
+    content_type = Column(String)
+    origin = Column(String)
+    referrer = Column(String)
+    browser_name = Column(String)
+    destination_path = Column(String)
+    device_name = Column(String)
+    ip_address = Column(String)
+    datetime = Column(String)
+    execution_time = Column(String)
+
     
-    
+
+
     
     
 
@@ -87,3 +128,4 @@ Users.__table__.create(bind=engine, checkfirst=True)
 Hotels.__table__.create(bind=engine, checkfirst=True)
 Menu.__table__.create(bind=engine, checkfirst=True)
 CustomerFavHotel.__table__.create(bind=engine, checkfirst=True)
+RequestResponseDetails.__table__.create(bind=engine, checkfirst=True)

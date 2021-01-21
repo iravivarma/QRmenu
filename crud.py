@@ -24,7 +24,19 @@ def get_user(db: Session, user_name: str):
 def get_hotels(db: Session, name: str):
     return db.query(models.Hotels).filter(models.Hotels.name == name)
 
-
+def insert_request_response_data(db: Session, analysis_dict: dict):
+    analysis_data = models.RequestResponseDetails(same_origin_yn = analysis_dict['same_origin_yn'],
+        request_size = analysis_dict['request_size'], response_size = analysis_dict['response_size'],
+        request_type = analysis_dict['request_type'], request_method = analysis_dict['request_method'],
+        content_type = analysis_dict['content_type'], origin = analysis_dict['origin'],
+        referrer = analysis_dict['referer'], browser_name= analysis_dict['browser'],
+        destination_path = analysis_dict['destination_path'], device_name = analysis_dict['device_name'],
+        ip_address = analysis_dict['ip_address'], datetime= str(analysis_dict['datetime']),
+        execution_time = str(analysis_dict['execution_time']))
+    db.add(analysis_data)
+    db.commit()
+    db.refresh(analysis_data)
+    return analysis_data
     
 
 

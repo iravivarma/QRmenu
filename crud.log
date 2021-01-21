@@ -1,0 +1,1537 @@
+2021-01-17 15:06:48.831 INFO main - serve: Started server process [28048]
+2021-01-17 15:06:48.834 INFO on - startup: Waiting for application startup.
+2021-01-17 15:06:48.839 INFO on - startup: Application startup complete.
+2021-01-17 15:06:48.841 INFO main - startup: Uvicorn running on http://127.0.0.1:8000 (Press CTRL+C to quit)
+2021-01-17 15:06:50.510 INFO main - shutdown: Shutting down
+2021-01-17 15:06:50.614 INFO on - shutdown: Waiting for application shutdown.
+2021-01-17 15:06:50.614 ERROR qr_logger - log_warning: quitting the application now
+
+
+
+
+2021-01-17 15:06:50.614 INFO on - main: ASGI 'lifespan' protocol appears unsupported.
+2021-01-17 15:06:50.618 INFO on - shutdown: Application shutdown complete.
+2021-01-17 15:06:50.622 INFO main - serve: Finished server process [28048]
+2021-01-21 09:37:41.293 INFO main - serve: Started server process [18168]
+2021-01-21 09:37:41.301 INFO on - startup: Waiting for application startup.
+2021-01-21 09:37:41.301 INFO on - startup: Application startup complete.
+2021-01-21 09:37:41.301 INFO main - startup: Uvicorn running on http://127.0.0.1:8000 (Press CTRL+C to quit)
+2021-01-21 09:38:19.802 INFO main - shutdown: Shutting down
+2021-01-21 09:38:19.905 INFO on - shutdown: Waiting for application shutdown.
+2021-01-21 09:38:19.905 ERROR qr_logger - log_warning: quitting the application now
+
+
+
+
+2021-01-21 09:38:19.907 INFO on - main: ASGI 'lifespan' protocol appears unsupported.
+2021-01-21 09:38:19.907 INFO on - shutdown: Application shutdown complete.
+2021-01-21 09:38:19.909 INFO main - serve: Finished server process [18168]
+2021-01-21 09:38:23.751 INFO main - serve: Started server process [19664]
+2021-01-21 09:38:23.752 INFO on - startup: Waiting for application startup.
+2021-01-21 09:38:23.754 INFO on - startup: Application startup complete.
+2021-01-21 09:38:23.755 INFO main - startup: Uvicorn running on http://127.0.0.1:8000 (Press CTRL+C to quit)
+2021-01-21 09:38:34.586 WARNING main - add_process_time_header: Path is: /users
+execution time is 0.011442184448242188
+2021-01-21 09:38:35.001 ERROR h11_impl - run_asgi: Exception in ASGI application
+Traceback (most recent call last):
+  File "C:\Users\krish\AppData\Roaming\Python\Python37\site-packages\uvicorn\protocols\http\h11_impl.py", line 389, in run_asgi
+    result = await app(self.scope, self.receive, self.send)
+  File "C:\Users\krish\AppData\Roaming\Python\Python37\site-packages\uvicorn\middleware\proxy_headers.py", line 45, in __call__
+    return await self.app(scope, receive, send)
+  File "C:\ProgramData\Anaconda3\lib\site-packages\fastapi\applications.py", line 199, in __call__
+    await super().__call__(scope, receive, send)
+  File "C:\Users\krish\AppData\Roaming\Python\Python37\site-packages\starlette\applications.py", line 111, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "C:\Users\krish\AppData\Roaming\Python\Python37\site-packages\starlette\middleware\errors.py", line 181, in __call__
+    raise exc from None
+  File "C:\Users\krish\AppData\Roaming\Python\Python37\site-packages\starlette\middleware\errors.py", line 159, in __call__
+    await self.app(scope, receive, _send)
+  File "C:\Users\krish\AppData\Roaming\Python\Python37\site-packages\starlette\middleware\base.py", line 25, in __call__
+    response = await self.dispatch_func(request, self.call_next)
+  File "main.py", line 151, in add_process_time_header
+    path = [route for route in request.scope['router'].routes if route.endpoint == request.scope['endpoint']][0].path
+  File "main.py", line 151, in <listcomp>
+    path = [route for route in request.scope['router'].routes if route.endpoint == request.scope['endpoint']][0].path
+KeyError: 'endpoint'
+2021-01-21 09:38:46.061 WARNING main - add_process_time_header: Path is: /users/
+execution time is 0.09063148498535156
+2021-01-21 09:38:47.160 ERROR h11_impl - run_asgi: Exception in ASGI application
+Traceback (most recent call last):
+  File "C:\Users\krish\AppData\Roaming\Python\Python37\site-packages\uvicorn\protocols\http\h11_impl.py", line 389, in run_asgi
+    result = await app(self.scope, self.receive, self.send)
+  File "C:\Users\krish\AppData\Roaming\Python\Python37\site-packages\uvicorn\middleware\proxy_headers.py", line 45, in __call__
+    return await self.app(scope, receive, send)
+  File "C:\ProgramData\Anaconda3\lib\site-packages\fastapi\applications.py", line 199, in __call__
+    await super().__call__(scope, receive, send)
+  File "C:\Users\krish\AppData\Roaming\Python\Python37\site-packages\starlette\applications.py", line 111, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "C:\Users\krish\AppData\Roaming\Python\Python37\site-packages\starlette\middleware\errors.py", line 181, in __call__
+    raise exc from None
+  File "C:\Users\krish\AppData\Roaming\Python\Python37\site-packages\starlette\middleware\errors.py", line 159, in __call__
+    await self.app(scope, receive, _send)
+  File "C:\Users\krish\AppData\Roaming\Python\Python37\site-packages\starlette\middleware\base.py", line 25, in __call__
+    response = await self.dispatch_func(request, self.call_next)
+  File "main.py", line 151, in add_process_time_header
+    path = [route for route in request.scope['router'].routes if route.endpoint == request.scope['endpoint']][0].path
+  File "main.py", line 151, in <listcomp>
+    path = [route for route in request.scope['router'].routes if route.endpoint == request.scope['endpoint']][0].path
+KeyError: 'endpoint'
+2021-01-21 09:38:50.819 INFO main - shutdown: Shutting down
+2021-01-21 09:38:50.924 INFO on - shutdown: Waiting for application shutdown.
+2021-01-21 09:38:50.925 ERROR qr_logger - log_warning: quitting the application now
+
+
+
+
+2021-01-21 09:38:50.925 INFO on - main: ASGI 'lifespan' protocol appears unsupported.
+2021-01-21 09:38:50.928 INFO on - shutdown: Application shutdown complete.
+2021-01-21 09:38:50.930 INFO main - serve: Finished server process [19664]
+2021-01-21 09:38:56.350 INFO main - serve: Started server process [27296]
+2021-01-21 09:38:56.351 INFO on - startup: Waiting for application startup.
+2021-01-21 09:38:56.353 INFO on - startup: Application startup complete.
+2021-01-21 09:38:56.355 INFO main - startup: Uvicorn running on http://127.0.0.1:8000 (Press CTRL+C to quit)
+2021-01-21 09:39:00.160 WARNING main - add_process_time_header: Path is: /users/
+execution time is 0.05946016311645508
+2021-01-21 09:39:00.454 ERROR h11_impl - run_asgi: Exception in ASGI application
+Traceback (most recent call last):
+  File "C:\Users\krish\AppData\Roaming\Python\Python37\site-packages\uvicorn\protocols\http\h11_impl.py", line 389, in run_asgi
+    result = await app(self.scope, self.receive, self.send)
+  File "C:\Users\krish\AppData\Roaming\Python\Python37\site-packages\uvicorn\middleware\proxy_headers.py", line 45, in __call__
+    return await self.app(scope, receive, send)
+  File "C:\ProgramData\Anaconda3\lib\site-packages\fastapi\applications.py", line 199, in __call__
+    await super().__call__(scope, receive, send)
+  File "C:\Users\krish\AppData\Roaming\Python\Python37\site-packages\starlette\applications.py", line 111, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "C:\Users\krish\AppData\Roaming\Python\Python37\site-packages\starlette\middleware\errors.py", line 181, in __call__
+    raise exc from None
+  File "C:\Users\krish\AppData\Roaming\Python\Python37\site-packages\starlette\middleware\errors.py", line 159, in __call__
+    await self.app(scope, receive, _send)
+  File "C:\Users\krish\AppData\Roaming\Python\Python37\site-packages\starlette\middleware\base.py", line 25, in __call__
+    response = await self.dispatch_func(request, self.call_next)
+  File "main.py", line 151, in add_process_time_header
+    path = [route for route in request.scope['router'].routes if route.endpoint == request.scope['endpoint']][0].path
+  File "main.py", line 151, in <listcomp>
+    path = [route for route in request.scope['router'].routes if route.endpoint == request.scope['endpoint']][0].path
+KeyError: 'endpoint'
+2021-01-21 09:42:06.220 INFO main - shutdown: Shutting down
+2021-01-21 09:42:06.328 INFO on - shutdown: Waiting for application shutdown.
+2021-01-21 09:42:06.329 ERROR qr_logger - log_warning: quitting the application now
+
+
+
+
+2021-01-21 09:42:06.330 INFO on - main: ASGI 'lifespan' protocol appears unsupported.
+2021-01-21 09:42:06.332 INFO on - shutdown: Application shutdown complete.
+2021-01-21 09:42:06.334 INFO main - serve: Finished server process [27296]
+2021-01-21 09:42:10.941 INFO main - serve: Started server process [27316]
+2021-01-21 09:42:10.941 INFO on - startup: Waiting for application startup.
+2021-01-21 09:42:10.944 INFO on - startup: Application startup complete.
+2021-01-21 09:42:10.946 INFO main - startup: Uvicorn running on http://127.0.0.1:8000 (Press CTRL+C to quit)
+2021-01-21 09:42:15.729 ERROR h11_impl - run_asgi: Exception in ASGI application
+Traceback (most recent call last):
+  File "C:\Users\krish\AppData\Roaming\Python\Python37\site-packages\uvicorn\protocols\http\h11_impl.py", line 389, in run_asgi
+    result = await app(self.scope, self.receive, self.send)
+  File "C:\Users\krish\AppData\Roaming\Python\Python37\site-packages\uvicorn\middleware\proxy_headers.py", line 45, in __call__
+    return await self.app(scope, receive, send)
+  File "C:\ProgramData\Anaconda3\lib\site-packages\fastapi\applications.py", line 199, in __call__
+    await super().__call__(scope, receive, send)
+  File "C:\Users\krish\AppData\Roaming\Python\Python37\site-packages\starlette\applications.py", line 111, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "C:\Users\krish\AppData\Roaming\Python\Python37\site-packages\starlette\middleware\errors.py", line 181, in __call__
+    raise exc from None
+  File "C:\Users\krish\AppData\Roaming\Python\Python37\site-packages\starlette\middleware\errors.py", line 159, in __call__
+    await self.app(scope, receive, _send)
+  File "C:\Users\krish\AppData\Roaming\Python\Python37\site-packages\starlette\middleware\base.py", line 25, in __call__
+    response = await self.dispatch_func(request, self.call_next)
+  File "main.py", line 151, in add_process_time_header
+    path = request.scopes['path']#[route for route in request.scope['router'].routes if route.endpoint == request.scope['endpoint']][0].path
+AttributeError: 'Request' object has no attribute 'scopes'
+2021-01-21 09:42:16.165 ERROR h11_impl - run_asgi: Exception in ASGI application
+Traceback (most recent call last):
+  File "C:\Users\krish\AppData\Roaming\Python\Python37\site-packages\uvicorn\protocols\http\h11_impl.py", line 389, in run_asgi
+    result = await app(self.scope, self.receive, self.send)
+  File "C:\Users\krish\AppData\Roaming\Python\Python37\site-packages\uvicorn\middleware\proxy_headers.py", line 45, in __call__
+    return await self.app(scope, receive, send)
+  File "C:\ProgramData\Anaconda3\lib\site-packages\fastapi\applications.py", line 199, in __call__
+    await super().__call__(scope, receive, send)
+  File "C:\Users\krish\AppData\Roaming\Python\Python37\site-packages\starlette\applications.py", line 111, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "C:\Users\krish\AppData\Roaming\Python\Python37\site-packages\starlette\middleware\errors.py", line 181, in __call__
+    raise exc from None
+  File "C:\Users\krish\AppData\Roaming\Python\Python37\site-packages\starlette\middleware\errors.py", line 159, in __call__
+    await self.app(scope, receive, _send)
+  File "C:\Users\krish\AppData\Roaming\Python\Python37\site-packages\starlette\middleware\base.py", line 25, in __call__
+    response = await self.dispatch_func(request, self.call_next)
+  File "main.py", line 151, in add_process_time_header
+    path = request.scopes['path']#[route for route in request.scope['router'].routes if route.endpoint == request.scope['endpoint']][0].path
+AttributeError: 'Request' object has no attribute 'scopes'
+2021-01-21 09:42:33.477 INFO main - shutdown: Shutting down
+2021-01-21 09:42:33.578 INFO on - shutdown: Waiting for application shutdown.
+2021-01-21 09:42:33.579 ERROR qr_logger - log_warning: quitting the application now
+
+
+
+
+2021-01-21 09:42:33.579 INFO on - main: ASGI 'lifespan' protocol appears unsupported.
+2021-01-21 09:42:33.581 INFO on - shutdown: Application shutdown complete.
+2021-01-21 09:42:33.582 INFO main - serve: Finished server process [27316]
+2021-01-21 09:42:38.296 INFO main - serve: Started server process [12176]
+2021-01-21 09:42:38.297 INFO on - startup: Waiting for application startup.
+2021-01-21 09:42:38.298 INFO on - startup: Application startup complete.
+2021-01-21 09:42:38.299 INFO main - startup: Uvicorn running on http://127.0.0.1:8000 (Press CTRL+C to quit)
+2021-01-21 09:42:43.511 WARNING main - add_process_time_header: Path is: /users/
+execution time is 0.04392361640930176
+2021-01-21 09:42:43.980 WARNING main - add_process_time_header: Path is: /favicon.ico
+execution time is 0.007589101791381836
+2021-01-21 09:50:24.302 INFO main - shutdown: Shutting down
+2021-01-21 09:50:24.404 INFO on - shutdown: Waiting for application shutdown.
+2021-01-21 09:50:24.405 ERROR qr_logger - log_warning: quitting the application now
+
+
+
+
+2021-01-21 09:50:24.406 INFO on - main: ASGI 'lifespan' protocol appears unsupported.
+2021-01-21 09:50:24.409 INFO on - shutdown: Application shutdown complete.
+2021-01-21 09:50:24.411 INFO main - serve: Finished server process [12176]
+2021-01-21 09:50:28.800 INFO main - serve: Started server process [24500]
+2021-01-21 09:50:28.800 INFO on - startup: Waiting for application startup.
+2021-01-21 09:50:28.802 INFO on - startup: Application startup complete.
+2021-01-21 09:50:28.802 INFO main - startup: Uvicorn running on http://127.0.0.1:8000 (Press CTRL+C to quit)
+2021-01-21 09:50:33.108 WARNING main - add_process_time_header: Path is: /users/
+execution time is 0.03357243537902832
+2021-01-21 09:50:33.116 ERROR h11_impl - run_asgi: Exception in ASGI application
+Traceback (most recent call last):
+  File "C:\Users\krish\AppData\Roaming\Python\Python37\site-packages\uvicorn\protocols\http\h11_impl.py", line 389, in run_asgi
+    result = await app(self.scope, self.receive, self.send)
+  File "C:\Users\krish\AppData\Roaming\Python\Python37\site-packages\uvicorn\middleware\proxy_headers.py", line 45, in __call__
+    return await self.app(scope, receive, send)
+  File "C:\ProgramData\Anaconda3\lib\site-packages\fastapi\applications.py", line 199, in __call__
+    await super().__call__(scope, receive, send)
+  File "C:\Users\krish\AppData\Roaming\Python\Python37\site-packages\starlette\applications.py", line 111, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "C:\Users\krish\AppData\Roaming\Python\Python37\site-packages\starlette\middleware\errors.py", line 181, in __call__
+    raise exc from None
+  File "C:\Users\krish\AppData\Roaming\Python\Python37\site-packages\starlette\middleware\errors.py", line 159, in __call__
+    await self.app(scope, receive, _send)
+  File "C:\Users\krish\AppData\Roaming\Python\Python37\site-packages\starlette\middleware\base.py", line 25, in __call__
+    response = await self.dispatch_func(request, self.call_next)
+  File "main.py", line 171, in add_process_time_header
+    print(response.body)
+AttributeError: 'StreamingResponse' object has no attribute 'body'
+2021-01-21 09:50:50.103 INFO main - shutdown: Shutting down
+2021-01-21 09:50:50.213 INFO on - shutdown: Waiting for application shutdown.
+2021-01-21 09:50:50.214 ERROR qr_logger - log_warning: quitting the application now
+
+
+
+
+2021-01-21 09:50:50.214 INFO on - main: ASGI 'lifespan' protocol appears unsupported.
+2021-01-21 09:50:50.215 INFO on - shutdown: Application shutdown complete.
+2021-01-21 09:50:50.216 INFO main - serve: Finished server process [24500]
+2021-01-21 09:50:53.854 INFO main - serve: Started server process [21488]
+2021-01-21 09:50:53.857 INFO on - startup: Waiting for application startup.
+2021-01-21 09:50:53.862 INFO on - startup: Application startup complete.
+2021-01-21 09:50:53.864 INFO main - startup: Uvicorn running on http://127.0.0.1:8000 (Press CTRL+C to quit)
+2021-01-21 09:51:00.864 WARNING main - add_process_time_header: Path is: /users/
+execution time is 0.08624672889709473
+2021-01-21 09:51:52.818 INFO main - shutdown: Shutting down
+2021-01-21 09:51:52.923 INFO on - shutdown: Waiting for application shutdown.
+2021-01-21 09:51:52.923 ERROR qr_logger - log_warning: quitting the application now
+
+
+
+
+2021-01-21 09:51:52.923 INFO on - main: ASGI 'lifespan' protocol appears unsupported.
+2021-01-21 09:51:52.925 INFO on - shutdown: Application shutdown complete.
+2021-01-21 09:51:52.926 INFO main - serve: Finished server process [21488]
+2021-01-21 09:51:56.863 INFO main - serve: Started server process [27348]
+2021-01-21 09:51:56.863 INFO on - startup: Waiting for application startup.
+2021-01-21 09:51:56.865 INFO on - startup: Application startup complete.
+2021-01-21 09:51:56.868 INFO main - startup: Uvicorn running on http://127.0.0.1:8000 (Press CTRL+C to quit)
+2021-01-21 09:52:02.497 WARNING main - add_process_time_header: Path is: /users/
+execution time is 0.06010937690734863
+2021-01-21 09:52:02.516 ERROR h11_impl - run_asgi: Exception in ASGI application
+Traceback (most recent call last):
+  File "C:\Users\krish\AppData\Roaming\Python\Python37\site-packages\uvicorn\protocols\http\h11_impl.py", line 389, in run_asgi
+    result = await app(self.scope, self.receive, self.send)
+  File "C:\Users\krish\AppData\Roaming\Python\Python37\site-packages\uvicorn\middleware\proxy_headers.py", line 45, in __call__
+    return await self.app(scope, receive, send)
+  File "C:\ProgramData\Anaconda3\lib\site-packages\fastapi\applications.py", line 199, in __call__
+    await super().__call__(scope, receive, send)
+  File "C:\Users\krish\AppData\Roaming\Python\Python37\site-packages\starlette\applications.py", line 111, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "C:\Users\krish\AppData\Roaming\Python\Python37\site-packages\starlette\middleware\errors.py", line 181, in __call__
+    raise exc from None
+  File "C:\Users\krish\AppData\Roaming\Python\Python37\site-packages\starlette\middleware\errors.py", line 159, in __call__
+    await self.app(scope, receive, _send)
+  File "C:\Users\krish\AppData\Roaming\Python\Python37\site-packages\starlette\middleware\base.py", line 25, in __call__
+    response = await self.dispatch_func(request, self.call_next)
+  File "main.py", line 172, in add_process_time_header
+    print(response.body_iterator.__dict__)
+AttributeError: 'async_generator' object has no attribute '__dict__'
+2021-01-21 09:52:13.772 INFO main - shutdown: Shutting down
+2021-01-21 09:52:13.875 INFO on - shutdown: Waiting for application shutdown.
+2021-01-21 09:52:13.876 ERROR qr_logger - log_warning: quitting the application now
+
+
+
+
+2021-01-21 09:52:13.877 INFO on - main: ASGI 'lifespan' protocol appears unsupported.
+2021-01-21 09:52:13.881 INFO on - shutdown: Application shutdown complete.
+2021-01-21 09:52:13.883 INFO main - serve: Finished server process [27348]
+2021-01-21 09:52:17.538 INFO main - serve: Started server process [7676]
+2021-01-21 09:52:17.538 INFO on - startup: Waiting for application startup.
+2021-01-21 09:52:17.543 INFO on - startup: Application startup complete.
+2021-01-21 09:52:17.544 INFO main - startup: Uvicorn running on http://127.0.0.1:8000 (Press CTRL+C to quit)
+2021-01-21 09:52:25.637 WARNING main - add_process_time_header: Path is: /users/
+execution time is 0.04691815376281738
+2021-01-21 09:53:51.107 INFO main - shutdown: Shutting down
+2021-01-21 09:53:51.215 INFO on - shutdown: Waiting for application shutdown.
+2021-01-21 09:53:51.216 ERROR qr_logger - log_warning: quitting the application now
+
+
+
+
+2021-01-21 09:53:51.216 INFO on - main: ASGI 'lifespan' protocol appears unsupported.
+2021-01-21 09:53:51.219 INFO on - shutdown: Application shutdown complete.
+2021-01-21 09:53:51.220 INFO main - serve: Finished server process [7676]
+2021-01-21 09:54:02.198 INFO main - serve: Started server process [17448]
+2021-01-21 09:54:02.202 INFO on - startup: Waiting for application startup.
+2021-01-21 09:54:02.203 INFO on - startup: Application startup complete.
+2021-01-21 09:54:02.205 INFO main - startup: Uvicorn running on http://127.0.0.1:8000 (Press CTRL+C to quit)
+2021-01-21 09:54:07.330 WARNING main - add_process_time_header: Path is: /users/
+execution time is 0.039485931396484375
+2021-01-21 09:54:37.389 INFO main - shutdown: Shutting down
+2021-01-21 09:54:37.497 INFO on - shutdown: Waiting for application shutdown.
+2021-01-21 09:54:37.497 ERROR qr_logger - log_warning: quitting the application now
+
+
+
+
+2021-01-21 09:54:37.498 INFO on - main: ASGI 'lifespan' protocol appears unsupported.
+2021-01-21 09:54:37.498 INFO on - shutdown: Application shutdown complete.
+2021-01-21 09:54:37.499 INFO main - serve: Finished server process [17448]
+2021-01-21 09:54:41.681 INFO main - serve: Started server process [26148]
+2021-01-21 09:54:41.685 INFO on - startup: Waiting for application startup.
+2021-01-21 09:54:41.687 INFO on - startup: Application startup complete.
+2021-01-21 09:54:41.688 INFO main - startup: Uvicorn running on http://127.0.0.1:8000 (Press CTRL+C to quit)
+2021-01-21 09:54:46.475 WARNING main - add_process_time_header: Path is: /users/
+execution time is 0.03707170486450195
+2021-01-21 09:54:46.482 ERROR h11_impl - run_asgi: Exception in ASGI application
+Traceback (most recent call last):
+  File "C:\Users\krish\AppData\Roaming\Python\Python37\site-packages\uvicorn\protocols\http\h11_impl.py", line 389, in run_asgi
+    result = await app(self.scope, self.receive, self.send)
+  File "C:\Users\krish\AppData\Roaming\Python\Python37\site-packages\uvicorn\middleware\proxy_headers.py", line 45, in __call__
+    return await self.app(scope, receive, send)
+  File "C:\ProgramData\Anaconda3\lib\site-packages\fastapi\applications.py", line 199, in __call__
+    await super().__call__(scope, receive, send)
+  File "C:\Users\krish\AppData\Roaming\Python\Python37\site-packages\starlette\applications.py", line 111, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "C:\Users\krish\AppData\Roaming\Python\Python37\site-packages\starlette\middleware\errors.py", line 181, in __call__
+    raise exc from None
+  File "C:\Users\krish\AppData\Roaming\Python\Python37\site-packages\starlette\middleware\errors.py", line 159, in __call__
+    await self.app(scope, receive, _send)
+  File "C:\Users\krish\AppData\Roaming\Python\Python37\site-packages\starlette\middleware\base.py", line 25, in __call__
+    response = await self.dispatch_func(request, self.call_next)
+  File "main.py", line 171, in add_process_time_header
+    await get_request_data(request, response)
+  File "main.py", line 111, in get_request_data
+    analysis_dict['request_size'] = request.headers['Content-length']
+  File "C:\Users\krish\AppData\Roaming\Python\Python37\site-packages\starlette\datastructures.py", line 550, in __getitem__
+    raise KeyError(key)
+KeyError: 'Content-length'
+2021-01-21 09:55:02.355 INFO main - shutdown: Shutting down
+2021-01-21 09:55:02.457 INFO on - shutdown: Waiting for application shutdown.
+2021-01-21 09:55:02.458 ERROR qr_logger - log_warning: quitting the application now
+
+
+
+
+2021-01-21 09:55:02.458 INFO on - main: ASGI 'lifespan' protocol appears unsupported.
+2021-01-21 09:55:02.459 INFO on - shutdown: Application shutdown complete.
+2021-01-21 09:55:02.460 INFO main - serve: Finished server process [26148]
+2021-01-21 09:55:06.222 INFO main - serve: Started server process [26716]
+2021-01-21 09:55:06.224 INFO on - startup: Waiting for application startup.
+2021-01-21 09:55:06.225 INFO on - startup: Application startup complete.
+2021-01-21 09:55:06.227 INFO main - startup: Uvicorn running on http://127.0.0.1:8000 (Press CTRL+C to quit)
+2021-01-21 09:55:10.995 WARNING main - add_process_time_header: Path is: /users/
+execution time is 0.03030085563659668
+2021-01-21 09:55:11.003 ERROR h11_impl - run_asgi: Exception in ASGI application
+Traceback (most recent call last):
+  File "C:\Users\krish\AppData\Roaming\Python\Python37\site-packages\uvicorn\protocols\http\h11_impl.py", line 389, in run_asgi
+    result = await app(self.scope, self.receive, self.send)
+  File "C:\Users\krish\AppData\Roaming\Python\Python37\site-packages\uvicorn\middleware\proxy_headers.py", line 45, in __call__
+    return await self.app(scope, receive, send)
+  File "C:\ProgramData\Anaconda3\lib\site-packages\fastapi\applications.py", line 199, in __call__
+    await super().__call__(scope, receive, send)
+  File "C:\Users\krish\AppData\Roaming\Python\Python37\site-packages\starlette\applications.py", line 111, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "C:\Users\krish\AppData\Roaming\Python\Python37\site-packages\starlette\middleware\errors.py", line 181, in __call__
+    raise exc from None
+  File "C:\Users\krish\AppData\Roaming\Python\Python37\site-packages\starlette\middleware\errors.py", line 159, in __call__
+    await self.app(scope, receive, _send)
+  File "C:\Users\krish\AppData\Roaming\Python\Python37\site-packages\starlette\middleware\base.py", line 25, in __call__
+    response = await self.dispatch_func(request, self.call_next)
+  File "main.py", line 171, in add_process_time_header
+    await get_request_data(request, response)
+  File "main.py", line 111, in get_request_data
+    analysis_dict['request_size'] = request.headers['content-length']
+  File "C:\Users\krish\AppData\Roaming\Python\Python37\site-packages\starlette\datastructures.py", line 550, in __getitem__
+    raise KeyError(key)
+KeyError: 'content-length'
+2021-01-21 10:02:56.173 INFO main - shutdown: Shutting down
+2021-01-21 10:02:56.276 INFO on - shutdown: Waiting for application shutdown.
+2021-01-21 10:02:56.277 ERROR qr_logger - log_warning: quitting the application now
+
+
+
+
+2021-01-21 10:02:56.278 INFO on - main: ASGI 'lifespan' protocol appears unsupported.
+2021-01-21 10:02:56.279 INFO on - shutdown: Application shutdown complete.
+2021-01-21 10:02:56.280 INFO main - serve: Finished server process [26716]
+2021-01-21 10:02:59.382 INFO main - serve: Started server process [19912]
+2021-01-21 10:02:59.384 INFO on - startup: Waiting for application startup.
+2021-01-21 10:02:59.385 INFO on - startup: Application startup complete.
+2021-01-21 10:02:59.387 INFO main - startup: Uvicorn running on http://127.0.0.1:8000 (Press CTRL+C to quit)
+2021-01-21 10:03:06.936 WARNING main - add_process_time_header: Path is: /users/
+execution time is 0.023059368133544922
+2021-01-21 10:03:06.945 ERROR h11_impl - run_asgi: Exception in ASGI application
+Traceback (most recent call last):
+  File "C:\Users\krish\AppData\Roaming\Python\Python37\site-packages\uvicorn\protocols\http\h11_impl.py", line 389, in run_asgi
+    result = await app(self.scope, self.receive, self.send)
+  File "C:\Users\krish\AppData\Roaming\Python\Python37\site-packages\uvicorn\middleware\proxy_headers.py", line 45, in __call__
+    return await self.app(scope, receive, send)
+  File "C:\ProgramData\Anaconda3\lib\site-packages\fastapi\applications.py", line 199, in __call__
+    await super().__call__(scope, receive, send)
+  File "C:\Users\krish\AppData\Roaming\Python\Python37\site-packages\starlette\applications.py", line 111, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "C:\Users\krish\AppData\Roaming\Python\Python37\site-packages\starlette\middleware\errors.py", line 181, in __call__
+    raise exc from None
+  File "C:\Users\krish\AppData\Roaming\Python\Python37\site-packages\starlette\middleware\errors.py", line 159, in __call__
+    await self.app(scope, receive, _send)
+  File "C:\Users\krish\AppData\Roaming\Python\Python37\site-packages\starlette\middleware\base.py", line 25, in __call__
+    response = await self.dispatch_func(request, self.call_next)
+  File "main.py", line 172, in add_process_time_header
+    await get_request_data(request, response)
+  File "main.py", line 114, in get_request_data
+    analysis_dict['request_type'] = request.type
+AttributeError: 'Request' object has no attribute 'type'
+2021-01-21 10:05:13.334 INFO main - shutdown: Shutting down
+2021-01-21 10:05:13.436 INFO on - shutdown: Waiting for application shutdown.
+2021-01-21 10:05:13.437 ERROR qr_logger - log_warning: quitting the application now
+
+
+
+
+2021-01-21 10:05:13.438 INFO on - main: ASGI 'lifespan' protocol appears unsupported.
+2021-01-21 10:05:13.441 INFO on - shutdown: Application shutdown complete.
+2021-01-21 10:05:13.442 INFO main - serve: Finished server process [19912]
+2021-01-21 10:05:19.044 INFO main - serve: Started server process [27796]
+2021-01-21 10:05:19.045 INFO on - startup: Waiting for application startup.
+2021-01-21 10:05:19.046 INFO on - startup: Application startup complete.
+2021-01-21 10:05:19.047 INFO main - startup: Uvicorn running on http://127.0.0.1:8000 (Press CTRL+C to quit)
+2021-01-21 10:05:22.818 WARNING main - add_process_time_header: Path is: /users/
+execution time is 0.02415943145751953
+2021-01-21 10:05:22.824 ERROR h11_impl - run_asgi: Exception in ASGI application
+Traceback (most recent call last):
+  File "C:\Users\krish\AppData\Roaming\Python\Python37\site-packages\uvicorn\protocols\http\h11_impl.py", line 389, in run_asgi
+    result = await app(self.scope, self.receive, self.send)
+  File "C:\Users\krish\AppData\Roaming\Python\Python37\site-packages\uvicorn\middleware\proxy_headers.py", line 45, in __call__
+    return await self.app(scope, receive, send)
+  File "C:\ProgramData\Anaconda3\lib\site-packages\fastapi\applications.py", line 199, in __call__
+    await super().__call__(scope, receive, send)
+  File "C:\Users\krish\AppData\Roaming\Python\Python37\site-packages\starlette\applications.py", line 111, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "C:\Users\krish\AppData\Roaming\Python\Python37\site-packages\starlette\middleware\errors.py", line 181, in __call__
+    raise exc from None
+  File "C:\Users\krish\AppData\Roaming\Python\Python37\site-packages\starlette\middleware\errors.py", line 159, in __call__
+    await self.app(scope, receive, _send)
+  File "C:\Users\krish\AppData\Roaming\Python\Python37\site-packages\starlette\middleware\base.py", line 25, in __call__
+    response = await self.dispatch_func(request, self.call_next)
+  File "main.py", line 172, in add_process_time_header
+    await get_request_data(request, response)
+  File "main.py", line 116, in get_request_data
+    analysis_dict['content_type'] = request.headers['content_type']
+  File "C:\Users\krish\AppData\Roaming\Python\Python37\site-packages\starlette\datastructures.py", line 550, in __getitem__
+    raise KeyError(key)
+KeyError: 'content_type'
+2021-01-21 10:06:58.459 INFO main - shutdown: Shutting down
+2021-01-21 10:06:58.562 INFO on - shutdown: Waiting for application shutdown.
+2021-01-21 10:06:58.563 ERROR qr_logger - log_warning: quitting the application now
+
+
+
+
+2021-01-21 10:06:58.564 INFO on - main: ASGI 'lifespan' protocol appears unsupported.
+2021-01-21 10:06:58.567 INFO on - shutdown: Application shutdown complete.
+2021-01-21 10:06:58.568 INFO main - serve: Finished server process [27796]
+2021-01-21 10:07:01.639 INFO main - serve: Started server process [3940]
+2021-01-21 10:07:01.639 INFO on - startup: Waiting for application startup.
+2021-01-21 10:07:01.640 INFO on - startup: Application startup complete.
+2021-01-21 10:07:01.642 INFO main - startup: Uvicorn running on http://127.0.0.1:8000 (Press CTRL+C to quit)
+2021-01-21 10:07:06.322 WARNING main - add_process_time_header: Path is: /users/
+execution time is 0.019973278045654297
+2021-01-21 10:07:06.325 ERROR h11_impl - run_asgi: Exception in ASGI application
+Traceback (most recent call last):
+  File "C:\Users\krish\AppData\Roaming\Python\Python37\site-packages\uvicorn\protocols\http\h11_impl.py", line 389, in run_asgi
+    result = await app(self.scope, self.receive, self.send)
+  File "C:\Users\krish\AppData\Roaming\Python\Python37\site-packages\uvicorn\middleware\proxy_headers.py", line 45, in __call__
+    return await self.app(scope, receive, send)
+  File "C:\ProgramData\Anaconda3\lib\site-packages\fastapi\applications.py", line 199, in __call__
+    await super().__call__(scope, receive, send)
+  File "C:\Users\krish\AppData\Roaming\Python\Python37\site-packages\starlette\applications.py", line 111, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "C:\Users\krish\AppData\Roaming\Python\Python37\site-packages\starlette\middleware\errors.py", line 181, in __call__
+    raise exc from None
+  File "C:\Users\krish\AppData\Roaming\Python\Python37\site-packages\starlette\middleware\errors.py", line 159, in __call__
+    await self.app(scope, receive, _send)
+  File "C:\Users\krish\AppData\Roaming\Python\Python37\site-packages\starlette\middleware\base.py", line 25, in __call__
+    response = await self.dispatch_func(request, self.call_next)
+  File "main.py", line 172, in add_process_time_header
+    await get_request_data(request, response)
+  File "main.py", line 116, in get_request_data
+    analysis_dict['content_type'] = request.headers['content_type']
+  File "C:\Users\krish\AppData\Roaming\Python\Python37\site-packages\starlette\datastructures.py", line 550, in __getitem__
+    raise KeyError(key)
+KeyError: 'content_type'
+2021-01-21 10:07:58.697 INFO main - shutdown: Shutting down
+2021-01-21 10:07:58.800 INFO on - shutdown: Waiting for application shutdown.
+2021-01-21 10:07:58.801 ERROR qr_logger - log_warning: quitting the application now
+
+
+
+
+2021-01-21 10:07:58.801 INFO on - main: ASGI 'lifespan' protocol appears unsupported.
+2021-01-21 10:07:58.804 INFO on - shutdown: Application shutdown complete.
+2021-01-21 10:07:58.808 INFO main - serve: Finished server process [3940]
+2021-01-21 10:08:03.269 INFO main - serve: Started server process [1960]
+2021-01-21 10:08:03.270 INFO on - startup: Waiting for application startup.
+2021-01-21 10:08:03.271 INFO on - startup: Application startup complete.
+2021-01-21 10:08:03.272 INFO main - startup: Uvicorn running on http://127.0.0.1:8000 (Press CTRL+C to quit)
+2021-01-21 10:08:08.498 WARNING main - add_process_time_header: Path is: /users/
+execution time is 0.020026445388793945
+2021-01-21 10:08:08.505 ERROR h11_impl - run_asgi: Exception in ASGI application
+Traceback (most recent call last):
+  File "C:\Users\krish\AppData\Roaming\Python\Python37\site-packages\uvicorn\protocols\http\h11_impl.py", line 389, in run_asgi
+    result = await app(self.scope, self.receive, self.send)
+  File "C:\Users\krish\AppData\Roaming\Python\Python37\site-packages\uvicorn\middleware\proxy_headers.py", line 45, in __call__
+    return await self.app(scope, receive, send)
+  File "C:\ProgramData\Anaconda3\lib\site-packages\fastapi\applications.py", line 199, in __call__
+    await super().__call__(scope, receive, send)
+  File "C:\Users\krish\AppData\Roaming\Python\Python37\site-packages\starlette\applications.py", line 111, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "C:\Users\krish\AppData\Roaming\Python\Python37\site-packages\starlette\middleware\errors.py", line 181, in __call__
+    raise exc from None
+  File "C:\Users\krish\AppData\Roaming\Python\Python37\site-packages\starlette\middleware\errors.py", line 159, in __call__
+    await self.app(scope, receive, _send)
+  File "C:\Users\krish\AppData\Roaming\Python\Python37\site-packages\starlette\middleware\base.py", line 25, in __call__
+    response = await self.dispatch_func(request, self.call_next)
+  File "main.py", line 172, in add_process_time_header
+    await get_request_data(request, response)
+  File "main.py", line 117, in get_request_data
+    analysis_dict['origin'] = request.headers['origin']
+  File "C:\Users\krish\AppData\Roaming\Python\Python37\site-packages\starlette\datastructures.py", line 550, in __getitem__
+    raise KeyError(key)
+KeyError: 'origin'
+2021-01-21 10:08:52.134 INFO main - shutdown: Shutting down
+2021-01-21 10:08:52.235 INFO on - shutdown: Waiting for application shutdown.
+2021-01-21 10:08:52.236 ERROR qr_logger - log_warning: quitting the application now
+
+
+
+
+2021-01-21 10:08:52.237 INFO on - main: ASGI 'lifespan' protocol appears unsupported.
+2021-01-21 10:08:52.240 INFO on - shutdown: Application shutdown complete.
+2021-01-21 10:08:52.242 INFO main - serve: Finished server process [1960]
+2021-01-21 10:08:55.383 INFO main - serve: Started server process [27804]
+2021-01-21 10:08:55.384 INFO on - startup: Waiting for application startup.
+2021-01-21 10:08:55.386 INFO on - startup: Application startup complete.
+2021-01-21 10:08:55.387 INFO main - startup: Uvicorn running on http://127.0.0.1:8000 (Press CTRL+C to quit)
+2021-01-21 10:08:59.407 WARNING main - add_process_time_header: Path is: /users/
+execution time is 0.030005455017089844
+2021-01-21 10:08:59.415 ERROR h11_impl - run_asgi: Exception in ASGI application
+Traceback (most recent call last):
+  File "C:\Users\krish\AppData\Roaming\Python\Python37\site-packages\uvicorn\protocols\http\h11_impl.py", line 389, in run_asgi
+    result = await app(self.scope, self.receive, self.send)
+  File "C:\Users\krish\AppData\Roaming\Python\Python37\site-packages\uvicorn\middleware\proxy_headers.py", line 45, in __call__
+    return await self.app(scope, receive, send)
+  File "C:\ProgramData\Anaconda3\lib\site-packages\fastapi\applications.py", line 199, in __call__
+    await super().__call__(scope, receive, send)
+  File "C:\Users\krish\AppData\Roaming\Python\Python37\site-packages\starlette\applications.py", line 111, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "C:\Users\krish\AppData\Roaming\Python\Python37\site-packages\starlette\middleware\errors.py", line 181, in __call__
+    raise exc from None
+  File "C:\Users\krish\AppData\Roaming\Python\Python37\site-packages\starlette\middleware\errors.py", line 159, in __call__
+    await self.app(scope, receive, _send)
+  File "C:\Users\krish\AppData\Roaming\Python\Python37\site-packages\starlette\middleware\base.py", line 25, in __call__
+    response = await self.dispatch_func(request, self.call_next)
+  File "main.py", line 172, in add_process_time_header
+    await get_request_data(request, response)
+  File "main.py", line 121, in get_request_data
+    analysis_dict['datetime'] = datetime.datetime.now()
+NameError: name 'datetime' is not defined
+2021-01-21 10:09:14.413 INFO main - shutdown: Shutting down
+2021-01-21 10:09:14.514 INFO on - shutdown: Waiting for application shutdown.
+2021-01-21 10:09:14.514 ERROR qr_logger - log_warning: quitting the application now
+
+
+
+
+2021-01-21 10:09:14.515 INFO on - main: ASGI 'lifespan' protocol appears unsupported.
+2021-01-21 10:09:14.516 INFO on - shutdown: Application shutdown complete.
+2021-01-21 10:09:14.516 INFO main - serve: Finished server process [27804]
+2021-01-21 10:09:17.932 INFO main - serve: Started server process [3996]
+2021-01-21 10:09:17.933 INFO on - startup: Waiting for application startup.
+2021-01-21 10:09:17.934 INFO on - startup: Application startup complete.
+2021-01-21 10:09:17.935 INFO main - startup: Uvicorn running on http://127.0.0.1:8000 (Press CTRL+C to quit)
+2021-01-21 10:09:23.070 WARNING main - add_process_time_header: Path is: /users/
+execution time is 0.018999099731445312
+2021-01-21 10:09:49.483 WARNING main - add_process_time_header: Path is: /docs
+execution time is 0.005056142807006836
+2021-01-21 10:09:50.358 WARNING main - add_process_time_header: Path is: /openapi.json
+execution time is 0.01508021354675293
+2021-01-21 10:09:58.821 WARNING main - add_process_time_header: Path is: /[object Module]
+execution time is 0.003997802734375
+2021-01-21 10:10:06.613 ERROR h11_impl - run_asgi: Exception in ASGI application
+Traceback (most recent call last):
+  File "C:\Users\krish\AppData\Roaming\Python\Python37\site-packages\uvicorn\protocols\http\h11_impl.py", line 389, in run_asgi
+    result = await app(self.scope, self.receive, self.send)
+  File "C:\Users\krish\AppData\Roaming\Python\Python37\site-packages\uvicorn\middleware\proxy_headers.py", line 45, in __call__
+    return await self.app(scope, receive, send)
+  File "C:\ProgramData\Anaconda3\lib\site-packages\fastapi\applications.py", line 199, in __call__
+    await super().__call__(scope, receive, send)
+  File "C:\Users\krish\AppData\Roaming\Python\Python37\site-packages\starlette\applications.py", line 111, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "C:\Users\krish\AppData\Roaming\Python\Python37\site-packages\starlette\middleware\errors.py", line 181, in __call__
+    raise exc from None
+  File "C:\Users\krish\AppData\Roaming\Python\Python37\site-packages\starlette\middleware\errors.py", line 159, in __call__
+    await self.app(scope, receive, _send)
+  File "C:\Users\krish\AppData\Roaming\Python\Python37\site-packages\starlette\middleware\base.py", line 25, in __call__
+    response = await self.dispatch_func(request, self.call_next)
+  File "main.py", line 158, in add_process_time_header
+    response = await call_next(request)
+  File "C:\Users\krish\AppData\Roaming\Python\Python37\site-packages\starlette\middleware\base.py", line 45, in call_next
+    task.result()
+  File "C:\Users\krish\AppData\Roaming\Python\Python37\site-packages\starlette\middleware\base.py", line 38, in coro
+    await self.app(scope, receive, send)
+  File "C:\Users\krish\AppData\Roaming\Python\Python37\site-packages\starlette\exceptions.py", line 82, in __call__
+    raise exc from None
+  File "C:\Users\krish\AppData\Roaming\Python\Python37\site-packages\starlette\exceptions.py", line 71, in __call__
+    await self.app(scope, receive, sender)
+  File "C:\Users\krish\AppData\Roaming\Python\Python37\site-packages\starlette\routing.py", line 566, in __call__
+    await route.handle(scope, receive, send)
+  File "C:\Users\krish\AppData\Roaming\Python\Python37\site-packages\starlette\routing.py", line 227, in handle
+    await self.app(scope, receive, send)
+  File "C:\Users\krish\AppData\Roaming\Python\Python37\site-packages\starlette\routing.py", line 41, in app
+    response = await func(request)
+  File "C:\ProgramData\Anaconda3\lib\site-packages\fastapi\routing.py", line 218, in app
+    is_coroutine=is_coroutine,
+  File "C:\ProgramData\Anaconda3\lib\site-packages\fastapi\routing.py", line 126, in serialize_response
+    raise ValidationError(errors, field.type_)
+pydantic.error_wrappers.ValidationError: 4 validation errors for Users
+response -> name
+  field required (type=value_error.missing)
+response -> email
+  field required (type=value_error.missing)
+response -> password
+  field required (type=value_error.missing)
+response -> id
+  field required (type=value_error.missing)
+2021-01-21 10:11:12.796 ERROR h11_impl - run_asgi: Exception in ASGI application
+Traceback (most recent call last):
+  File "C:\Users\krish\AppData\Roaming\Python\Python37\site-packages\uvicorn\protocols\http\h11_impl.py", line 389, in run_asgi
+    result = await app(self.scope, self.receive, self.send)
+  File "C:\Users\krish\AppData\Roaming\Python\Python37\site-packages\uvicorn\middleware\proxy_headers.py", line 45, in __call__
+    return await self.app(scope, receive, send)
+  File "C:\ProgramData\Anaconda3\lib\site-packages\fastapi\applications.py", line 199, in __call__
+    await super().__call__(scope, receive, send)
+  File "C:\Users\krish\AppData\Roaming\Python\Python37\site-packages\starlette\applications.py", line 111, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "C:\Users\krish\AppData\Roaming\Python\Python37\site-packages\starlette\middleware\errors.py", line 181, in __call__
+    raise exc from None
+  File "C:\Users\krish\AppData\Roaming\Python\Python37\site-packages\starlette\middleware\errors.py", line 159, in __call__
+    await self.app(scope, receive, _send)
+  File "C:\Users\krish\AppData\Roaming\Python\Python37\site-packages\starlette\middleware\base.py", line 25, in __call__
+    response = await self.dispatch_func(request, self.call_next)
+  File "main.py", line 158, in add_process_time_header
+    response = await call_next(request)
+  File "C:\Users\krish\AppData\Roaming\Python\Python37\site-packages\starlette\middleware\base.py", line 45, in call_next
+    task.result()
+  File "C:\Users\krish\AppData\Roaming\Python\Python37\site-packages\starlette\middleware\base.py", line 38, in coro
+    await self.app(scope, receive, send)
+  File "C:\Users\krish\AppData\Roaming\Python\Python37\site-packages\starlette\exceptions.py", line 82, in __call__
+    raise exc from None
+  File "C:\Users\krish\AppData\Roaming\Python\Python37\site-packages\starlette\exceptions.py", line 71, in __call__
+    await self.app(scope, receive, sender)
+  File "C:\Users\krish\AppData\Roaming\Python\Python37\site-packages\starlette\routing.py", line 566, in __call__
+    await route.handle(scope, receive, send)
+  File "C:\Users\krish\AppData\Roaming\Python\Python37\site-packages\starlette\routing.py", line 227, in handle
+    await self.app(scope, receive, send)
+  File "C:\Users\krish\AppData\Roaming\Python\Python37\site-packages\starlette\routing.py", line 41, in app
+    response = await func(request)
+  File "C:\ProgramData\Anaconda3\lib\site-packages\fastapi\routing.py", line 218, in app
+    is_coroutine=is_coroutine,
+  File "C:\ProgramData\Anaconda3\lib\site-packages\fastapi\routing.py", line 126, in serialize_response
+    raise ValidationError(errors, field.type_)
+pydantic.error_wrappers.ValidationError: 4 validation errors for Users
+response -> name
+  field required (type=value_error.missing)
+response -> email
+  field required (type=value_error.missing)
+response -> password
+  field required (type=value_error.missing)
+response -> id
+  field required (type=value_error.missing)
+2021-01-21 10:14:07.992 INFO main - shutdown: Shutting down
+2021-01-21 10:14:08.095 INFO on - shutdown: Waiting for application shutdown.
+2021-01-21 10:14:08.096 ERROR qr_logger - log_warning: quitting the application now
+
+
+
+
+2021-01-21 10:14:08.096 INFO on - main: ASGI 'lifespan' protocol appears unsupported.
+2021-01-21 10:14:08.098 INFO on - shutdown: Application shutdown complete.
+2021-01-21 10:14:08.098 INFO main - serve: Finished server process [3996]
+2021-01-21 10:14:13.178 INFO main - serve: Started server process [6132]
+2021-01-21 10:14:13.179 INFO on - startup: Waiting for application startup.
+2021-01-21 10:14:13.180 INFO on - startup: Application startup complete.
+2021-01-21 10:14:13.181 INFO main - startup: Uvicorn running on http://127.0.0.1:8000 (Press CTRL+C to quit)
+2021-01-21 10:14:23.520 WARNING main - add_process_time_header: Path is: /users/krishna
+execution time is 0.029998779296875
+2021-01-21 10:15:30.511 INFO main - shutdown: Shutting down
+2021-01-21 10:15:30.613 INFO on - shutdown: Waiting for application shutdown.
+2021-01-21 10:15:30.615 ERROR qr_logger - log_warning: quitting the application now
+
+
+
+
+2021-01-21 10:15:30.615 INFO on - main: ASGI 'lifespan' protocol appears unsupported.
+2021-01-21 10:15:30.616 INFO on - shutdown: Application shutdown complete.
+2021-01-21 10:15:30.617 INFO main - serve: Finished server process [6132]
+2021-01-21 10:18:35.046 INFO main - serve: Started server process [25596]
+2021-01-21 10:18:35.047 INFO on - startup: Waiting for application startup.
+2021-01-21 10:18:35.048 INFO on - startup: Application startup complete.
+2021-01-21 10:18:35.049 INFO main - startup: Uvicorn running on http://127.0.0.1:8000 (Press CTRL+C to quit)
+2021-01-21 10:18:39.416 WARNING main - add_process_time_header: Path is: /users/krishna
+execution time is 0.020000934600830078
+2021-01-21 10:18:39.421 ERROR h11_impl - run_asgi: Exception in ASGI application
+Traceback (most recent call last):
+  File "C:\Users\krish\AppData\Roaming\Python\Python37\site-packages\uvicorn\protocols\http\h11_impl.py", line 389, in run_asgi
+    result = await app(self.scope, self.receive, self.send)
+  File "C:\Users\krish\AppData\Roaming\Python\Python37\site-packages\uvicorn\middleware\proxy_headers.py", line 45, in __call__
+    return await self.app(scope, receive, send)
+  File "C:\ProgramData\Anaconda3\lib\site-packages\fastapi\applications.py", line 199, in __call__
+    await super().__call__(scope, receive, send)
+  File "C:\Users\krish\AppData\Roaming\Python\Python37\site-packages\starlette\applications.py", line 111, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "C:\Users\krish\AppData\Roaming\Python\Python37\site-packages\starlette\middleware\errors.py", line 181, in __call__
+    raise exc from None
+  File "C:\Users\krish\AppData\Roaming\Python\Python37\site-packages\starlette\middleware\errors.py", line 159, in __call__
+    await self.app(scope, receive, _send)
+  File "C:\Users\krish\AppData\Roaming\Python\Python37\site-packages\starlette\middleware\base.py", line 25, in __call__
+    response = await self.dispatch_func(request, self.call_next)
+  File "main.py", line 173, in add_process_time_header
+    await get_request_data(request, response)
+  File "main.py", line 112, in get_request_data
+    analysis_dict['same_origin_yn'] = request.scope['sec-fetch-site'] if 'sec-fetch-site' in request.headers else 'same'
+KeyError: 'sec-fetch-site'
+2021-01-21 10:21:31.628 INFO main - shutdown: Shutting down
+2021-01-21 10:21:31.730 INFO on - shutdown: Waiting for application shutdown.
+2021-01-21 10:21:31.731 ERROR qr_logger - log_warning: quitting the application now
+
+
+
+
+2021-01-21 10:21:31.732 INFO on - main: ASGI 'lifespan' protocol appears unsupported.
+2021-01-21 10:21:31.733 INFO on - shutdown: Application shutdown complete.
+2021-01-21 10:21:31.734 INFO main - serve: Finished server process [25596]
+2021-01-21 10:21:34.800 INFO main - serve: Started server process [26088]
+2021-01-21 10:21:34.801 INFO on - startup: Waiting for application startup.
+2021-01-21 10:21:34.802 INFO on - startup: Application startup complete.
+2021-01-21 10:21:34.802 INFO main - startup: Uvicorn running on http://127.0.0.1:8000 (Press CTRL+C to quit)
+2021-01-21 10:21:38.523 WARNING main - add_process_time_header: Path is: /users/krishna
+execution time is 0.03199577331542969
+2021-01-21 10:22:50.661 INFO main - shutdown: Shutting down
+2021-01-21 10:22:50.762 INFO on - shutdown: Waiting for application shutdown.
+2021-01-21 10:22:50.762 ERROR qr_logger - log_warning: quitting the application now
+
+
+
+
+2021-01-21 10:22:50.762 INFO on - main: ASGI 'lifespan' protocol appears unsupported.
+2021-01-21 10:22:50.762 INFO on - shutdown: Application shutdown complete.
+2021-01-21 10:22:50.763 INFO main - serve: Finished server process [26088]
+2021-01-21 10:22:53.940 INFO main - serve: Started server process [26008]
+2021-01-21 10:22:53.940 INFO on - startup: Waiting for application startup.
+2021-01-21 10:22:53.940 INFO on - startup: Application startup complete.
+2021-01-21 10:22:53.940 INFO main - startup: Uvicorn running on http://127.0.0.1:8000 (Press CTRL+C to quit)
+2021-01-21 10:22:57.425 WARNING main - add_process_time_header: Path is: /users/krishna
+execution time is 0.018001079559326172
+2021-01-21 10:25:18.575 INFO main - shutdown: Shutting down
+2021-01-21 10:25:18.675 INFO on - shutdown: Waiting for application shutdown.
+2021-01-21 10:25:18.675 ERROR qr_logger - log_warning: quitting the application now
+
+
+
+
+2021-01-21 10:25:18.675 INFO on - main: ASGI 'lifespan' protocol appears unsupported.
+2021-01-21 10:25:18.676 INFO on - shutdown: Application shutdown complete.
+2021-01-21 10:25:18.677 INFO main - serve: Finished server process [26008]
+2021-01-21 10:25:22.483 INFO main - serve: Started server process [28648]
+2021-01-21 10:25:22.484 INFO on - startup: Waiting for application startup.
+2021-01-21 10:25:22.484 INFO on - startup: Application startup complete.
+2021-01-21 10:25:22.485 INFO main - startup: Uvicorn running on http://127.0.0.1:8000 (Press CTRL+C to quit)
+2021-01-21 10:25:29.235 WARNING main - add_process_time_header: Path is: /users/krishna
+execution time is 0.013997793197631836
+2021-01-21 10:25:29.238 ERROR h11_impl - run_asgi: Exception in ASGI application
+Traceback (most recent call last):
+  File "C:\Users\krish\AppData\Roaming\Python\Python37\site-packages\uvicorn\protocols\http\h11_impl.py", line 389, in run_asgi
+    result = await app(self.scope, self.receive, self.send)
+  File "C:\Users\krish\AppData\Roaming\Python\Python37\site-packages\uvicorn\middleware\proxy_headers.py", line 45, in __call__
+    return await self.app(scope, receive, send)
+  File "C:\ProgramData\Anaconda3\lib\site-packages\fastapi\applications.py", line 199, in __call__
+    await super().__call__(scope, receive, send)
+  File "C:\Users\krish\AppData\Roaming\Python\Python37\site-packages\starlette\applications.py", line 111, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "C:\Users\krish\AppData\Roaming\Python\Python37\site-packages\starlette\middleware\errors.py", line 181, in __call__
+    raise exc from None
+  File "C:\Users\krish\AppData\Roaming\Python\Python37\site-packages\starlette\middleware\errors.py", line 159, in __call__
+    await self.app(scope, receive, _send)
+  File "C:\Users\krish\AppData\Roaming\Python\Python37\site-packages\starlette\middleware\base.py", line 25, in __call__
+    response = await self.dispatch_func(request, self.call_next)
+  File "main.py", line 175, in add_process_time_header
+    await get_request_data(request, response)
+  File "main.py", line 130, in get_request_data
+    crud.insert_request_response_data(db, analysis_dict)
+  File "C:\Users\krish\Documents\QRmenu\crud.py", line 28, in insert_request_response_data
+    analysis_data = models.RequestResponseDetails(analysis_dict)
+TypeError: __init__() takes 1 positional argument but 2 were given
+2021-01-21 10:30:48.250 INFO main - shutdown: Shutting down
+2021-01-21 10:30:48.352 INFO on - shutdown: Waiting for application shutdown.
+2021-01-21 10:30:48.352 ERROR qr_logger - log_warning: quitting the application now
+
+
+
+
+2021-01-21 10:30:48.353 INFO on - main: ASGI 'lifespan' protocol appears unsupported.
+2021-01-21 10:30:48.357 INFO on - shutdown: Application shutdown complete.
+2021-01-21 10:30:48.359 INFO main - serve: Finished server process [28648]
+2021-01-21 10:30:51.127 INFO main - serve: Started server process [27820]
+2021-01-21 10:30:51.128 INFO on - startup: Waiting for application startup.
+2021-01-21 10:30:51.129 INFO on - startup: Application startup complete.
+2021-01-21 10:30:51.129 INFO main - startup: Uvicorn running on http://127.0.0.1:8000 (Press CTRL+C to quit)
+2021-01-21 10:30:54.643 WARNING main - add_process_time_header: Path is: /users/krishna
+execution time is 0.019972562789916992
+2021-01-21 10:30:54.645 ERROR h11_impl - run_asgi: Exception in ASGI application
+Traceback (most recent call last):
+  File "C:\Users\krish\AppData\Roaming\Python\Python37\site-packages\uvicorn\protocols\http\h11_impl.py", line 389, in run_asgi
+    result = await app(self.scope, self.receive, self.send)
+  File "C:\Users\krish\AppData\Roaming\Python\Python37\site-packages\uvicorn\middleware\proxy_headers.py", line 45, in __call__
+    return await self.app(scope, receive, send)
+  File "C:\ProgramData\Anaconda3\lib\site-packages\fastapi\applications.py", line 199, in __call__
+    await super().__call__(scope, receive, send)
+  File "C:\Users\krish\AppData\Roaming\Python\Python37\site-packages\starlette\applications.py", line 111, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "C:\Users\krish\AppData\Roaming\Python\Python37\site-packages\starlette\middleware\errors.py", line 181, in __call__
+    raise exc from None
+  File "C:\Users\krish\AppData\Roaming\Python\Python37\site-packages\starlette\middleware\errors.py", line 159, in __call__
+    await self.app(scope, receive, _send)
+  File "C:\Users\krish\AppData\Roaming\Python\Python37\site-packages\starlette\middleware\base.py", line 25, in __call__
+    response = await self.dispatch_func(request, self.call_next)
+  File "main.py", line 175, in add_process_time_header
+    await get_request_data(request, response)
+  File "main.py", line 130, in get_request_data
+    crud.insert_request_response_data(db, analysis_dict)
+  File "C:\Users\krish\Documents\QRmenu\crud.py", line 32, in insert_request_response_data
+    referrer = analysis_dict['referer'], browser_name= analysis_dict['browser_name'],
+KeyError: 'browser_name'
+2021-01-21 10:31:25.552 INFO main - shutdown: Shutting down
+2021-01-21 10:31:25.653 INFO on - shutdown: Waiting for application shutdown.
+2021-01-21 10:31:25.653 ERROR qr_logger - log_warning: quitting the application now
+
+
+
+
+2021-01-21 10:31:25.654 INFO on - main: ASGI 'lifespan' protocol appears unsupported.
+2021-01-21 10:31:25.655 INFO on - shutdown: Application shutdown complete.
+2021-01-21 10:31:25.655 INFO main - serve: Finished server process [27820]
+2021-01-21 10:31:29.034 INFO main - serve: Started server process [28272]
+2021-01-21 10:31:29.034 INFO on - startup: Waiting for application startup.
+2021-01-21 10:31:29.035 INFO on - startup: Application startup complete.
+2021-01-21 10:31:29.036 INFO main - startup: Uvicorn running on http://127.0.0.1:8000 (Press CTRL+C to quit)
+2021-01-21 10:31:33.000 WARNING main - add_process_time_header: Path is: /users/krishna
+execution time is 0.01605701446533203
+2021-01-21 10:31:33.005 ERROR h11_impl - run_asgi: Exception in ASGI application
+Traceback (most recent call last):
+  File "C:\Users\krish\AppData\Roaming\Python\Python37\site-packages\uvicorn\protocols\http\h11_impl.py", line 389, in run_asgi
+    result = await app(self.scope, self.receive, self.send)
+  File "C:\Users\krish\AppData\Roaming\Python\Python37\site-packages\uvicorn\middleware\proxy_headers.py", line 45, in __call__
+    return await self.app(scope, receive, send)
+  File "C:\ProgramData\Anaconda3\lib\site-packages\fastapi\applications.py", line 199, in __call__
+    await super().__call__(scope, receive, send)
+  File "C:\Users\krish\AppData\Roaming\Python\Python37\site-packages\starlette\applications.py", line 111, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "C:\Users\krish\AppData\Roaming\Python\Python37\site-packages\starlette\middleware\errors.py", line 181, in __call__
+    raise exc from None
+  File "C:\Users\krish\AppData\Roaming\Python\Python37\site-packages\starlette\middleware\errors.py", line 159, in __call__
+    await self.app(scope, receive, _send)
+  File "C:\Users\krish\AppData\Roaming\Python\Python37\site-packages\starlette\middleware\base.py", line 25, in __call__
+    response = await self.dispatch_func(request, self.call_next)
+  File "main.py", line 175, in add_process_time_header
+    await get_request_data(request, response)
+  File "main.py", line 130, in get_request_data
+    crud.insert_request_response_data(db, analysis_dict)
+  File "C:\Users\krish\Documents\QRmenu\crud.py", line 36, in insert_request_response_data
+    db.add(analysis_data)
+AttributeError: 'generator' object has no attribute 'add'
+2021-01-21 10:32:23.938 INFO main - shutdown: Shutting down
+2021-01-21 10:32:24.040 INFO on - shutdown: Waiting for application shutdown.
+2021-01-21 10:32:24.040 ERROR qr_logger - log_warning: quitting the application now
+
+
+
+
+2021-01-21 10:32:24.040 INFO on - main: ASGI 'lifespan' protocol appears unsupported.
+2021-01-21 10:32:24.041 INFO on - shutdown: Application shutdown complete.
+2021-01-21 10:32:24.041 INFO main - serve: Finished server process [28272]
+2021-01-21 10:32:27.309 INFO main - serve: Started server process [24184]
+2021-01-21 10:32:27.309 INFO on - startup: Waiting for application startup.
+2021-01-21 10:32:27.310 INFO on - startup: Application startup complete.
+2021-01-21 10:32:27.311 INFO main - startup: Uvicorn running on http://127.0.0.1:8000 (Press CTRL+C to quit)
+2021-01-21 10:32:31.084 WARNING main - add_process_time_header: Path is: /users/krishna
+execution time is 0.014998674392700195
+2021-01-21 10:32:31.087 ERROR h11_impl - run_asgi: Exception in ASGI application
+Traceback (most recent call last):
+  File "C:\Users\krish\AppData\Roaming\Python\Python37\site-packages\uvicorn\protocols\http\h11_impl.py", line 389, in run_asgi
+    result = await app(self.scope, self.receive, self.send)
+  File "C:\Users\krish\AppData\Roaming\Python\Python37\site-packages\uvicorn\middleware\proxy_headers.py", line 45, in __call__
+    return await self.app(scope, receive, send)
+  File "C:\ProgramData\Anaconda3\lib\site-packages\fastapi\applications.py", line 199, in __call__
+    await super().__call__(scope, receive, send)
+  File "C:\Users\krish\AppData\Roaming\Python\Python37\site-packages\starlette\applications.py", line 111, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "C:\Users\krish\AppData\Roaming\Python\Python37\site-packages\starlette\middleware\errors.py", line 181, in __call__
+    raise exc from None
+  File "C:\Users\krish\AppData\Roaming\Python\Python37\site-packages\starlette\middleware\errors.py", line 159, in __call__
+    await self.app(scope, receive, _send)
+  File "C:\Users\krish\AppData\Roaming\Python\Python37\site-packages\starlette\middleware\base.py", line 25, in __call__
+    response = await self.dispatch_func(request, self.call_next)
+  File "main.py", line 175, in add_process_time_header
+    await get_request_data(request, response)
+  File "main.py", line 130, in get_request_data
+    crud.insert_request_response_data(db, analysis_dict)
+  File "C:\Users\krish\Documents\QRmenu\crud.py", line 36, in insert_request_response_data
+    db.add(analysis_data)
+AttributeError: 'Depends' object has no attribute 'add'
+2021-01-21 10:33:29.277 INFO main - shutdown: Shutting down
+2021-01-21 10:33:29.378 INFO on - shutdown: Waiting for application shutdown.
+2021-01-21 10:33:29.378 ERROR qr_logger - log_warning: quitting the application now
+
+
+
+
+2021-01-21 10:33:29.379 INFO on - main: ASGI 'lifespan' protocol appears unsupported.
+2021-01-21 10:33:29.382 INFO on - shutdown: Application shutdown complete.
+2021-01-21 10:33:29.383 INFO main - serve: Finished server process [24184]
+2021-01-21 10:37:02.457 INFO main - serve: Started server process [2604]
+2021-01-21 10:37:02.458 INFO on - startup: Waiting for application startup.
+2021-01-21 10:37:02.459 INFO on - startup: Application startup complete.
+2021-01-21 10:37:02.459 INFO main - startup: Uvicorn running on http://127.0.0.1:8000 (Press CTRL+C to quit)
+2021-01-21 10:37:13.669 WARNING main - add_process_time_header: Path is: /users/krishna
+execution time is 0.01599407196044922
+2021-01-21 10:37:13.705 ERROR h11_impl - run_asgi: Exception in ASGI application
+Traceback (most recent call last):
+  File "C:\Users\krish\AppData\Roaming\Python\Python37\site-packages\uvicorn\protocols\http\h11_impl.py", line 389, in run_asgi
+    result = await app(self.scope, self.receive, self.send)
+  File "C:\Users\krish\AppData\Roaming\Python\Python37\site-packages\uvicorn\middleware\proxy_headers.py", line 45, in __call__
+    return await self.app(scope, receive, send)
+  File "C:\ProgramData\Anaconda3\lib\site-packages\fastapi\applications.py", line 199, in __call__
+    await super().__call__(scope, receive, send)
+  File "C:\Users\krish\AppData\Roaming\Python\Python37\site-packages\starlette\applications.py", line 111, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "C:\Users\krish\AppData\Roaming\Python\Python37\site-packages\starlette\middleware\errors.py", line 181, in __call__
+    raise exc from None
+  File "C:\Users\krish\AppData\Roaming\Python\Python37\site-packages\starlette\middleware\errors.py", line 159, in __call__
+    await self.app(scope, receive, _send)
+  File "C:\Users\krish\AppData\Roaming\Python\Python37\site-packages\starlette\middleware\base.py", line 25, in __call__
+    response = await self.dispatch_func(request, self.call_next)
+  File "main.py", line 177, in add_process_time_header
+    await get_request_data(request, response)
+  File "main.py", line 131, in get_request_data
+    crud.insert_request_response_data(db, analysis_dict)
+  File "C:\Users\krish\Documents\QRmenu\crud.py", line 37, in insert_request_response_data
+    db.commit()
+  File "C:\Users\krish\AppData\Roaming\Python\Python37\site-packages\sqlalchemy\orm\session.py", line 937, in commit
+    self.transaction.commit()
+  File "C:\Users\krish\AppData\Roaming\Python\Python37\site-packages\sqlalchemy\orm\session.py", line 461, in commit
+    self._prepare_impl()
+  File "C:\Users\krish\AppData\Roaming\Python\Python37\site-packages\sqlalchemy\orm\session.py", line 441, in _prepare_impl
+    self.session.flush()
+  File "C:\Users\krish\AppData\Roaming\Python\Python37\site-packages\sqlalchemy\orm\session.py", line 2237, in flush
+    self._flush(objects)
+  File "C:\Users\krish\AppData\Roaming\Python\Python37\site-packages\sqlalchemy\orm\session.py", line 2363, in _flush
+    transaction.rollback(_capture_exception=True)
+  File "C:\Users\krish\AppData\Roaming\Python\Python37\site-packages\sqlalchemy\util\langhelpers.py", line 66, in __exit__
+    compat.reraise(exc_type, exc_value, exc_tb)
+  File "C:\Users\krish\AppData\Roaming\Python\Python37\site-packages\sqlalchemy\util\compat.py", line 187, in reraise
+    raise value
+  File "C:\Users\krish\AppData\Roaming\Python\Python37\site-packages\sqlalchemy\orm\session.py", line 2327, in _flush
+    flush_context.execute()
+  File "C:\Users\krish\AppData\Roaming\Python\Python37\site-packages\sqlalchemy\orm\unitofwork.py", line 391, in execute
+    rec.execute(self)
+  File "C:\Users\krish\AppData\Roaming\Python\Python37\site-packages\sqlalchemy\orm\unitofwork.py", line 556, in execute
+    uow
+  File "C:\Users\krish\AppData\Roaming\Python\Python37\site-packages\sqlalchemy\orm\persistence.py", line 181, in save_obj
+    mapper, table, insert)
+  File "C:\Users\krish\AppData\Roaming\Python\Python37\site-packages\sqlalchemy\orm\persistence.py", line 866, in _emit_insert_statements
+    execute(statement, params)
+  File "C:\Users\krish\AppData\Roaming\Python\Python37\site-packages\sqlalchemy\engine\base.py", line 948, in execute
+    return meth(self, multiparams, params)
+  File "C:\Users\krish\AppData\Roaming\Python\Python37\site-packages\sqlalchemy\sql\elements.py", line 269, in _execute_on_connection
+    return connection._execute_clauseelement(self, multiparams, params)
+  File "C:\Users\krish\AppData\Roaming\Python\Python37\site-packages\sqlalchemy\engine\base.py", line 1060, in _execute_clauseelement
+    compiled_sql, distilled_params
+  File "C:\Users\krish\AppData\Roaming\Python\Python37\site-packages\sqlalchemy\engine\base.py", line 1132, in _execute_context
+    None, None)
+  File "C:\Users\krish\AppData\Roaming\Python\Python37\site-packages\sqlalchemy\engine\base.py", line 1413, in _handle_dbapi_exception
+    exc_info
+  File "C:\Users\krish\AppData\Roaming\Python\Python37\site-packages\sqlalchemy\util\compat.py", line 203, in raise_from_cause
+    reraise(type(exception), exception, tb=exc_tb, cause=cause)
+  File "C:\Users\krish\AppData\Roaming\Python\Python37\site-packages\sqlalchemy\util\compat.py", line 186, in reraise
+    raise value.with_traceback(tb)
+  File "C:\Users\krish\AppData\Roaming\Python\Python37\site-packages\sqlalchemy\engine\base.py", line 1127, in _execute_context
+    context = constructor(dialect, self, conn, *args)
+  File "C:\Users\krish\AppData\Roaming\Python\Python37\site-packages\sqlalchemy\engine\default.py", line 693, in _init_compiled
+    for key in compiled_params
+  File "C:\Users\krish\AppData\Roaming\Python\Python37\site-packages\sqlalchemy\engine\default.py", line 693, in <genexpr>
+    for key in compiled_params
+  File "C:\Users\krish\AppData\Roaming\Python\Python37\site-packages\sqlalchemy\sql\sqltypes.py", line 1676, in process
+    value = _strict_as_bool(value)
+  File "C:\Users\krish\AppData\Roaming\Python\Python37\site-packages\sqlalchemy\sql\sqltypes.py", line 1653, in _strict_as_bool
+    "Not a boolean value: %r" % value)
+sqlalchemy.exc.StatementError: (builtins.TypeError) Not a boolean value: 'same' [SQL: 'INSERT INTO request_response_details (same_origin_yn, request_size, response_size, request_type, request_method, content_type, origin, referrer, browser_name, destination_path, device_name, ip_address, datetime, execution_time) VALUES (%(same_origin_yn)s, %(request_size)s, %(response_size)s, %(request_type)s, %(request_method)s, %(content_type)s, %(origin)s, %(referrer)s, %(browser_name)s, %(destination_path)s, %(device_name)s, %(ip_address)s, %(datetime)s, %(execution_time)s) RETURNING request_response_details.id'] [parameters: [{'content_type': '', 'request_size': 0, 'destination_path': 'cors', 'response_size': '66', 'datetime': datetime.datetime(2021, 1, 21, 10, 37, 13, 669183), 'ip_address': '', 'referrer': 'http://127.0.0.1:8000/docs', 'execution_time': '0.01599407196044922', 'browser_name': 'chrome', 'origin': '', 'device_name': '', 'request_method': 'GET', 'same_origin_yn': 'same', 'request_type': 'http'}]]
+2021-01-21 10:37:40.415 INFO main - shutdown: Shutting down
+2021-01-21 10:37:40.517 INFO on - shutdown: Waiting for application shutdown.
+2021-01-21 10:37:40.519 ERROR qr_logger - log_warning: quitting the application now
+
+
+
+
+2021-01-21 10:37:40.519 INFO on - main: ASGI 'lifespan' protocol appears unsupported.
+2021-01-21 10:37:40.520 INFO on - shutdown: Application shutdown complete.
+2021-01-21 10:37:40.522 INFO main - serve: Finished server process [2604]
+2021-01-21 10:37:43.772 INFO main - serve: Started server process [26900]
+2021-01-21 10:37:43.773 INFO on - startup: Waiting for application startup.
+2021-01-21 10:37:43.774 INFO on - startup: Application startup complete.
+2021-01-21 10:37:43.776 INFO main - startup: Uvicorn running on http://127.0.0.1:8000 (Press CTRL+C to quit)
+2021-01-21 10:37:48.651 WARNING main - add_process_time_header: Path is: /users/krishna
+execution time is 0.013998270034790039
+2021-01-21 10:37:48.703 ERROR h11_impl - run_asgi: Exception in ASGI application
+Traceback (most recent call last):
+  File "C:\Users\krish\AppData\Roaming\Python\Python37\site-packages\uvicorn\protocols\http\h11_impl.py", line 389, in run_asgi
+    result = await app(self.scope, self.receive, self.send)
+  File "C:\Users\krish\AppData\Roaming\Python\Python37\site-packages\uvicorn\middleware\proxy_headers.py", line 45, in __call__
+    return await self.app(scope, receive, send)
+  File "C:\ProgramData\Anaconda3\lib\site-packages\fastapi\applications.py", line 199, in __call__
+    await super().__call__(scope, receive, send)
+  File "C:\Users\krish\AppData\Roaming\Python\Python37\site-packages\starlette\applications.py", line 111, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "C:\Users\krish\AppData\Roaming\Python\Python37\site-packages\starlette\middleware\errors.py", line 181, in __call__
+    raise exc from None
+  File "C:\Users\krish\AppData\Roaming\Python\Python37\site-packages\starlette\middleware\errors.py", line 159, in __call__
+    await self.app(scope, receive, _send)
+  File "C:\Users\krish\AppData\Roaming\Python\Python37\site-packages\starlette\middleware\base.py", line 25, in __call__
+    response = await self.dispatch_func(request, self.call_next)
+  File "main.py", line 177, in add_process_time_header
+    await get_request_data(request, response)
+  File "main.py", line 131, in get_request_data
+    crud.insert_request_response_data(db, analysis_dict)
+  File "C:\Users\krish\Documents\QRmenu\crud.py", line 37, in insert_request_response_data
+    db.commit()
+  File "C:\Users\krish\AppData\Roaming\Python\Python37\site-packages\sqlalchemy\orm\session.py", line 937, in commit
+    self.transaction.commit()
+  File "C:\Users\krish\AppData\Roaming\Python\Python37\site-packages\sqlalchemy\orm\session.py", line 461, in commit
+    self._prepare_impl()
+  File "C:\Users\krish\AppData\Roaming\Python\Python37\site-packages\sqlalchemy\orm\session.py", line 441, in _prepare_impl
+    self.session.flush()
+  File "C:\Users\krish\AppData\Roaming\Python\Python37\site-packages\sqlalchemy\orm\session.py", line 2237, in flush
+    self._flush(objects)
+  File "C:\Users\krish\AppData\Roaming\Python\Python37\site-packages\sqlalchemy\orm\session.py", line 2363, in _flush
+    transaction.rollback(_capture_exception=True)
+  File "C:\Users\krish\AppData\Roaming\Python\Python37\site-packages\sqlalchemy\util\langhelpers.py", line 66, in __exit__
+    compat.reraise(exc_type, exc_value, exc_tb)
+  File "C:\Users\krish\AppData\Roaming\Python\Python37\site-packages\sqlalchemy\util\compat.py", line 187, in reraise
+    raise value
+  File "C:\Users\krish\AppData\Roaming\Python\Python37\site-packages\sqlalchemy\orm\session.py", line 2327, in _flush
+    flush_context.execute()
+  File "C:\Users\krish\AppData\Roaming\Python\Python37\site-packages\sqlalchemy\orm\unitofwork.py", line 391, in execute
+    rec.execute(self)
+  File "C:\Users\krish\AppData\Roaming\Python\Python37\site-packages\sqlalchemy\orm\unitofwork.py", line 556, in execute
+    uow
+  File "C:\Users\krish\AppData\Roaming\Python\Python37\site-packages\sqlalchemy\orm\persistence.py", line 181, in save_obj
+    mapper, table, insert)
+  File "C:\Users\krish\AppData\Roaming\Python\Python37\site-packages\sqlalchemy\orm\persistence.py", line 866, in _emit_insert_statements
+    execute(statement, params)
+  File "C:\Users\krish\AppData\Roaming\Python\Python37\site-packages\sqlalchemy\engine\base.py", line 948, in execute
+    return meth(self, multiparams, params)
+  File "C:\Users\krish\AppData\Roaming\Python\Python37\site-packages\sqlalchemy\sql\elements.py", line 269, in _execute_on_connection
+    return connection._execute_clauseelement(self, multiparams, params)
+  File "C:\Users\krish\AppData\Roaming\Python\Python37\site-packages\sqlalchemy\engine\base.py", line 1060, in _execute_clauseelement
+    compiled_sql, distilled_params
+  File "C:\Users\krish\AppData\Roaming\Python\Python37\site-packages\sqlalchemy\engine\base.py", line 1200, in _execute_context
+    context)
+  File "C:\Users\krish\AppData\Roaming\Python\Python37\site-packages\sqlalchemy\engine\base.py", line 1413, in _handle_dbapi_exception
+    exc_info
+  File "C:\Users\krish\AppData\Roaming\Python\Python37\site-packages\sqlalchemy\util\compat.py", line 203, in raise_from_cause
+    reraise(type(exception), exception, tb=exc_tb, cause=cause)
+  File "C:\Users\krish\AppData\Roaming\Python\Python37\site-packages\sqlalchemy\util\compat.py", line 186, in reraise
+    raise value.with_traceback(tb)
+  File "C:\Users\krish\AppData\Roaming\Python\Python37\site-packages\sqlalchemy\engine\base.py", line 1193, in _execute_context
+    context)
+  File "C:\Users\krish\AppData\Roaming\Python\Python37\site-packages\sqlalchemy\engine\default.py", line 507, in do_execute
+    cursor.execute(statement, parameters)
+sqlalchemy.exc.DataError: (psycopg2.errors.InvalidTextRepresentation) invalid input syntax for type integer: "0.013998270034790039"
+LINE 1: ... '', '', '2021-01-21T10:37:48.651194'::timestamp, '0.0139982...
+                                                             ^
+ [SQL: 'INSERT INTO request_response_details (same_origin_yn, request_size, response_size, request_type, request_method, content_type, origin, referrer, browser_name, destination_path, device_name, ip_address, datetime, execution_time) VALUES (%(same_origin_yn)s, %(request_size)s, %(response_size)s, %(request_type)s, %(request_method)s, %(content_type)s, %(origin)s, %(referrer)s, %(browser_name)s, %(destination_path)s, %(device_name)s, %(ip_address)s, %(datetime)s, %(execution_time)s) RETURNING request_response_details.id'] [parameters: {'same_origin_yn': True, 'request_size': 0, 'response_size': '66', 'request_type': 'http', 'request_method': 'GET', 'content_type': '', 'origin': '', 'referrer': 'http://127.0.0.1:8000/docs', 'browser_name': 'chrome', 'destination_path': 'cors', 'device_name': '', 'ip_address': '', 'datetime': datetime.datetime(2021, 1, 21, 10, 37, 48, 651194), 'execution_time': '0.013998270034790039'}] (Background on this error at: http://sqlalche.me/e/9h9h)
+2021-01-21 10:38:40.772 INFO main - shutdown: Shutting down
+2021-01-21 10:38:40.872 INFO on - shutdown: Waiting for application shutdown.
+2021-01-21 10:38:40.872 ERROR qr_logger - log_warning: quitting the application now
+
+
+
+
+2021-01-21 10:38:40.873 INFO on - main: ASGI 'lifespan' protocol appears unsupported.
+2021-01-21 10:38:40.876 INFO on - shutdown: Application shutdown complete.
+2021-01-21 10:38:40.877 INFO main - serve: Finished server process [26900]
+2021-01-21 10:38:43.956 INFO main - serve: Started server process [25892]
+2021-01-21 10:38:43.956 INFO on - startup: Waiting for application startup.
+2021-01-21 10:38:43.957 INFO on - startup: Application startup complete.
+2021-01-21 10:38:43.958 INFO main - startup: Uvicorn running on http://127.0.0.1:8000 (Press CTRL+C to quit)
+2021-01-21 10:38:49.819 WARNING main - add_process_time_header: Path is: /users/krishna
+execution time is 0.014001607894897461
+2021-01-21 10:38:49.822 ERROR h11_impl - run_asgi: Exception in ASGI application
+Traceback (most recent call last):
+  File "C:\Users\krish\AppData\Roaming\Python\Python37\site-packages\uvicorn\protocols\http\h11_impl.py", line 389, in run_asgi
+    result = await app(self.scope, self.receive, self.send)
+  File "C:\Users\krish\AppData\Roaming\Python\Python37\site-packages\uvicorn\middleware\proxy_headers.py", line 45, in __call__
+    return await self.app(scope, receive, send)
+  File "C:\ProgramData\Anaconda3\lib\site-packages\fastapi\applications.py", line 199, in __call__
+    await super().__call__(scope, receive, send)
+  File "C:\Users\krish\AppData\Roaming\Python\Python37\site-packages\starlette\applications.py", line 111, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "C:\Users\krish\AppData\Roaming\Python\Python37\site-packages\starlette\middleware\errors.py", line 181, in __call__
+    raise exc from None
+  File "C:\Users\krish\AppData\Roaming\Python\Python37\site-packages\starlette\middleware\errors.py", line 159, in __call__
+    await self.app(scope, receive, _send)
+  File "C:\Users\krish\AppData\Roaming\Python\Python37\site-packages\starlette\middleware\base.py", line 25, in __call__
+    response = await self.dispatch_func(request, self.call_next)
+  File "main.py", line 177, in add_process_time_header
+    await get_request_data(request, response)
+  File "main.py", line 125, in get_request_data
+    analysis_dict['datetime'] = time.time.now()
+AttributeError: 'builtin_function_or_method' object has no attribute 'now'
+2021-01-21 10:39:11.839 INFO main - shutdown: Shutting down
+2021-01-21 10:39:11.939 INFO on - shutdown: Waiting for application shutdown.
+2021-01-21 10:39:11.940 ERROR qr_logger - log_warning: quitting the application now
+
+
+
+
+2021-01-21 10:39:11.941 INFO on - main: ASGI 'lifespan' protocol appears unsupported.
+2021-01-21 10:39:11.944 INFO on - shutdown: Application shutdown complete.
+2021-01-21 10:39:11.946 INFO main - serve: Finished server process [25892]
+2021-01-21 10:39:16.338 INFO main - serve: Started server process [13236]
+2021-01-21 10:39:16.339 INFO on - startup: Waiting for application startup.
+2021-01-21 10:39:16.339 INFO on - startup: Application startup complete.
+2021-01-21 10:39:16.340 INFO main - startup: Uvicorn running on http://127.0.0.1:8000 (Press CTRL+C to quit)
+2021-01-21 10:39:22.080 WARNING main - add_process_time_header: Path is: /users/krishna
+execution time is 0.0209963321685791
+2021-01-21 10:39:22.084 ERROR h11_impl - run_asgi: Exception in ASGI application
+Traceback (most recent call last):
+  File "C:\Users\krish\AppData\Roaming\Python\Python37\site-packages\uvicorn\protocols\http\h11_impl.py", line 389, in run_asgi
+    result = await app(self.scope, self.receive, self.send)
+  File "C:\Users\krish\AppData\Roaming\Python\Python37\site-packages\uvicorn\middleware\proxy_headers.py", line 45, in __call__
+    return await self.app(scope, receive, send)
+  File "C:\ProgramData\Anaconda3\lib\site-packages\fastapi\applications.py", line 199, in __call__
+    await super().__call__(scope, receive, send)
+  File "C:\Users\krish\AppData\Roaming\Python\Python37\site-packages\starlette\applications.py", line 111, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "C:\Users\krish\AppData\Roaming\Python\Python37\site-packages\starlette\middleware\errors.py", line 181, in __call__
+    raise exc from None
+  File "C:\Users\krish\AppData\Roaming\Python\Python37\site-packages\starlette\middleware\errors.py", line 159, in __call__
+    await self.app(scope, receive, _send)
+  File "C:\Users\krish\AppData\Roaming\Python\Python37\site-packages\starlette\middleware\base.py", line 25, in __call__
+    response = await self.dispatch_func(request, self.call_next)
+  File "main.py", line 177, in add_process_time_header
+    await get_request_data(request, response)
+  File "main.py", line 125, in get_request_data
+    analysis_dict['datetime'] = time.time*1000
+TypeError: unsupported operand type(s) for *: 'builtin_function_or_method' and 'int'
+2021-01-21 10:39:42.224 INFO main - shutdown: Shutting down
+2021-01-21 10:39:42.325 INFO on - shutdown: Waiting for application shutdown.
+2021-01-21 10:39:42.326 ERROR qr_logger - log_warning: quitting the application now
+
+
+
+
+2021-01-21 10:39:42.327 INFO on - main: ASGI 'lifespan' protocol appears unsupported.
+2021-01-21 10:39:42.330 INFO on - shutdown: Application shutdown complete.
+2021-01-21 10:39:42.331 INFO main - serve: Finished server process [13236]
+2021-01-21 10:39:45.772 INFO main - serve: Started server process [26952]
+2021-01-21 10:39:45.773 INFO on - startup: Waiting for application startup.
+2021-01-21 10:39:45.774 INFO on - startup: Application startup complete.
+2021-01-21 10:39:45.774 INFO main - startup: Uvicorn running on http://127.0.0.1:8000 (Press CTRL+C to quit)
+2021-01-21 10:39:49.179 WARNING main - add_process_time_header: Path is: /users/krishna
+execution time is 0.014022588729858398
+2021-01-21 10:39:49.182 ERROR h11_impl - run_asgi: Exception in ASGI application
+Traceback (most recent call last):
+  File "C:\Users\krish\AppData\Roaming\Python\Python37\site-packages\uvicorn\protocols\http\h11_impl.py", line 389, in run_asgi
+    result = await app(self.scope, self.receive, self.send)
+  File "C:\Users\krish\AppData\Roaming\Python\Python37\site-packages\uvicorn\middleware\proxy_headers.py", line 45, in __call__
+    return await self.app(scope, receive, send)
+  File "C:\ProgramData\Anaconda3\lib\site-packages\fastapi\applications.py", line 199, in __call__
+    await super().__call__(scope, receive, send)
+  File "C:\Users\krish\AppData\Roaming\Python\Python37\site-packages\starlette\applications.py", line 111, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "C:\Users\krish\AppData\Roaming\Python\Python37\site-packages\starlette\middleware\errors.py", line 181, in __call__
+    raise exc from None
+  File "C:\Users\krish\AppData\Roaming\Python\Python37\site-packages\starlette\middleware\errors.py", line 159, in __call__
+    await self.app(scope, receive, _send)
+  File "C:\Users\krish\AppData\Roaming\Python\Python37\site-packages\starlette\middleware\base.py", line 25, in __call__
+    response = await self.dispatch_func(request, self.call_next)
+  File "main.py", line 177, in add_process_time_header
+    await get_request_data(request, response)
+  File "main.py", line 125, in get_request_data
+    analysis_dict['datetime'] = str(time.time*1000)
+TypeError: unsupported operand type(s) for *: 'builtin_function_or_method' and 'int'
+2021-01-21 10:40:06.821 INFO main - shutdown: Shutting down
+2021-01-21 10:40:06.921 INFO on - shutdown: Waiting for application shutdown.
+2021-01-21 10:40:06.922 ERROR qr_logger - log_warning: quitting the application now
+
+
+
+
+2021-01-21 10:40:06.922 INFO on - main: ASGI 'lifespan' protocol appears unsupported.
+2021-01-21 10:40:06.925 INFO on - shutdown: Application shutdown complete.
+2021-01-21 10:40:06.927 INFO main - serve: Finished server process [26952]
+2021-01-21 10:40:09.652 INFO main - serve: Started server process [24160]
+2021-01-21 10:40:09.653 INFO on - startup: Waiting for application startup.
+2021-01-21 10:40:09.653 INFO on - startup: Application startup complete.
+2021-01-21 10:40:09.654 INFO main - startup: Uvicorn running on http://127.0.0.1:8000 (Press CTRL+C to quit)
+2021-01-21 10:40:12.524 WARNING main - add_process_time_header: Path is: /users/krishna
+execution time is 0.013996362686157227
+2021-01-21 10:40:12.571 ERROR h11_impl - run_asgi: Exception in ASGI application
+Traceback (most recent call last):
+  File "C:\Users\krish\AppData\Roaming\Python\Python37\site-packages\uvicorn\protocols\http\h11_impl.py", line 389, in run_asgi
+    result = await app(self.scope, self.receive, self.send)
+  File "C:\Users\krish\AppData\Roaming\Python\Python37\site-packages\uvicorn\middleware\proxy_headers.py", line 45, in __call__
+    return await self.app(scope, receive, send)
+  File "C:\ProgramData\Anaconda3\lib\site-packages\fastapi\applications.py", line 199, in __call__
+    await super().__call__(scope, receive, send)
+  File "C:\Users\krish\AppData\Roaming\Python\Python37\site-packages\starlette\applications.py", line 111, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "C:\Users\krish\AppData\Roaming\Python\Python37\site-packages\starlette\middleware\errors.py", line 181, in __call__
+    raise exc from None
+  File "C:\Users\krish\AppData\Roaming\Python\Python37\site-packages\starlette\middleware\errors.py", line 159, in __call__
+    await self.app(scope, receive, _send)
+  File "C:\Users\krish\AppData\Roaming\Python\Python37\site-packages\starlette\middleware\base.py", line 25, in __call__
+    response = await self.dispatch_func(request, self.call_next)
+  File "main.py", line 177, in add_process_time_header
+    await get_request_data(request, response)
+  File "main.py", line 131, in get_request_data
+    crud.insert_request_response_data(db, analysis_dict)
+  File "C:\Users\krish\Documents\QRmenu\crud.py", line 37, in insert_request_response_data
+    db.commit()
+  File "C:\Users\krish\AppData\Roaming\Python\Python37\site-packages\sqlalchemy\orm\session.py", line 937, in commit
+    self.transaction.commit()
+  File "C:\Users\krish\AppData\Roaming\Python\Python37\site-packages\sqlalchemy\orm\session.py", line 461, in commit
+    self._prepare_impl()
+  File "C:\Users\krish\AppData\Roaming\Python\Python37\site-packages\sqlalchemy\orm\session.py", line 441, in _prepare_impl
+    self.session.flush()
+  File "C:\Users\krish\AppData\Roaming\Python\Python37\site-packages\sqlalchemy\orm\session.py", line 2237, in flush
+    self._flush(objects)
+  File "C:\Users\krish\AppData\Roaming\Python\Python37\site-packages\sqlalchemy\orm\session.py", line 2363, in _flush
+    transaction.rollback(_capture_exception=True)
+  File "C:\Users\krish\AppData\Roaming\Python\Python37\site-packages\sqlalchemy\util\langhelpers.py", line 66, in __exit__
+    compat.reraise(exc_type, exc_value, exc_tb)
+  File "C:\Users\krish\AppData\Roaming\Python\Python37\site-packages\sqlalchemy\util\compat.py", line 187, in reraise
+    raise value
+  File "C:\Users\krish\AppData\Roaming\Python\Python37\site-packages\sqlalchemy\orm\session.py", line 2327, in _flush
+    flush_context.execute()
+  File "C:\Users\krish\AppData\Roaming\Python\Python37\site-packages\sqlalchemy\orm\unitofwork.py", line 391, in execute
+    rec.execute(self)
+  File "C:\Users\krish\AppData\Roaming\Python\Python37\site-packages\sqlalchemy\orm\unitofwork.py", line 556, in execute
+    uow
+  File "C:\Users\krish\AppData\Roaming\Python\Python37\site-packages\sqlalchemy\orm\persistence.py", line 181, in save_obj
+    mapper, table, insert)
+  File "C:\Users\krish\AppData\Roaming\Python\Python37\site-packages\sqlalchemy\orm\persistence.py", line 866, in _emit_insert_statements
+    execute(statement, params)
+  File "C:\Users\krish\AppData\Roaming\Python\Python37\site-packages\sqlalchemy\engine\base.py", line 948, in execute
+    return meth(self, multiparams, params)
+  File "C:\Users\krish\AppData\Roaming\Python\Python37\site-packages\sqlalchemy\sql\elements.py", line 269, in _execute_on_connection
+    return connection._execute_clauseelement(self, multiparams, params)
+  File "C:\Users\krish\AppData\Roaming\Python\Python37\site-packages\sqlalchemy\engine\base.py", line 1060, in _execute_clauseelement
+    compiled_sql, distilled_params
+  File "C:\Users\krish\AppData\Roaming\Python\Python37\site-packages\sqlalchemy\engine\base.py", line 1200, in _execute_context
+    context)
+  File "C:\Users\krish\AppData\Roaming\Python\Python37\site-packages\sqlalchemy\engine\base.py", line 1413, in _handle_dbapi_exception
+    exc_info
+  File "C:\Users\krish\AppData\Roaming\Python\Python37\site-packages\sqlalchemy\util\compat.py", line 203, in raise_from_cause
+    reraise(type(exception), exception, tb=exc_tb, cause=cause)
+  File "C:\Users\krish\AppData\Roaming\Python\Python37\site-packages\sqlalchemy\util\compat.py", line 186, in reraise
+    raise value.with_traceback(tb)
+  File "C:\Users\krish\AppData\Roaming\Python\Python37\site-packages\sqlalchemy\engine\base.py", line 1193, in _execute_context
+    context)
+  File "C:\Users\krish\AppData\Roaming\Python\Python37\site-packages\sqlalchemy\engine\default.py", line 507, in do_execute
+    cursor.execute(statement, parameters)
+sqlalchemy.exc.ProgrammingError: (psycopg2.errors.DatatypeMismatch) column "datetime" is of type timestamp without time zone but expression is of type numeric
+LINE 1: ...//127.0.0.1:8000/docs', 'chrome', 'cors', '', '', 1611205812...
+                                                             ^
+HINT:  You will need to rewrite or cast the expression.
+ [SQL: 'INSERT INTO request_response_details (same_origin_yn, request_size, response_size, request_type, request_method, content_type, origin, referrer, browser_name, destination_path, device_name, ip_address, datetime, execution_time) VALUES (%(same_origin_yn)s, %(request_size)s, %(response_size)s, %(request_type)s, %(request_method)s, %(content_type)s, %(origin)s, %(referrer)s, %(browser_name)s, %(destination_path)s, %(device_name)s, %(ip_address)s, %(datetime)s, %(execution_time)s) RETURNING request_response_details.id'] [parameters: {'same_origin_yn': True, 'request_size': 0, 'response_size': '66', 'request_type': 'http', 'request_method': 'GET', 'content_type': '', 'origin': '', 'referrer': 'http://127.0.0.1:8000/docs', 'browser_name': 'chrome', 'destination_path': 'cors', 'device_name': '', 'ip_address': '', 'datetime': 1611205812525.7588, 'execution_time': '0.013996362686157227'}] (Background on this error at: http://sqlalche.me/e/f405)
+2021-01-21 10:41:03.441 INFO main - shutdown: Shutting down
+2021-01-21 10:41:03.543 INFO on - shutdown: Waiting for application shutdown.
+2021-01-21 10:41:03.545 ERROR qr_logger - log_warning: quitting the application now
+
+
+
+
+2021-01-21 10:41:03.545 INFO on - main: ASGI 'lifespan' protocol appears unsupported.
+2021-01-21 10:41:03.548 INFO on - shutdown: Application shutdown complete.
+2021-01-21 10:41:03.550 INFO main - serve: Finished server process [24160]
+2021-01-21 10:41:06.829 INFO main - serve: Started server process [25836]
+2021-01-21 10:41:06.830 INFO on - startup: Waiting for application startup.
+2021-01-21 10:41:06.831 INFO on - startup: Application startup complete.
+2021-01-21 10:41:06.831 INFO main - startup: Uvicorn running on http://127.0.0.1:8000 (Press CTRL+C to quit)
+2021-01-21 10:41:37.754 INFO main - shutdown: Shutting down
+2021-01-21 10:41:37.854 INFO on - shutdown: Waiting for application shutdown.
+2021-01-21 10:41:37.855 ERROR qr_logger - log_warning: quitting the application now
+
+
+
+
+2021-01-21 10:41:37.856 INFO on - main: ASGI 'lifespan' protocol appears unsupported.
+2021-01-21 10:41:37.859 INFO on - shutdown: Application shutdown complete.
+2021-01-21 10:41:37.860 INFO main - serve: Finished server process [25836]
+2021-01-21 10:41:42.272 INFO main - serve: Started server process [23484]
+2021-01-21 10:41:42.273 INFO on - startup: Waiting for application startup.
+2021-01-21 10:41:42.274 INFO on - startup: Application startup complete.
+2021-01-21 10:41:42.274 INFO main - startup: Uvicorn running on http://127.0.0.1:8000 (Press CTRL+C to quit)
+2021-01-21 10:41:49.701 WARNING main - add_process_time_header: Path is: /users/krishna
+execution time is 0.017000436782836914
+2021-01-21 10:41:49.749 ERROR h11_impl - run_asgi: Exception in ASGI application
+Traceback (most recent call last):
+  File "C:\Users\krish\AppData\Roaming\Python\Python37\site-packages\uvicorn\protocols\http\h11_impl.py", line 389, in run_asgi
+    result = await app(self.scope, self.receive, self.send)
+  File "C:\Users\krish\AppData\Roaming\Python\Python37\site-packages\uvicorn\middleware\proxy_headers.py", line 45, in __call__
+    return await self.app(scope, receive, send)
+  File "C:\ProgramData\Anaconda3\lib\site-packages\fastapi\applications.py", line 199, in __call__
+    await super().__call__(scope, receive, send)
+  File "C:\Users\krish\AppData\Roaming\Python\Python37\site-packages\starlette\applications.py", line 111, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "C:\Users\krish\AppData\Roaming\Python\Python37\site-packages\starlette\middleware\errors.py", line 181, in __call__
+    raise exc from None
+  File "C:\Users\krish\AppData\Roaming\Python\Python37\site-packages\starlette\middleware\errors.py", line 159, in __call__
+    await self.app(scope, receive, _send)
+  File "C:\Users\krish\AppData\Roaming\Python\Python37\site-packages\starlette\middleware\base.py", line 25, in __call__
+    response = await self.dispatch_func(request, self.call_next)
+  File "main.py", line 177, in add_process_time_header
+    await get_request_data(request, response)
+  File "main.py", line 131, in get_request_data
+    crud.insert_request_response_data(db, analysis_dict)
+  File "C:\Users\krish\Documents\QRmenu\crud.py", line 37, in insert_request_response_data
+    db.commit()
+  File "C:\Users\krish\AppData\Roaming\Python\Python37\site-packages\sqlalchemy\orm\session.py", line 937, in commit
+    self.transaction.commit()
+  File "C:\Users\krish\AppData\Roaming\Python\Python37\site-packages\sqlalchemy\orm\session.py", line 461, in commit
+    self._prepare_impl()
+  File "C:\Users\krish\AppData\Roaming\Python\Python37\site-packages\sqlalchemy\orm\session.py", line 441, in _prepare_impl
+    self.session.flush()
+  File "C:\Users\krish\AppData\Roaming\Python\Python37\site-packages\sqlalchemy\orm\session.py", line 2237, in flush
+    self._flush(objects)
+  File "C:\Users\krish\AppData\Roaming\Python\Python37\site-packages\sqlalchemy\orm\session.py", line 2363, in _flush
+    transaction.rollback(_capture_exception=True)
+  File "C:\Users\krish\AppData\Roaming\Python\Python37\site-packages\sqlalchemy\util\langhelpers.py", line 66, in __exit__
+    compat.reraise(exc_type, exc_value, exc_tb)
+  File "C:\Users\krish\AppData\Roaming\Python\Python37\site-packages\sqlalchemy\util\compat.py", line 187, in reraise
+    raise value
+  File "C:\Users\krish\AppData\Roaming\Python\Python37\site-packages\sqlalchemy\orm\session.py", line 2327, in _flush
+    flush_context.execute()
+  File "C:\Users\krish\AppData\Roaming\Python\Python37\site-packages\sqlalchemy\orm\unitofwork.py", line 391, in execute
+    rec.execute(self)
+  File "C:\Users\krish\AppData\Roaming\Python\Python37\site-packages\sqlalchemy\orm\unitofwork.py", line 556, in execute
+    uow
+  File "C:\Users\krish\AppData\Roaming\Python\Python37\site-packages\sqlalchemy\orm\persistence.py", line 181, in save_obj
+    mapper, table, insert)
+  File "C:\Users\krish\AppData\Roaming\Python\Python37\site-packages\sqlalchemy\orm\persistence.py", line 866, in _emit_insert_statements
+    execute(statement, params)
+  File "C:\Users\krish\AppData\Roaming\Python\Python37\site-packages\sqlalchemy\engine\base.py", line 948, in execute
+    return meth(self, multiparams, params)
+  File "C:\Users\krish\AppData\Roaming\Python\Python37\site-packages\sqlalchemy\sql\elements.py", line 269, in _execute_on_connection
+    return connection._execute_clauseelement(self, multiparams, params)
+  File "C:\Users\krish\AppData\Roaming\Python\Python37\site-packages\sqlalchemy\engine\base.py", line 1060, in _execute_clauseelement
+    compiled_sql, distilled_params
+  File "C:\Users\krish\AppData\Roaming\Python\Python37\site-packages\sqlalchemy\engine\base.py", line 1200, in _execute_context
+    context)
+  File "C:\Users\krish\AppData\Roaming\Python\Python37\site-packages\sqlalchemy\engine\base.py", line 1413, in _handle_dbapi_exception
+    exc_info
+  File "C:\Users\krish\AppData\Roaming\Python\Python37\site-packages\sqlalchemy\util\compat.py", line 203, in raise_from_cause
+    reraise(type(exception), exception, tb=exc_tb, cause=cause)
+  File "C:\Users\krish\AppData\Roaming\Python\Python37\site-packages\sqlalchemy\util\compat.py", line 186, in reraise
+    raise value.with_traceback(tb)
+  File "C:\Users\krish\AppData\Roaming\Python\Python37\site-packages\sqlalchemy\engine\base.py", line 1193, in _execute_context
+    context)
+  File "C:\Users\krish\AppData\Roaming\Python\Python37\site-packages\sqlalchemy\engine\default.py", line 507, in do_execute
+    cursor.execute(statement, parameters)
+sqlalchemy.exc.DataError: (psycopg2.errors.InvalidTextRepresentation) invalid input syntax for type integer: "0.017000436782836914"
+LINE 1: ...s', 'chrome', 'cors', '', '', 1611205909702.5906, '0.0170004...
+                                                             ^
+ [SQL: 'INSERT INTO request_response_details (same_origin_yn, request_size, response_size, request_type, request_method, content_type, origin, referrer, browser_name, destination_path, device_name, ip_address, datetime, execution_time) VALUES (%(same_origin_yn)s, %(request_size)s, %(response_size)s, %(request_type)s, %(request_method)s, %(content_type)s, %(origin)s, %(referrer)s, %(browser_name)s, %(destination_path)s, %(device_name)s, %(ip_address)s, %(datetime)s, %(execution_time)s) RETURNING request_response_details.id'] [parameters: {'same_origin_yn': True, 'request_size': 0, 'response_size': '66', 'request_type': 'http', 'request_method': 'GET', 'content_type': '', 'origin': '', 'referrer': 'http://127.0.0.1:8000/docs', 'browser_name': 'chrome', 'destination_path': 'cors', 'device_name': '', 'ip_address': '', 'datetime': 1611205909702.5906, 'execution_time': '0.017000436782836914'}] (Background on this error at: http://sqlalche.me/e/9h9h)
+2021-01-21 10:43:02.449 INFO main - shutdown: Shutting down
+2021-01-21 10:43:02.552 INFO on - shutdown: Waiting for application shutdown.
+2021-01-21 10:43:02.553 ERROR qr_logger - log_warning: quitting the application now
+
+
+
+
+2021-01-21 10:43:02.554 INFO on - main: ASGI 'lifespan' protocol appears unsupported.
+2021-01-21 10:43:02.557 INFO on - shutdown: Application shutdown complete.
+2021-01-21 10:43:02.558 INFO main - serve: Finished server process [23484]
+2021-01-21 10:43:05.320 INFO main - serve: Started server process [10992]
+2021-01-21 10:43:05.321 INFO on - startup: Waiting for application startup.
+2021-01-21 10:43:05.322 INFO on - startup: Application startup complete.
+2021-01-21 10:43:05.322 INFO main - startup: Uvicorn running on http://127.0.0.1:8000 (Press CTRL+C to quit)
+2021-01-21 10:43:08.566 WARNING main - add_process_time_header: Path is: /users/krishna
+execution time is 0.01500082015991211
+2021-01-21 10:43:08.612 ERROR h11_impl - run_asgi: Exception in ASGI application
+Traceback (most recent call last):
+  File "C:\Users\krish\AppData\Roaming\Python\Python37\site-packages\uvicorn\protocols\http\h11_impl.py", line 389, in run_asgi
+    result = await app(self.scope, self.receive, self.send)
+  File "C:\Users\krish\AppData\Roaming\Python\Python37\site-packages\uvicorn\middleware\proxy_headers.py", line 45, in __call__
+    return await self.app(scope, receive, send)
+  File "C:\ProgramData\Anaconda3\lib\site-packages\fastapi\applications.py", line 199, in __call__
+    await super().__call__(scope, receive, send)
+  File "C:\Users\krish\AppData\Roaming\Python\Python37\site-packages\starlette\applications.py", line 111, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "C:\Users\krish\AppData\Roaming\Python\Python37\site-packages\starlette\middleware\errors.py", line 181, in __call__
+    raise exc from None
+  File "C:\Users\krish\AppData\Roaming\Python\Python37\site-packages\starlette\middleware\errors.py", line 159, in __call__
+    await self.app(scope, receive, _send)
+  File "C:\Users\krish\AppData\Roaming\Python\Python37\site-packages\starlette\middleware\base.py", line 25, in __call__
+    response = await self.dispatch_func(request, self.call_next)
+  File "main.py", line 177, in add_process_time_header
+    await get_request_data(request, response)
+  File "main.py", line 131, in get_request_data
+    crud.insert_request_response_data(db, analysis_dict)
+  File "C:\Users\krish\Documents\QRmenu\crud.py", line 37, in insert_request_response_data
+    db.commit()
+  File "C:\Users\krish\AppData\Roaming\Python\Python37\site-packages\sqlalchemy\orm\session.py", line 937, in commit
+    self.transaction.commit()
+  File "C:\Users\krish\AppData\Roaming\Python\Python37\site-packages\sqlalchemy\orm\session.py", line 461, in commit
+    self._prepare_impl()
+  File "C:\Users\krish\AppData\Roaming\Python\Python37\site-packages\sqlalchemy\orm\session.py", line 441, in _prepare_impl
+    self.session.flush()
+  File "C:\Users\krish\AppData\Roaming\Python\Python37\site-packages\sqlalchemy\orm\session.py", line 2237, in flush
+    self._flush(objects)
+  File "C:\Users\krish\AppData\Roaming\Python\Python37\site-packages\sqlalchemy\orm\session.py", line 2363, in _flush
+    transaction.rollback(_capture_exception=True)
+  File "C:\Users\krish\AppData\Roaming\Python\Python37\site-packages\sqlalchemy\util\langhelpers.py", line 66, in __exit__
+    compat.reraise(exc_type, exc_value, exc_tb)
+  File "C:\Users\krish\AppData\Roaming\Python\Python37\site-packages\sqlalchemy\util\compat.py", line 187, in reraise
+    raise value
+  File "C:\Users\krish\AppData\Roaming\Python\Python37\site-packages\sqlalchemy\orm\session.py", line 2327, in _flush
+    flush_context.execute()
+  File "C:\Users\krish\AppData\Roaming\Python\Python37\site-packages\sqlalchemy\orm\unitofwork.py", line 391, in execute
+    rec.execute(self)
+  File "C:\Users\krish\AppData\Roaming\Python\Python37\site-packages\sqlalchemy\orm\unitofwork.py", line 556, in execute
+    uow
+  File "C:\Users\krish\AppData\Roaming\Python\Python37\site-packages\sqlalchemy\orm\persistence.py", line 181, in save_obj
+    mapper, table, insert)
+  File "C:\Users\krish\AppData\Roaming\Python\Python37\site-packages\sqlalchemy\orm\persistence.py", line 866, in _emit_insert_statements
+    execute(statement, params)
+  File "C:\Users\krish\AppData\Roaming\Python\Python37\site-packages\sqlalchemy\engine\base.py", line 948, in execute
+    return meth(self, multiparams, params)
+  File "C:\Users\krish\AppData\Roaming\Python\Python37\site-packages\sqlalchemy\sql\elements.py", line 269, in _execute_on_connection
+    return connection._execute_clauseelement(self, multiparams, params)
+  File "C:\Users\krish\AppData\Roaming\Python\Python37\site-packages\sqlalchemy\engine\base.py", line 1060, in _execute_clauseelement
+    compiled_sql, distilled_params
+  File "C:\Users\krish\AppData\Roaming\Python\Python37\site-packages\sqlalchemy\engine\base.py", line 1200, in _execute_context
+    context)
+  File "C:\Users\krish\AppData\Roaming\Python\Python37\site-packages\sqlalchemy\engine\base.py", line 1413, in _handle_dbapi_exception
+    exc_info
+  File "C:\Users\krish\AppData\Roaming\Python\Python37\site-packages\sqlalchemy\util\compat.py", line 203, in raise_from_cause
+    reraise(type(exception), exception, tb=exc_tb, cause=cause)
+  File "C:\Users\krish\AppData\Roaming\Python\Python37\site-packages\sqlalchemy\util\compat.py", line 186, in reraise
+    raise value.with_traceback(tb)
+  File "C:\Users\krish\AppData\Roaming\Python\Python37\site-packages\sqlalchemy\engine\base.py", line 1193, in _execute_context
+    context)
+  File "C:\Users\krish\AppData\Roaming\Python\Python37\site-packages\sqlalchemy\engine\default.py", line 507, in do_execute
+    cursor.execute(statement, parameters)
+sqlalchemy.exc.DataError: (psycopg2.errors.NumericValueOutOfRange) integer out of range
+ [SQL: 'INSERT INTO request_response_details (same_origin_yn, request_size, response_size, request_type, request_method, content_type, origin, referrer, browser_name, destination_path, device_name, ip_address, datetime, execution_time) VALUES (%(same_origin_yn)s, %(request_size)s, %(response_size)s, %(request_type)s, %(request_method)s, %(content_type)s, %(origin)s, %(referrer)s, %(browser_name)s, %(destination_path)s, %(device_name)s, %(ip_address)s, %(datetime)s, %(execution_time)s) RETURNING request_response_details.id'] [parameters: {'same_origin_yn': True, 'request_size': 0, 'response_size': '66', 'request_type': 'http', 'request_method': 'GET', 'content_type': '', 'origin': '', 'referrer': 'http://127.0.0.1:8000/docs', 'browser_name': 'chrome', 'destination_path': 'cors', 'device_name': '', 'ip_address': '', 'datetime': 1611205988566.9504, 'execution_time': '0.01500082015991211'}] (Background on this error at: http://sqlalche.me/e/9h9h)
+2021-01-21 10:45:19.597 INFO main - shutdown: Shutting down
+2021-01-21 10:45:19.697 INFO on - shutdown: Waiting for application shutdown.
+2021-01-21 10:45:19.698 ERROR qr_logger - log_warning: quitting the application now
+
+
+
+
+2021-01-21 10:45:19.698 INFO on - main: ASGI 'lifespan' protocol appears unsupported.
+2021-01-21 10:45:19.700 INFO on - shutdown: Application shutdown complete.
+2021-01-21 10:45:19.701 INFO main - serve: Finished server process [10992]
+2021-01-21 10:46:01.229 INFO main - serve: Started server process [24460]
+2021-01-21 10:46:01.229 INFO on - startup: Waiting for application startup.
+2021-01-21 10:46:01.230 INFO on - startup: Application startup complete.
+2021-01-21 10:46:01.230 INFO main - startup: Uvicorn running on http://127.0.0.1:8000 (Press CTRL+C to quit)
+2021-01-21 10:46:06.367 WARNING main - add_process_time_header: Path is: /users/krishna
+execution time is 0.01499795913696289
+2021-01-21 10:46:06.408 ERROR h11_impl - run_asgi: Exception in ASGI application
+Traceback (most recent call last):
+  File "C:\Users\krish\AppData\Roaming\Python\Python37\site-packages\uvicorn\protocols\http\h11_impl.py", line 389, in run_asgi
+    result = await app(self.scope, self.receive, self.send)
+  File "C:\Users\krish\AppData\Roaming\Python\Python37\site-packages\uvicorn\middleware\proxy_headers.py", line 45, in __call__
+    return await self.app(scope, receive, send)
+  File "C:\ProgramData\Anaconda3\lib\site-packages\fastapi\applications.py", line 199, in __call__
+    await super().__call__(scope, receive, send)
+  File "C:\Users\krish\AppData\Roaming\Python\Python37\site-packages\starlette\applications.py", line 111, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "C:\Users\krish\AppData\Roaming\Python\Python37\site-packages\starlette\middleware\errors.py", line 181, in __call__
+    raise exc from None
+  File "C:\Users\krish\AppData\Roaming\Python\Python37\site-packages\starlette\middleware\errors.py", line 159, in __call__
+    await self.app(scope, receive, _send)
+  File "C:\Users\krish\AppData\Roaming\Python\Python37\site-packages\starlette\middleware\base.py", line 25, in __call__
+    response = await self.dispatch_func(request, self.call_next)
+  File "main.py", line 177, in add_process_time_header
+    await get_request_data(request, response)
+  File "main.py", line 131, in get_request_data
+    crud.insert_request_response_data(db, analysis_dict)
+  File "C:\Users\krish\Documents\QRmenu\crud.py", line 39, in insert_request_response_data
+    return db_user
+NameError: name 'db_user' is not defined
+2021-01-21 10:46:28.589 INFO main - shutdown: Shutting down
+2021-01-21 10:46:28.692 INFO on - shutdown: Waiting for application shutdown.
+2021-01-21 10:46:28.692 ERROR qr_logger - log_warning: quitting the application now
+
+
+
+
+2021-01-21 10:46:28.692 INFO on - main: ASGI 'lifespan' protocol appears unsupported.
+2021-01-21 10:46:28.692 INFO on - shutdown: Application shutdown complete.
+2021-01-21 10:46:28.692 INFO main - serve: Finished server process [24460]
+2021-01-21 10:46:31.820 INFO main - serve: Started server process [17652]
+2021-01-21 10:46:31.821 INFO on - startup: Waiting for application startup.
+2021-01-21 10:46:31.822 INFO on - startup: Application startup complete.
+2021-01-21 10:46:31.822 INFO main - startup: Uvicorn running on http://127.0.0.1:8000 (Press CTRL+C to quit)
+2021-01-21 10:46:35.428 WARNING main - add_process_time_header: Path is: /users/krishna
+execution time is 0.014999866485595703
+2021-01-21 11:37:40.253 INFO main - shutdown: Shutting down
+2021-01-21 11:37:40.361 INFO on - shutdown: Waiting for application shutdown.
+2021-01-21 11:37:40.363 ERROR qr_logger - log_warning: quitting the application now
+
+
+
+
+2021-01-21 11:37:40.363 INFO on - main: ASGI 'lifespan' protocol appears unsupported.
+2021-01-21 11:37:40.364 INFO on - shutdown: Application shutdown complete.
+2021-01-21 11:37:40.365 INFO main - serve: Finished server process [17652]

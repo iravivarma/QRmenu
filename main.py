@@ -20,7 +20,7 @@ import io, cv2
 from starlette.responses import StreamingResponse, JSONResponse
 from fastapi.responses import FileResponse
 from PIL import Image
-import logging, os
+import logging, os, time
 from qr_logger import create_or_get_logger, log_warning
 
 
@@ -56,6 +56,82 @@ logging.debug('This will get logged to a file')
 models.Base.metadata.create_all(bind=engine)
 
 
+def get_db():
+    db = SessionLocal()
+    try:
+        yield db
+    finally:
+        logging.info("database is closed.....")
+        db.close()
+        
+
+
+"""
+to store all the metadata of a request in a table.
+1. origins/same or different
+2. request packet size - content length
+3. response packet size
+4. type of request
+5. request_method
+6. content type
+7. origin
+8. referrer
+9. browser name
+10. destination path
+11. device name
+12. device ip address
+13. if such api is called again and already stored in table, increment the count
+14. datetime the request is requested.
+15. reponse time
+16. response datapacket size.
+
+
+
+same_origin_yn = Column(Boolean)
+    request_size = Column(Integer)
+    response_size = Column(Integer)
+    request_type = Column(String)
+    request_method = Column(String)
+    content_type = Column(String)
+    origin = Column(String)
+    referrer = Column(String)
+    browser_name = Column(String)
+    destination_path = Column(String)
+    device_name = Column(String)
+    ip_address = Column(String)
+    datetime = Column(DateTime)
+    execution_time = Column(Integer)
+"""
+
+
+async def get_request_data(request, response, db: Session = Depends(get_db)):
+    
+    #db = get_db()
+    db = SessionLocal()
+    analysis_dict = {}
+    print('Content-length' in request.headers)
+    analysis_dict['same_origin_yn'] = True#request.scope['sec-fetch-site'] if 'sec-fetch-site' in request.scope else 'same'
+    analysis_dict['request_size'] = request.headers['Content-length'] if 'Content-length' in request.headers else 0
+    analysis_dict['response_size'] = response.headers['content-length']
+    analysis_dict['request_type'] = request.scope['type']
+    analysis_dict['request_method'] = request.scope['method']
+    analysis_dict['content_type'] = request.headers['content_type'] if 'content_type' in request.headers else ""
+    analysis_dict['origin'] = request.headers['origin'] if 'origin' in request.headers else ""
+    analysis_dict['referer'] = request.headers['referer'] if 'referer' in request.headers else ""
+    analysis_dict['browser'] = 'chrome'
+    analysis_dict['destination_path'] = request.headers['sec-fetch-mode']
+    analysis_dict['device_name'] = ''
+    analysis_dict['ip_address'] = ''
+    analysis_dict['datetime'] = time.time()*1000
+    analysis_dict['execution_time'] = response.headers["x-Process-Time"]
+    print("printing the analysis dict")
+    print(analysis_dict)
+
+
+    crud.insert_request_response_data(db, analysis_dict)
+    db.close()
+
+
 
 @app.middleware("http")
 async def add_process_time_header(request: Request, call_next):
@@ -85,34 +161,31 @@ async def add_process_time_header(request: Request, call_next):
     """
     start_time = time.time()
     response = await call_next(request)
-    #print(request.body())
-    #print(request.headers)
-    #print("printing the scopes.......")
-    #print(request.scope)
-    path = [route for route in request.scope['router'].routes if route.endpoint == request.scope['endpoint']][0].path
+    print(await request.body())
+    print(request.headers)
+    print("printing the scopes.......")
+    print(request.scope)
+    print("#######################################################")
+    path = request.scope['path']#[route for route in request.scope['router'].routes if route.endpoint == request.scope['endpoint']][0].path
     #this path variable derives the route of the api that is being accessed currently
     process_time = time.time() - start_time
     print(f'Path is: {path}\nexecution time is {process_time}')
     logging.warning(f'Path is: {path}\nexecution time is {process_time}')
-    
+    print("###########################################################")
     #print(process_time)
     response.headers["X-Process-Time"] = str(process_time)
+    await get_request_data(request, response)
     #adds the total execution time to the response
-    #print(response)
-    #print(response.headers)
+    print(response)
+    print(response.__dict__)
+    print(response.body_iterator)
+    print(response.headers)
     return response
 
 
 
 
-def get_db():
-    db = SessionLocal()
-    try:
-        yield db
-    finally:
-        logging.info("database is closed.....")
-        db.close()
-        
+
         
 @app.post("/users", response_model=schemas.Users)
 async def create_user(user: schemas.NewUser, db: Session = Depends(get_db)):
@@ -166,7 +239,7 @@ async def read_items(skip: int = 0, limit: int = 100, db: Session = Depends(get_
 
 @app.get("/users/{user_name}", response_model=schemas.Users)
 async def read_user(user_name: str, db: Session = Depends(get_db)):
-    db_user = crud.get_user(db, user_name=user_name)
+    db_user = crud.get_user(db, user_name=user_name).first()
     if db_user is None:
         raise HTTPException(status_code=404, detail="User not found")
     return db_user
