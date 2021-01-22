@@ -1,0 +1,34 @@
+2021-01-17 14:08:30.450 INFO main - serve: Started server process [42060]
+2021-01-17 14:08:30.451 INFO on - startup: Waiting for application startup.
+2021-01-17 14:08:30.452 INFO on - startup: Application startup complete.
+2021-01-17 14:08:30.452 INFO main - startup: Uvicorn running on http://127.0.0.1:8000 (Press CTRL+C to quit)
+2021-01-17 14:08:53.458 WARNING main - add_process_time_header: Path is: /users/
+execution time is 0.009999275207519531
+2021-01-17 14:09:36.726 WARNING main - add_process_time_header: Path is: /users/
+execution time is 0.00202178955078125
+2021-01-17 14:10:14.451 INFO main - shutdown: Shutting down
+2021-01-17 14:10:14.554 INFO on - shutdown: Waiting for application shutdown.
+2021-01-17 14:10:14.554 WARNING main - on_shutdown: 
+
+
+
+
+2021-01-17 14:10:14.555 INFO on - main: ASGI 'lifespan' protocol appears unsupported.
+2021-01-17 14:10:14.557 INFO on - shutdown: Application shutdown complete.
+2021-01-17 14:10:14.559 INFO main - serve: Finished server process [42060]
+2021-01-17 14:42:13.444 INFO main - serve: Started server process [52036]
+2021-01-17 14:42:13.453 INFO on - startup: Waiting for application startup.
+2021-01-17 14:42:13.456 INFO on - startup: Application startup complete.
+2021-01-17 14:42:13.460 INFO main - startup: Uvicorn running on http://127.0.0.1:8000 (Press CTRL+C to quit)
+2021-01-17 14:42:21.463 WARNING main - add_process_time_header: Path is: /users/
+execution time is 0.06985020637512207
+2021-01-17 14:42:52.152 INFO main - shutdown: Shutting down
+2021-01-17 14:42:52.243 INFO on - shutdown: Waiting for application shutdown.
+2021-01-17 14:42:52.244 ERROR qr_logger - log_warning: quitting the application now
+
+
+
+
+2021-01-17 14:42:52.244 INFO on - main: ASGI 'lifespan' protocol appears unsupported.
+2021-01-17 14:42:52.247 INFO on - shutdown: Application shutdown complete.
+2021-01-17 14:42:52.247 INFO main - serve: Finished server process [52036]
