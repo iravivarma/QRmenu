@@ -24,9 +24,13 @@ def get_user(db: Session, user_name: str):
 def get_hotels(db: Session, name: str):
     return db.query(models.Hotels).filter(models.Hotels.name == name)
 
+
+
+###may not work for HTTP 2 versions and above
+# works for HTTP 1.1 version
 def insert_request_response_data(db: Session, analysis_dict: dict):
     analysis_data = models.RequestResponseDetails(same_origin_yn = analysis_dict['same_origin_yn'],
-        request_size = analysis_dict['request_size'], response_size = analysis_dict['response_size'],
+        request_size = analysis_dict['request_size'], response_size = analysis_dict['response_size']/1024,
         request_type = analysis_dict['request_type'], request_method = analysis_dict['request_method'],
         content_type = analysis_dict['content_type'], origin = analysis_dict['origin'],
         referrer = analysis_dict['referer'], browser_name= analysis_dict['browser'],
