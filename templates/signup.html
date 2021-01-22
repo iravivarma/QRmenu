@@ -9,10 +9,10 @@
         <h3>Please enter the details below to get started</h3><br>
 
         <div>
-            <form method="post" action="/api/v1/new_user/" id="signup_form">
+            <form method="post" action="/new_user/" id="signup_form">
 
                 <label for="signup_form">Username : </label>
-                <input type="text" name="username" id="username" required><br>
+                <input type="text" name="name" id="name" required><br>
 
                 <label for="signup_form">Email : </label>
                 <input type="text" name="email" id="email" required><br>
@@ -20,28 +20,20 @@
                 <label for="signup_form">Password : </label>
                 <input type="password" name="password" id="password" required><br>
 
-                <label for="signup_form">Company : </label>
-                <input type="text" name="company" id="company" required><br>
-
-                <label for="signup_form">Position : </label>
-                <input type="text" name="position" id="position" required><br>
-
-                <label for="signup_form">Location : </label>
-                <input type="text" name="location" id="location" required><br>
 
                 <br><br>
                 <input type="submit" value="Submit">
                 <br>
-                Alerady a user? Login <a id="login" href="/api/v1/login">here</a>!
+                Alerady a user? Login <a id="login" href="/login">here</a>!
             </form>
         </div>
         <script>
             const params = new URLSearchParams(document.location.search);
             var link = params.get("redirect_url");
-            var r_url = "/api/v1/login";
+            var r_url = "/login";
             if(link!=null) {
                 r_url+="/?redirect_url="+link;
-                document.getElementById("signup_form").action = "/api/v1/new_user?redirect_url="+link;
+                document.getElementById("signup_form").action = "/new_user?redirect_url="+link;
             }
             document.getElementById("login").href = r_url;
         </script>

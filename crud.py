@@ -31,7 +31,7 @@ def get_hotels(db: Session, name: str):
 # works for HTTP 1.1 version
 def insert_request_response_data(db: Session, analysis_dict: dict):
     analysis_data = models.RequestResponseDetails(same_origin_yn = analysis_dict['same_origin_yn'],
-        request_size = analysis_dict['request_size'], response_size = analysis_dict['response_size']/1024,
+        request_size = analysis_dict['request_size'], response_size = analysis_dict['response_size'],
         request_type = analysis_dict['request_type'], request_method = analysis_dict['request_method'],
         content_type = analysis_dict['content_type'], origin = analysis_dict['origin'],
         referrer = analysis_dict['referer'], browser_name= analysis_dict['browser'],
@@ -54,6 +54,7 @@ def get_users(db: Session, skip: int = 0, limit: int = 100):
 
 
 def create_user(db: Session, user: schemas.NewUser):
+    print(user.__dict__)
     secret_password = user.password
     db_user = models.Users(name=user.name, email=user.email, password=secret_password)
     db.add(db_user)
@@ -199,18 +200,20 @@ def authenticate_user_username_password(db: Session, username: str,password: str
     Authenticate user using username and password
     """
 
-    get_my_details = get_user(db, user_name).first()
+    get_my_details = get_user(db, username).first()
     
     if get_my_details is not None:
-        my_username = get_my_details.username
+        my_username = get_my_details.name
         my_password = get_my_details.password
+
+        print(my_password, password)
 
         if my_password == password:
             return get_my_details.__dict__
         else:
-            return HttpResponse(status=status.HTTP_500_NOT_FOUND, details='wrong password')
+            return HTTPException(status=status.HTTP_500_NOT_FOUND, details='wrong password')
     else:
-        return HttpResponse(status=status.HTTP_404_NOT_FOUND, details='username not found')
+        return HTTPException(status=status.HTTP_404_NOT_FOUND, details='username not found')
 
 
 

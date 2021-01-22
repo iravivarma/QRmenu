@@ -45,7 +45,7 @@
                 // xhr.send(data);
 
                 // ################# FetchAPI #################
-                fetch("http://localhost:8000/api/v1/authenticate",
+                fetch("/authenticate",
                     {method: 'POST',body: data})
                     .then(response => {
                                         if (response.ok) {
@@ -60,7 +60,7 @@
                 // console.log(xhr);
                 function redirect() {
                     console.log(url);
-                    window.location.href = "http://localhost:8000/api/v1/" + url;
+                    window.location.href = "" + url;
                 };
             }
     </script>
@@ -77,7 +77,7 @@
             <br><br>
             <input onclick="login()" type="button" value="Submit">
             <br>
-            Create an account for free <a id="signup" href="/api/v1/new_user_signup">here</a>
+            Create an account for free <a id="signup" href="/new_user_signup">here</a>
         </form>
         <span>----------------Or login using 3rd party-----------------------</span>
     </div>
@@ -87,7 +87,7 @@
     <script>
         const params = new URLSearchParams(document.location.search);
         var link = params.get("redirect_url");
-        var r_url = "/api/v1/new_user_signup";
+        var r_url = "/new_user_signup";
         if (link != null) {
             r_url += "/?redirect_url=" + link;
             document.getElementById("signup").href = r_url;
@@ -107,7 +107,7 @@
 
         // ################# MODIFIED #################
         //xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
-        xhr.open('POST', 'http://localhost:8000/api/v1/swap_token');
+        xhr.open('POST', '/api/v1/swap_token');
         xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
         xhr.setRequestHeader('X-Requested-With', 'XMLHttpRequest');
         xhr.setRequestHeader('X-Google-OAuth2-Type', 'client');
@@ -118,7 +118,7 @@
           const url = "{{ redirect }}";
           console.log(url)
           console.log('Signed in as: ' + xhr.responseText);
-          window.location.href = "http://localhost:8000/api/v1/" + url;
+          window.location.href = "/api/v1/" + url;
         // console.log(xhr.responseText.redirect_url);
         // window.alert(xhr.responseText)
         // window.alert(xhr.responseXML)
