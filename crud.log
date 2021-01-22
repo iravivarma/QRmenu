@@ -3298,3 +3298,1587 @@ execution time is 0.005035400390625
 2021-01-22 15:27:12.221 INFO on - shutdown: Application shutdown complete.
 2021-01-22 15:27:12.223 INFO main - serve: Finished server process [25396]
 2021-01-22 15:27:12.473 INFO basereload - shutdown: Stopping reloader process [3108]
+2021-01-22 16:23:08.533 INFO config - bind_socket: Uvicorn running on http://127.0.0.1:8000 (Press CTRL+C to quit)
+2021-01-22 16:23:08.535 INFO basereload - startup: Started reloader process [21260] using statreload
+2021-01-22 16:23:12.706 INFO main - serve: Started server process [10104]
+2021-01-22 16:23:12.709 INFO on - startup: Waiting for application startup.
+2021-01-22 16:23:12.714 INFO on - startup: Application startup complete.
+2021-01-22 16:23:28.735 WARNING pilot - add_process_time_header: Path is: /hotels/madhapur
+execution time is 0.0010006427764892578
+2021-01-22 16:23:51.249 WARNING statreload - should_restart: Detected file change in 'main.py'. Reloading...
+2021-01-22 16:23:55.833 INFO main - serve: Started server process [2504]
+2021-01-22 16:23:55.835 INFO on - startup: Waiting for application startup.
+2021-01-22 16:23:55.845 INFO on - startup: Application startup complete.
+2021-01-22 16:24:04.445 WARNING pilot - add_process_time_header: Path is: /docs
+execution time is 0.0007104873657226562
+2021-01-22 16:24:05.613 WARNING pilot - add_process_time_header: Path is: /openapi.json
+execution time is 0.06961441040039062
+2021-01-22 16:24:13.939 WARNING pilot - add_process_time_header: Path is: /[object Module]
+execution time is 0.0009992122650146484
+2021-01-22 16:24:42.426 INFO main - shutdown: Shutting down
+2021-01-22 16:24:42.527 INFO on - shutdown: Waiting for application shutdown.
+2021-01-22 16:24:42.528 ERROR qr_logger - log_warning: quitting the application now
+
+
+
+
+2021-01-22 16:24:42.528 INFO on - main: ASGI 'lifespan' protocol appears unsupported.
+2021-01-22 16:24:42.530 INFO on - shutdown: Application shutdown complete.
+2021-01-22 16:24:42.532 INFO main - serve: Finished server process [2504]
+2021-01-22 16:24:42.740 INFO basereload - shutdown: Stopping reloader process [21260]
+2021-01-22 16:24:48.736 INFO config - bind_socket: Uvicorn running on http://127.0.0.1:8000 (Press CTRL+C to quit)
+2021-01-22 16:24:48.738 INFO basereload - startup: Started reloader process [23404] using statreload
+2021-01-22 16:24:52.538 INFO main - serve: Started server process [7900]
+2021-01-22 16:24:52.539 INFO on - startup: Waiting for application startup.
+2021-01-22 16:24:52.544 INFO on - startup: Application startup complete.
+2021-01-22 16:25:00.803 WARNING statreload - should_restart: Detected file change in 'main.py'. Reloading...
+2021-01-22 16:25:05.647 INFO main - serve: Started server process [7964]
+2021-01-22 16:25:05.649 INFO on - startup: Waiting for application startup.
+2021-01-22 16:25:05.650 INFO on - startup: Application startup complete.
+2021-01-22 16:25:06.049 WARNING pilot - add_process_time_header: Path is: /docs
+execution time is 0.0012710094451904297
+2021-01-22 16:25:07.054 WARNING pilot - add_process_time_header: Path is: /openapi.json
+execution time is 0.07278180122375488
+2021-01-22 16:25:10.240 WARNING pilot - add_process_time_header: Path is: /[object Module]
+execution time is 0.0009989738464355469
+2021-01-22 16:25:17.112 WARNING pilot - add_process_time_header: Path is: /hotels/madhapur
+execution time is 0.05831503868103027
+2021-01-22 16:25:26.816 WARNING pilot - add_process_time_header: Path is: /hotels/Madhapur
+execution time is 0.007724285125732422
+2021-01-22 16:25:38.026 WARNING statreload - should_restart: Detected file change in 'main.py'. Reloading...
+2021-01-22 16:25:42.452 INFO main - serve: Started server process [29752]
+2021-01-22 16:25:42.455 INFO on - startup: Waiting for application startup.
+2021-01-22 16:25:42.458 INFO on - startup: Application startup complete.
+2021-01-22 16:28:09.271 WARNING statreload - should_restart: Detected file change in 'main.py'. Reloading...
+2021-01-22 16:28:13.934 INFO main - serve: Started server process [29828]
+2021-01-22 16:28:13.936 INFO on - startup: Waiting for application startup.
+2021-01-22 16:28:13.943 INFO on - startup: Application startup complete.
+2021-01-22 16:28:54.412 WARNING statreload - should_restart: Detected file change in 'crud.py'. Reloading...
+2021-01-22 16:28:59.223 INFO main - serve: Started server process [11572]
+2021-01-22 16:28:59.225 INFO on - startup: Waiting for application startup.
+2021-01-22 16:28:59.228 INFO on - startup: Application startup complete.
+2021-01-22 16:29:03.298 WARNING pilot - add_process_time_header: Path is: /hotels/Madhapur
+execution time is 0.08939719200134277
+2021-01-22 16:29:08.847 WARNING pilot - add_process_time_header: Path is: /hotels/madhapur
+execution time is 0.018147945404052734
+2021-01-22 16:30:50.918 WARNING statreload - should_restart: Detected file change in 'crud.py'. Reloading...
+2021-01-22 16:30:55.409 INFO main - serve: Started server process [6488]
+2021-01-22 16:30:55.412 INFO on - startup: Waiting for application startup.
+2021-01-22 16:30:55.414 INFO on - startup: Application startup complete.
+2021-01-22 16:31:03.757 WARNING pilot - add_process_time_header: Path is: /hotels/madhapur
+execution time is 0.0838003158569336
+2021-01-22 16:36:10.647 WARNING statreload - should_restart: Detected file change in 'crud.py'. Reloading...
+2021-01-22 16:36:15.758 INFO main - serve: Started server process [26896]
+2021-01-22 16:36:15.760 INFO on - startup: Waiting for application startup.
+2021-01-22 16:36:15.764 INFO on - startup: Application startup complete.
+2021-01-22 16:36:39.286 WARNING statreload - should_restart: Detected file change in 'crud.py'. Reloading...
+2021-01-22 16:36:44.566 INFO main - serve: Started server process [3332]
+2021-01-22 16:36:44.567 INFO on - startup: Waiting for application startup.
+2021-01-22 16:36:44.571 INFO on - startup: Application startup complete.
+2021-01-22 16:38:08.441 WARNING statreload - should_restart: Detected file change in 'crud.py'. Reloading...
+2021-01-22 16:38:13.004 INFO main - serve: Started server process [9828]
+2021-01-22 16:38:13.006 INFO on - startup: Waiting for application startup.
+2021-01-22 16:38:13.009 INFO on - startup: Application startup complete.
+2021-01-22 16:38:18.111 ERROR h11_impl - run_asgi: Exception in ASGI application
+Traceback (most recent call last):
+  File "C:\Users\krish\AppData\Roaming\Python\Python37\site-packages\uvicorn\protocols\http\h11_impl.py", line 389, in run_asgi
+    result = await app(self.scope, self.receive, self.send)
+  File "C:\Users\krish\AppData\Roaming\Python\Python37\site-packages\uvicorn\middleware\proxy_headers.py", line 45, in __call__
+    return await self.app(scope, receive, send)
+  File "C:\ProgramData\Anaconda3\lib\site-packages\fastapi\applications.py", line 199, in __call__
+    await super().__call__(scope, receive, send)
+  File "C:\Users\krish\AppData\Roaming\Python\Python37\site-packages\starlette\applications.py", line 111, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "C:\Users\krish\AppData\Roaming\Python\Python37\site-packages\starlette\middleware\errors.py", line 181, in __call__
+    raise exc from None
+  File "C:\Users\krish\AppData\Roaming\Python\Python37\site-packages\starlette\middleware\errors.py", line 159, in __call__
+    await self.app(scope, receive, _send)
+  File "C:\Users\krish\AppData\Roaming\Python\Python37\site-packages\starlette\middleware\base.py", line 25, in __call__
+    response = await self.dispatch_func(request, self.call_next)
+  File "C:\Users\krish\Documents\QRmenu\pilot.py", line 155, in add_process_time_header
+    response = await call_next(request)
+  File "C:\Users\krish\AppData\Roaming\Python\Python37\site-packages\starlette\middleware\base.py", line 45, in call_next
+    task.result()
+  File "C:\Users\krish\AppData\Roaming\Python\Python37\site-packages\starlette\middleware\base.py", line 38, in coro
+    await self.app(scope, receive, send)
+  File "C:\Users\krish\AppData\Roaming\Python\Python37\site-packages\starlette\exceptions.py", line 82, in __call__
+    raise exc from None
+  File "C:\Users\krish\AppData\Roaming\Python\Python37\site-packages\starlette\exceptions.py", line 71, in __call__
+    await self.app(scope, receive, sender)
+  File "C:\Users\krish\AppData\Roaming\Python\Python37\site-packages\starlette\routing.py", line 566, in __call__
+    await route.handle(scope, receive, send)
+  File "C:\Users\krish\AppData\Roaming\Python\Python37\site-packages\starlette\routing.py", line 227, in handle
+    await self.app(scope, receive, send)
+  File "C:\Users\krish\AppData\Roaming\Python\Python37\site-packages\starlette\routing.py", line 41, in app
+    response = await func(request)
+  File "C:\ProgramData\Anaconda3\lib\site-packages\fastapi\routing.py", line 202, in app
+    dependant=dependant, values=values, is_coroutine=is_coroutine
+  File "C:\ProgramData\Anaconda3\lib\site-packages\fastapi\routing.py", line 148, in run_endpoint_function
+    return await dependant.call(**values)
+  File "C:\Users\krish\Documents\QRmenu\main.py", line 151, in get_hotels_of_given_location
+    details = crud.get_hotels_of_given_location(db=db, location=location)
+  File "C:\Users\krish\Documents\QRmenu\crud.py", line 107, in get_hotels_of_given_location
+    hotels = db.query(models.Hotels, models.Menu).join(models.Menu).options(load_only(Hotels.name, Hotels.contact_email, Hotels.location, Hotels.city, Menu.items, Menu.qr_menu_path)).filter(or_(models.Hotels.location == location, models.Hotels.city == location)).all()
+  File "C:\Users\krish\AppData\Roaming\Python\Python37\site-packages\sqlalchemy\orm\query.py", line 1347, in options
+    return self._options(False, *args)
+  File "<string>", line 2, in _options
+  File "C:\Users\krish\AppData\Roaming\Python\Python37\site-packages\sqlalchemy\orm\base.py", line 201, in generate
+    fn(self, *args[1:], **kw)
+  File "C:\Users\krish\AppData\Roaming\Python\Python37\site-packages\sqlalchemy\orm\query.py", line 1364, in _options
+    opt.process_query(self)
+  File "C:\Users\krish\AppData\Roaming\Python\Python37\site-packages\sqlalchemy\orm\strategy_options.py", line 136, in process_query
+    self._process(query, True)
+  File "C:\Users\krish\AppData\Roaming\Python\Python37\site-packages\sqlalchemy\orm\strategy_options.py", line 457, in _process
+    query._current_path, query._attributes, raiseerr)
+  File "C:\Users\krish\AppData\Roaming\Python\Python37\site-packages\sqlalchemy\orm\strategy_options.py", line 587, in _bind_loader
+    entities, token, raiseerr)
+  File "C:\Users\krish\AppData\Roaming\Python\Python37\site-packages\sqlalchemy\orm\strategy_options.py", line 688, in _find_entity_basestring
+    "Wildcard loader can only be used with exactly "
+sqlalchemy.exc.ArgumentError: Wildcard loader can only be used with exactly one entity.  Use Load(ent) to specify specific entities.
+2021-01-22 16:40:54.125 WARNING statreload - should_restart: Detected file change in 'crud.py'. Reloading...
+2021-01-22 16:40:58.884 INFO main - serve: Started server process [20384]
+2021-01-22 16:40:58.886 INFO on - startup: Waiting for application startup.
+2021-01-22 16:40:58.888 INFO on - startup: Application startup complete.
+2021-01-22 16:41:03.890 ERROR h11_impl - run_asgi: Exception in ASGI application
+Traceback (most recent call last):
+  File "C:\Users\krish\AppData\Roaming\Python\Python37\site-packages\uvicorn\protocols\http\h11_impl.py", line 389, in run_asgi
+    result = await app(self.scope, self.receive, self.send)
+  File "C:\Users\krish\AppData\Roaming\Python\Python37\site-packages\uvicorn\middleware\proxy_headers.py", line 45, in __call__
+    return await self.app(scope, receive, send)
+  File "C:\ProgramData\Anaconda3\lib\site-packages\fastapi\applications.py", line 199, in __call__
+    await super().__call__(scope, receive, send)
+  File "C:\Users\krish\AppData\Roaming\Python\Python37\site-packages\starlette\applications.py", line 111, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "C:\Users\krish\AppData\Roaming\Python\Python37\site-packages\starlette\middleware\errors.py", line 181, in __call__
+    raise exc from None
+  File "C:\Users\krish\AppData\Roaming\Python\Python37\site-packages\starlette\middleware\errors.py", line 159, in __call__
+    await self.app(scope, receive, _send)
+  File "C:\Users\krish\AppData\Roaming\Python\Python37\site-packages\starlette\middleware\base.py", line 25, in __call__
+    response = await self.dispatch_func(request, self.call_next)
+  File "C:\Users\krish\Documents\QRmenu\pilot.py", line 155, in add_process_time_header
+    response = await call_next(request)
+  File "C:\Users\krish\AppData\Roaming\Python\Python37\site-packages\starlette\middleware\base.py", line 45, in call_next
+    task.result()
+  File "C:\Users\krish\AppData\Roaming\Python\Python37\site-packages\starlette\middleware\base.py", line 38, in coro
+    await self.app(scope, receive, send)
+  File "C:\Users\krish\AppData\Roaming\Python\Python37\site-packages\starlette\exceptions.py", line 82, in __call__
+    raise exc from None
+  File "C:\Users\krish\AppData\Roaming\Python\Python37\site-packages\starlette\exceptions.py", line 71, in __call__
+    await self.app(scope, receive, sender)
+  File "C:\Users\krish\AppData\Roaming\Python\Python37\site-packages\starlette\routing.py", line 566, in __call__
+    await route.handle(scope, receive, send)
+  File "C:\Users\krish\AppData\Roaming\Python\Python37\site-packages\starlette\routing.py", line 227, in handle
+    await self.app(scope, receive, send)
+  File "C:\Users\krish\AppData\Roaming\Python\Python37\site-packages\starlette\routing.py", line 41, in app
+    response = await func(request)
+  File "C:\ProgramData\Anaconda3\lib\site-packages\fastapi\routing.py", line 202, in app
+    dependant=dependant, values=values, is_coroutine=is_coroutine
+  File "C:\ProgramData\Anaconda3\lib\site-packages\fastapi\routing.py", line 148, in run_endpoint_function
+    return await dependant.call(**values)
+  File "C:\Users\krish\Documents\QRmenu\main.py", line 151, in get_hotels_of_given_location
+    details = crud.get_hotels_of_given_location(db=db, location=location)
+  File "C:\Users\krish\Documents\QRmenu\crud.py", line 107, in get_hotels_of_given_location
+    hotels = db.query(models.Hotels, models.Menu).filter(or_(models.Hotels.location == location, models.Hotels.city == location)).join(models.Menu).with_entities(SomeModel.col1, SomeModel.col2,Hotels.name, Hotels.contact_email, Hotels.location, Hotels.city, Menu.items, Menu.qr_menu_path).all()
+NameError: name 'SomeModel' is not defined
+2021-01-22 16:41:37.195 WARNING statreload - should_restart: Detected file change in 'crud.py'. Reloading...
+2021-01-22 16:41:38.097 WARNING statreload - should_restart: Detected file change in 'crud.py'. Reloading...
+2021-01-22 16:41:42.849 INFO main - serve: Started server process [4776]
+2021-01-22 16:41:42.851 INFO on - startup: Waiting for application startup.
+2021-01-22 16:41:42.855 INFO on - startup: Application startup complete.
+2021-01-22 16:41:46.115 WARNING pilot - add_process_time_header: Path is: /hotels/madhapur
+execution time is 0.05966830253601074
+2021-01-22 16:43:00.129 WARNING statreload - should_restart: Detected file change in 'crud.py'. Reloading...
+2021-01-22 16:43:05.048 INFO main - serve: Started server process [15752]
+2021-01-22 16:43:05.050 INFO on - startup: Waiting for application startup.
+2021-01-22 16:43:05.053 INFO on - startup: Application startup complete.
+2021-01-22 16:43:08.794 ERROR h11_impl - run_asgi: Exception in ASGI application
+Traceback (most recent call last):
+  File "C:\Users\krish\AppData\Roaming\Python\Python37\site-packages\uvicorn\protocols\http\h11_impl.py", line 389, in run_asgi
+    result = await app(self.scope, self.receive, self.send)
+  File "C:\Users\krish\AppData\Roaming\Python\Python37\site-packages\uvicorn\middleware\proxy_headers.py", line 45, in __call__
+    return await self.app(scope, receive, send)
+  File "C:\ProgramData\Anaconda3\lib\site-packages\fastapi\applications.py", line 199, in __call__
+    await super().__call__(scope, receive, send)
+  File "C:\Users\krish\AppData\Roaming\Python\Python37\site-packages\starlette\applications.py", line 111, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "C:\Users\krish\AppData\Roaming\Python\Python37\site-packages\starlette\middleware\errors.py", line 181, in __call__
+    raise exc from None
+  File "C:\Users\krish\AppData\Roaming\Python\Python37\site-packages\starlette\middleware\errors.py", line 159, in __call__
+    await self.app(scope, receive, _send)
+  File "C:\Users\krish\AppData\Roaming\Python\Python37\site-packages\starlette\middleware\base.py", line 25, in __call__
+    response = await self.dispatch_func(request, self.call_next)
+  File "C:\Users\krish\Documents\QRmenu\pilot.py", line 155, in add_process_time_header
+    response = await call_next(request)
+  File "C:\Users\krish\AppData\Roaming\Python\Python37\site-packages\starlette\middleware\base.py", line 45, in call_next
+    task.result()
+  File "C:\Users\krish\AppData\Roaming\Python\Python37\site-packages\starlette\middleware\base.py", line 38, in coro
+    await self.app(scope, receive, send)
+  File "C:\Users\krish\AppData\Roaming\Python\Python37\site-packages\starlette\exceptions.py", line 82, in __call__
+    raise exc from None
+  File "C:\Users\krish\AppData\Roaming\Python\Python37\site-packages\starlette\exceptions.py", line 71, in __call__
+    await self.app(scope, receive, sender)
+  File "C:\Users\krish\AppData\Roaming\Python\Python37\site-packages\starlette\routing.py", line 566, in __call__
+    await route.handle(scope, receive, send)
+  File "C:\Users\krish\AppData\Roaming\Python\Python37\site-packages\starlette\routing.py", line 227, in handle
+    await self.app(scope, receive, send)
+  File "C:\Users\krish\AppData\Roaming\Python\Python37\site-packages\starlette\routing.py", line 41, in app
+    response = await func(request)
+  File "C:\ProgramData\Anaconda3\lib\site-packages\fastapi\routing.py", line 202, in app
+    dependant=dependant, values=values, is_coroutine=is_coroutine
+  File "C:\ProgramData\Anaconda3\lib\site-packages\fastapi\routing.py", line 148, in run_endpoint_function
+    return await dependant.call(**values)
+  File "C:\Users\krish\Documents\QRmenu\main.py", line 151, in get_hotels_of_given_location
+    details = crud.get_hotels_of_given_location(db=db, location=location)
+  File "C:\Users\krish\Documents\QRmenu\crud.py", line 107, in get_hotels_of_given_location
+    hotels = db.query(models.Hotels, models.Menu).join(models.Menu).options(load_only(Hotels.name, Hotels.contact_email, Hotels.location, Hotels.city, Menu.items, Menu.qr)).filter(or_(models.Hotels.location == location, models.Hotels.city == location)).all()
+AttributeError: type object 'Menu' has no attribute 'qr'
+2021-01-22 16:43:25.630 WARNING statreload - should_restart: Detected file change in 'crud.py'. Reloading...
+2021-01-22 16:43:30.199 INFO main - serve: Started server process [26788]
+2021-01-22 16:43:30.202 INFO on - startup: Waiting for application startup.
+2021-01-22 16:43:30.207 INFO on - startup: Application startup complete.
+2021-01-22 16:43:32.129 ERROR h11_impl - run_asgi: Exception in ASGI application
+Traceback (most recent call last):
+  File "C:\Users\krish\AppData\Roaming\Python\Python37\site-packages\uvicorn\protocols\http\h11_impl.py", line 389, in run_asgi
+    result = await app(self.scope, self.receive, self.send)
+  File "C:\Users\krish\AppData\Roaming\Python\Python37\site-packages\uvicorn\middleware\proxy_headers.py", line 45, in __call__
+    return await self.app(scope, receive, send)
+  File "C:\ProgramData\Anaconda3\lib\site-packages\fastapi\applications.py", line 199, in __call__
+    await super().__call__(scope, receive, send)
+  File "C:\Users\krish\AppData\Roaming\Python\Python37\site-packages\starlette\applications.py", line 111, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "C:\Users\krish\AppData\Roaming\Python\Python37\site-packages\starlette\middleware\errors.py", line 181, in __call__
+    raise exc from None
+  File "C:\Users\krish\AppData\Roaming\Python\Python37\site-packages\starlette\middleware\errors.py", line 159, in __call__
+    await self.app(scope, receive, _send)
+  File "C:\Users\krish\AppData\Roaming\Python\Python37\site-packages\starlette\middleware\base.py", line 25, in __call__
+    response = await self.dispatch_func(request, self.call_next)
+  File "C:\Users\krish\Documents\QRmenu\pilot.py", line 155, in add_process_time_header
+    response = await call_next(request)
+  File "C:\Users\krish\AppData\Roaming\Python\Python37\site-packages\starlette\middleware\base.py", line 45, in call_next
+    task.result()
+  File "C:\Users\krish\AppData\Roaming\Python\Python37\site-packages\starlette\middleware\base.py", line 38, in coro
+    await self.app(scope, receive, send)
+  File "C:\Users\krish\AppData\Roaming\Python\Python37\site-packages\starlette\exceptions.py", line 82, in __call__
+    raise exc from None
+  File "C:\Users\krish\AppData\Roaming\Python\Python37\site-packages\starlette\exceptions.py", line 71, in __call__
+    await self.app(scope, receive, sender)
+  File "C:\Users\krish\AppData\Roaming\Python\Python37\site-packages\starlette\routing.py", line 566, in __call__
+    await route.handle(scope, receive, send)
+  File "C:\Users\krish\AppData\Roaming\Python\Python37\site-packages\starlette\routing.py", line 227, in handle
+    await self.app(scope, receive, send)
+  File "C:\Users\krish\AppData\Roaming\Python\Python37\site-packages\starlette\routing.py", line 41, in app
+    response = await func(request)
+  File "C:\ProgramData\Anaconda3\lib\site-packages\fastapi\routing.py", line 202, in app
+    dependant=dependant, values=values, is_coroutine=is_coroutine
+  File "C:\ProgramData\Anaconda3\lib\site-packages\fastapi\routing.py", line 148, in run_endpoint_function
+    return await dependant.call(**values)
+  File "C:\Users\krish\Documents\QRmenu\main.py", line 151, in get_hotels_of_given_location
+    details = crud.get_hotels_of_given_location(db=db, location=location)
+  File "C:\Users\krish\Documents\QRmenu\crud.py", line 107, in get_hotels_of_given_location
+    hotels = db.query(models.Hotels, models.Menu).join(models.Menu).options(load_only(Hotels.name, Hotels.contact_email, Hotels.location, Hotels.city, Menu.items, Menu.qr_menu_path)).filter(or_(models.Hotels.location == location, models.Hotels.city == location)).all()
+  File "C:\Users\krish\AppData\Roaming\Python\Python37\site-packages\sqlalchemy\orm\query.py", line 1347, in options
+    return self._options(False, *args)
+  File "<string>", line 2, in _options
+  File "C:\Users\krish\AppData\Roaming\Python\Python37\site-packages\sqlalchemy\orm\base.py", line 201, in generate
+    fn(self, *args[1:], **kw)
+  File "C:\Users\krish\AppData\Roaming\Python\Python37\site-packages\sqlalchemy\orm\query.py", line 1364, in _options
+    opt.process_query(self)
+  File "C:\Users\krish\AppData\Roaming\Python\Python37\site-packages\sqlalchemy\orm\strategy_options.py", line 136, in process_query
+    self._process(query, True)
+  File "C:\Users\krish\AppData\Roaming\Python\Python37\site-packages\sqlalchemy\orm\strategy_options.py", line 457, in _process
+    query._current_path, query._attributes, raiseerr)
+  File "C:\Users\krish\AppData\Roaming\Python\Python37\site-packages\sqlalchemy\orm\strategy_options.py", line 587, in _bind_loader
+    entities, token, raiseerr)
+  File "C:\Users\krish\AppData\Roaming\Python\Python37\site-packages\sqlalchemy\orm\strategy_options.py", line 688, in _find_entity_basestring
+    "Wildcard loader can only be used with exactly "
+sqlalchemy.exc.ArgumentError: Wildcard loader can only be used with exactly one entity.  Use Load(ent) to specify specific entities.
+2021-01-22 16:43:57.489 WARNING statreload - should_restart: Detected file change in 'crud.py'. Reloading...
+2021-01-22 16:44:01.991 INFO main - serve: Started server process [28964]
+2021-01-22 16:44:01.993 INFO on - startup: Waiting for application startup.
+2021-01-22 16:44:01.996 INFO on - startup: Application startup complete.
+2021-01-22 16:50:14.952 WARNING statreload - should_restart: Detected file change in 'crud.py'. Reloading...
+2021-01-22 16:50:19.563 INFO main - serve: Started server process [11860]
+2021-01-22 16:50:19.565 INFO on - startup: Waiting for application startup.
+2021-01-22 16:50:19.566 INFO on - startup: Application startup complete.
+2021-01-22 16:57:07.457 WARNING statreload - should_restart: Detected file change in 'schemas.py'. Reloading...
+2021-01-22 16:57:10.235 WARNING statreload - should_restart: Detected file change in 'models.py'. Reloading...
+2021-01-22 16:57:14.258 INFO main - serve: Started server process [9632]
+2021-01-22 16:57:14.261 INFO on - startup: Waiting for application startup.
+2021-01-22 16:57:14.264 INFO on - startup: Application startup complete.
+2021-01-22 17:02:12.160 WARNING statreload - should_restart: Detected file change in 'security.py'. Reloading...
+2021-01-22 17:16:02.064 WARNING statreload - should_restart: Detected file change in 'schemas.py'. Reloading...
+2021-01-22 17:16:22.703 WARNING statreload - should_restart: Detected file change in 'security.py'. Reloading...
+2021-01-22 17:17:53.713 WARNING statreload - should_restart: Detected file change in 'schemas.py'. Reloading...
+2021-01-22 17:18:26.248 WARNING statreload - should_restart: Detected file change in 'security.py'. Reloading...
+2021-01-22 17:18:40.241 WARNING statreload - should_restart: Detected file change in 'security.py'. Reloading...
+2021-01-22 17:18:44.429 INFO main - serve: Started server process [15564]
+2021-01-22 17:18:44.431 INFO on - startup: Waiting for application startup.
+2021-01-22 17:18:44.434 INFO on - startup: Application startup complete.
+2021-01-22 17:20:35.805 WARNING statreload - should_restart: Detected file change in 'security.py'. Reloading...
+2021-01-22 17:20:40.493 INFO main - serve: Started server process [24832]
+2021-01-22 17:20:40.495 INFO on - startup: Waiting for application startup.
+2021-01-22 17:20:40.498 INFO on - startup: Application startup complete.
+2021-01-22 17:20:48.110 WARNING statreload - should_restart: Detected file change in 'security.py'. Reloading...
+2021-01-22 17:20:52.121 WARNING statreload - should_restart: Detected file change in 'pilot.py'. Reloading...
+2021-01-22 17:20:57.211 INFO main - serve: Started server process [13924]
+2021-01-22 17:20:57.213 INFO on - startup: Waiting for application startup.
+2021-01-22 17:20:57.216 INFO on - startup: Application startup complete.
+2021-01-22 17:25:00.058 WARNING statreload - should_restart: Detected file change in 'crud.py'. Reloading...
+2021-01-22 17:25:05.010 INFO main - serve: Started server process [30052]
+2021-01-22 17:25:05.012 INFO on - startup: Waiting for application startup.
+2021-01-22 17:25:05.016 INFO on - startup: Application startup complete.
+2021-01-22 17:25:54.201 WARNING statreload - should_restart: Detected file change in 'schemas.py'. Reloading...
+2021-01-22 18:16:49.605 WARNING statreload - should_restart: Detected file change in 'security.py'. Reloading...
+2021-01-22 18:21:22.826 WARNING statreload - should_restart: Detected file change in 'security.py'. Reloading...
+2021-01-22 18:22:02.637 WARNING statreload - should_restart: Detected file change in 'security.py'. Reloading...
+2021-01-22 18:22:20.935 WARNING statreload - should_restart: Detected file change in 'schemas.py'. Reloading...
+2021-01-22 18:22:21.986 INFO main - serve: Started server process [29864]
+2021-01-22 18:22:21.987 INFO on - startup: Waiting for application startup.
+2021-01-22 18:22:21.988 INFO on - startup: Application startup complete.
+2021-01-22 18:22:29.330 WARNING pilot - add_process_time_header: Path is: /docs
+execution time is 0.0
+2021-01-22 18:22:29.626 WARNING pilot - add_process_time_header: Path is: /openapi.json
+execution time is 0.014000415802001953
+2021-01-22 18:22:29.819 WARNING pilot - add_process_time_header: Path is: /[object Module]
+execution time is 0.0009963512420654297
+2021-01-22 18:22:39.984 WARNING pilot - add_process_time_header: Path is: /[object Module]
+execution time is 0.001001119613647461
+2021-01-22 18:22:59.415 WARNING pilot - add_process_time_header: Path is: /change_password
+execution time is 0.003042936325073242
+2021-01-22 18:23:40.028 WARNING statreload - should_restart: Detected file change in 'security.py'. Reloading...
+2021-01-22 18:23:41.046 INFO main - serve: Started server process [25076]
+2021-01-22 18:23:41.046 INFO on - startup: Waiting for application startup.
+2021-01-22 18:23:41.046 INFO on - startup: Application startup complete.
+2021-01-22 18:23:56.273 WARNING statreload - should_restart: Detected file change in 'security.py'. Reloading...
+2021-01-22 18:23:57.316 INFO main - serve: Started server process [29872]
+2021-01-22 18:23:57.316 INFO on - startup: Waiting for application startup.
+2021-01-22 18:23:57.317 INFO on - startup: Application startup complete.
+2021-01-22 18:24:17.063 WARNING statreload - should_restart: Detected file change in 'security.py'. Reloading...
+2021-01-22 18:24:18.086 INFO main - serve: Started server process [27856]
+2021-01-22 18:24:18.087 INFO on - startup: Waiting for application startup.
+2021-01-22 18:24:18.087 INFO on - startup: Application startup complete.
+2021-01-22 18:24:36.037 WARNING pilot - add_process_time_header: Path is: /change_password
+execution time is 0.0059969425201416016
+2021-01-22 18:24:44.991 WARNING pilot - add_process_time_header: Path is: /api/v1/update_user_password
+execution time is 0.0
+2021-01-22 18:25:15.989 WARNING pilot - add_process_time_header: Path is: /change_password
+execution time is 0.0009963512420654297
+2021-01-22 18:25:23.310 WARNING pilot - add_process_time_header: Path is: /update_user_password
+execution time is 0.003000974655151367
+2021-01-22 18:25:50.346 WARNING pilot - add_process_time_header: Path is: /change_password
+execution time is 0.0010347366333007812
+2021-01-22 18:25:57.627 WARNING pilot - add_process_time_header: Path is: /update_user_password
+execution time is 0.0009975433349609375
+2021-01-22 18:27:26.143 WARNING statreload - should_restart: Detected file change in 'schemas.py'. Reloading...
+2021-01-22 18:27:27.232 INFO main - serve: Started server process [22840]
+2021-01-22 18:27:27.232 INFO on - startup: Waiting for application startup.
+2021-01-22 18:27:27.234 INFO on - startup: Application startup complete.
+2021-01-22 18:27:33.935 WARNING statreload - should_restart: Detected file change in 'schemas.py'. Reloading...
+2021-01-22 18:27:34.979 INFO main - serve: Started server process [24292]
+2021-01-22 18:27:34.980 INFO on - startup: Waiting for application startup.
+2021-01-22 18:27:34.981 INFO on - startup: Application startup complete.
+2021-01-22 18:27:40.157 WARNING pilot - add_process_time_header: Path is: /change_password
+execution time is 0.002022981643676758
+2021-01-22 18:27:47.063 WARNING pilot - add_process_time_header: Path is: /update_user_password
+execution time is 0.0029926300048828125
+2021-01-22 18:29:19.989 WARNING statreload - should_restart: Detected file change in 'schemas.py'. Reloading...
+2021-01-22 18:29:21.063 INFO main - serve: Started server process [5724]
+2021-01-22 18:29:21.064 INFO on - startup: Waiting for application startup.
+2021-01-22 18:29:21.065 INFO on - startup: Application startup complete.
+2021-01-22 18:30:07.852 WARNING statreload - should_restart: Detected file change in 'schemas.py'. Reloading...
+2021-01-22 18:30:08.907 INFO main - serve: Started server process [6432]
+2021-01-22 18:30:08.907 INFO on - startup: Waiting for application startup.
+2021-01-22 18:30:08.908 INFO on - startup: Application startup complete.
+2021-01-22 18:30:16.504 WARNING pilot - add_process_time_header: Path is: /update_user_password
+execution time is 0.0019936561584472656
+2021-01-22 18:39:49.179 WARNING statreload - should_restart: Detected file change in 'schemas.py'. Reloading...
+2021-01-22 18:39:50.232 INFO main - serve: Started server process [29452]
+2021-01-22 18:39:50.232 INFO on - startup: Waiting for application startup.
+2021-01-22 18:39:50.233 INFO on - startup: Application startup complete.
+2021-01-22 18:40:55.182 WARNING pilot - add_process_time_header: Path is: /change_password
+execution time is 0.003962993621826172
+2021-01-22 18:41:01.103 ERROR h11_impl - run_asgi: Exception in ASGI application
+Traceback (most recent call last):
+  File "C:\Users\krish\AppData\Roaming\Python\Python37\site-packages\uvicorn\protocols\http\h11_impl.py", line 389, in run_asgi
+    result = await app(self.scope, self.receive, self.send)
+  File "C:\Users\krish\AppData\Roaming\Python\Python37\site-packages\uvicorn\middleware\proxy_headers.py", line 45, in __call__
+    return await self.app(scope, receive, send)
+  File "C:\ProgramData\Anaconda3\lib\site-packages\fastapi\applications.py", line 199, in __call__
+    await super().__call__(scope, receive, send)
+  File "C:\Users\krish\AppData\Roaming\Python\Python37\site-packages\starlette\applications.py", line 111, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "C:\Users\krish\AppData\Roaming\Python\Python37\site-packages\starlette\middleware\errors.py", line 181, in __call__
+    raise exc from None
+  File "C:\Users\krish\AppData\Roaming\Python\Python37\site-packages\starlette\middleware\errors.py", line 159, in __call__
+    await self.app(scope, receive, _send)
+  File "C:\Users\krish\AppData\Roaming\Python\Python37\site-packages\starlette\middleware\base.py", line 25, in __call__
+    response = await self.dispatch_func(request, self.call_next)
+  File "C:\Users\krish\Documents\QRmenu\pilot.py", line 155, in add_process_time_header
+    response = await call_next(request)
+  File "C:\Users\krish\AppData\Roaming\Python\Python37\site-packages\starlette\middleware\base.py", line 45, in call_next
+    task.result()
+  File "C:\Users\krish\AppData\Roaming\Python\Python37\site-packages\starlette\middleware\base.py", line 38, in coro
+    await self.app(scope, receive, send)
+  File "C:\Users\krish\AppData\Roaming\Python\Python37\site-packages\starlette\exceptions.py", line 82, in __call__
+    raise exc from None
+  File "C:\Users\krish\AppData\Roaming\Python\Python37\site-packages\starlette\exceptions.py", line 71, in __call__
+    await self.app(scope, receive, sender)
+  File "C:\Users\krish\AppData\Roaming\Python\Python37\site-packages\starlette\routing.py", line 566, in __call__
+    await route.handle(scope, receive, send)
+  File "C:\Users\krish\AppData\Roaming\Python\Python37\site-packages\starlette\routing.py", line 227, in handle
+    await self.app(scope, receive, send)
+  File "C:\Users\krish\AppData\Roaming\Python\Python37\site-packages\starlette\routing.py", line 41, in app
+    response = await func(request)
+  File "C:\ProgramData\Anaconda3\lib\site-packages\fastapi\routing.py", line 195, in app
+    dependency_overrides_provider=dependency_overrides_provider,
+  File "C:\ProgramData\Anaconda3\lib\site-packages\fastapi\dependencies\utils.py", line 550, in solve_dependencies
+    solved = await run_in_threadpool(call, **sub_values)
+  File "C:\Users\krish\AppData\Roaming\Python\Python37\site-packages\starlette\concurrency.py", line 34, in run_in_threadpool
+    return await loop.run_in_executor(None, func, *args)
+  File "C:\ProgramData\Anaconda3\lib\concurrent\futures\thread.py", line 57, in run
+    result = self.fn(*self.args, **self.kwargs)
+  File "C:\Users\krish\Documents\QRmenu\schemas.py", line 134, in __init__
+    super.__init__(password1, password2)
+TypeError: descriptor '__init__' requires a 'super' object but received a 'str'
+2021-01-22 18:41:22.542 WARNING statreload - should_restart: Detected file change in 'schemas.py'. Reloading...
+2021-01-22 18:41:23.583 INFO main - serve: Started server process [30848]
+2021-01-22 18:41:23.583 INFO on - startup: Waiting for application startup.
+2021-01-22 18:41:23.584 INFO on - startup: Application startup complete.
+2021-01-22 18:41:34.024 ERROR h11_impl - run_asgi: Exception in ASGI application
+Traceback (most recent call last):
+  File "C:\Users\krish\AppData\Roaming\Python\Python37\site-packages\uvicorn\protocols\http\h11_impl.py", line 389, in run_asgi
+    result = await app(self.scope, self.receive, self.send)
+  File "C:\Users\krish\AppData\Roaming\Python\Python37\site-packages\uvicorn\middleware\proxy_headers.py", line 45, in __call__
+    return await self.app(scope, receive, send)
+  File "C:\ProgramData\Anaconda3\lib\site-packages\fastapi\applications.py", line 199, in __call__
+    await super().__call__(scope, receive, send)
+  File "C:\Users\krish\AppData\Roaming\Python\Python37\site-packages\starlette\applications.py", line 111, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "C:\Users\krish\AppData\Roaming\Python\Python37\site-packages\starlette\middleware\errors.py", line 181, in __call__
+    raise exc from None
+  File "C:\Users\krish\AppData\Roaming\Python\Python37\site-packages\starlette\middleware\errors.py", line 159, in __call__
+    await self.app(scope, receive, _send)
+  File "C:\Users\krish\AppData\Roaming\Python\Python37\site-packages\starlette\middleware\base.py", line 25, in __call__
+    response = await self.dispatch_func(request, self.call_next)
+  File "C:\Users\krish\Documents\QRmenu\pilot.py", line 155, in add_process_time_header
+    response = await call_next(request)
+  File "C:\Users\krish\AppData\Roaming\Python\Python37\site-packages\starlette\middleware\base.py", line 45, in call_next
+    task.result()
+  File "C:\Users\krish\AppData\Roaming\Python\Python37\site-packages\starlette\middleware\base.py", line 38, in coro
+    await self.app(scope, receive, send)
+  File "C:\Users\krish\AppData\Roaming\Python\Python37\site-packages\starlette\exceptions.py", line 82, in __call__
+    raise exc from None
+  File "C:\Users\krish\AppData\Roaming\Python\Python37\site-packages\starlette\exceptions.py", line 71, in __call__
+    await self.app(scope, receive, sender)
+  File "C:\Users\krish\AppData\Roaming\Python\Python37\site-packages\starlette\routing.py", line 566, in __call__
+    await route.handle(scope, receive, send)
+  File "C:\Users\krish\AppData\Roaming\Python\Python37\site-packages\starlette\routing.py", line 227, in handle
+    await self.app(scope, receive, send)
+  File "C:\Users\krish\AppData\Roaming\Python\Python37\site-packages\starlette\routing.py", line 41, in app
+    response = await func(request)
+  File "C:\ProgramData\Anaconda3\lib\site-packages\fastapi\routing.py", line 195, in app
+    dependency_overrides_provider=dependency_overrides_provider,
+  File "C:\ProgramData\Anaconda3\lib\site-packages\fastapi\dependencies\utils.py", line 550, in solve_dependencies
+    solved = await run_in_threadpool(call, **sub_values)
+  File "C:\Users\krish\AppData\Roaming\Python\Python37\site-packages\starlette\concurrency.py", line 34, in run_in_threadpool
+    return await loop.run_in_executor(None, func, *args)
+  File "C:\ProgramData\Anaconda3\lib\concurrent\futures\thread.py", line 57, in run
+    result = self.fn(*self.args, **self.kwargs)
+  File "C:\Users\krish\Documents\QRmenu\schemas.py", line 134, in __init__
+    super().__init__(password1, password2)
+  File "pydantic\main.py", line 334, in pydantic.main.BaseModel.__init__
+TypeError: __init__() takes exactly 1 positional argument (3 given)
+2021-01-22 18:43:10.340 WARNING statreload - should_restart: Detected file change in 'schemas.py'. Reloading...
+2021-01-22 18:43:11.439 INFO main - serve: Started server process [27344]
+2021-01-22 18:43:11.440 INFO on - startup: Waiting for application startup.
+2021-01-22 18:43:11.440 INFO on - startup: Application startup complete.
+2021-01-22 18:43:18.257 WARNING pilot - add_process_time_header: Path is: /change_password
+execution time is 0.0040378570556640625
+2021-01-22 18:43:23.812 ERROR h11_impl - run_asgi: Exception in ASGI application
+Traceback (most recent call last):
+  File "C:\Users\krish\AppData\Roaming\Python\Python37\site-packages\uvicorn\protocols\http\h11_impl.py", line 389, in run_asgi
+    result = await app(self.scope, self.receive, self.send)
+  File "C:\Users\krish\AppData\Roaming\Python\Python37\site-packages\uvicorn\middleware\proxy_headers.py", line 45, in __call__
+    return await self.app(scope, receive, send)
+  File "C:\ProgramData\Anaconda3\lib\site-packages\fastapi\applications.py", line 199, in __call__
+    await super().__call__(scope, receive, send)
+  File "C:\Users\krish\AppData\Roaming\Python\Python37\site-packages\starlette\applications.py", line 111, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "C:\Users\krish\AppData\Roaming\Python\Python37\site-packages\starlette\middleware\errors.py", line 181, in __call__
+    raise exc from None
+  File "C:\Users\krish\AppData\Roaming\Python\Python37\site-packages\starlette\middleware\errors.py", line 159, in __call__
+    await self.app(scope, receive, _send)
+  File "C:\Users\krish\AppData\Roaming\Python\Python37\site-packages\starlette\middleware\base.py", line 25, in __call__
+    response = await self.dispatch_func(request, self.call_next)
+  File "C:\Users\krish\Documents\QRmenu\pilot.py", line 155, in add_process_time_header
+    response = await call_next(request)
+  File "C:\Users\krish\AppData\Roaming\Python\Python37\site-packages\starlette\middleware\base.py", line 45, in call_next
+    task.result()
+  File "C:\Users\krish\AppData\Roaming\Python\Python37\site-packages\starlette\middleware\base.py", line 38, in coro
+    await self.app(scope, receive, send)
+  File "C:\Users\krish\AppData\Roaming\Python\Python37\site-packages\starlette\exceptions.py", line 82, in __call__
+    raise exc from None
+  File "C:\Users\krish\AppData\Roaming\Python\Python37\site-packages\starlette\exceptions.py", line 71, in __call__
+    await self.app(scope, receive, sender)
+  File "C:\Users\krish\AppData\Roaming\Python\Python37\site-packages\starlette\routing.py", line 566, in __call__
+    await route.handle(scope, receive, send)
+  File "C:\Users\krish\AppData\Roaming\Python\Python37\site-packages\starlette\routing.py", line 227, in handle
+    await self.app(scope, receive, send)
+  File "C:\Users\krish\AppData\Roaming\Python\Python37\site-packages\starlette\routing.py", line 41, in app
+    response = await func(request)
+  File "C:\ProgramData\Anaconda3\lib\site-packages\fastapi\routing.py", line 195, in app
+    dependency_overrides_provider=dependency_overrides_provider,
+  File "C:\ProgramData\Anaconda3\lib\site-packages\fastapi\dependencies\utils.py", line 550, in solve_dependencies
+    solved = await run_in_threadpool(call, **sub_values)
+  File "C:\Users\krish\AppData\Roaming\Python\Python37\site-packages\starlette\concurrency.py", line 34, in run_in_threadpool
+    return await loop.run_in_executor(None, func, *args)
+  File "C:\ProgramData\Anaconda3\lib\concurrent\futures\thread.py", line 57, in run
+    result = self.fn(*self.args, **self.kwargs)
+  File "C:\Users\krish\Documents\QRmenu\schemas.py", line 134, in __init__
+    super().__init__(password1, password2)
+  File "pydantic\main.py", line 334, in pydantic.main.BaseModel.__init__
+TypeError: __init__() takes exactly 1 positional argument (3 given)
+2021-01-22 18:48:20.026 WARNING statreload - should_restart: Detected file change in 'schemas.py'. Reloading...
+2021-01-22 18:49:03.777 WARNING statreload - should_restart: Detected file change in 'schemas.py'. Reloading...
+2021-01-22 18:51:45.258 WARNING statreload - should_restart: Detected file change in 'schemas.py'. Reloading...
+2021-01-22 18:51:46.332 INFO main - serve: Started server process [31452]
+2021-01-22 18:51:46.333 INFO on - startup: Waiting for application startup.
+2021-01-22 18:51:46.333 INFO on - startup: Application startup complete.
+2021-01-22 18:51:46.337 WARNING pilot - add_process_time_header: Path is: /change_password
+execution time is 0.003031492233276367
+2021-01-22 18:53:20.012 WARNING statreload - should_restart: Detected file change in 'schemas.py'. Reloading...
+2021-01-22 18:53:21.087 INFO main - serve: Started server process [20340]
+2021-01-22 18:53:21.088 INFO on - startup: Waiting for application startup.
+2021-01-22 18:53:21.089 INFO on - startup: Application startup complete.
+2021-01-22 18:54:03.540 WARNING statreload - should_restart: Detected file change in 'schemas.py'. Reloading...
+2021-01-22 18:54:04.583 INFO main - serve: Started server process [17940]
+2021-01-22 18:54:04.583 INFO on - startup: Waiting for application startup.
+2021-01-22 18:54:04.584 INFO on - startup: Application startup complete.
+2021-01-22 18:54:10.516 INFO main - shutdown: Shutting down
+2021-01-22 18:54:10.618 INFO on - shutdown: Waiting for application shutdown.
+2021-01-22 18:54:10.618 ERROR qr_logger - log_warning: quitting the application now
+
+
+
+
+2021-01-22 18:54:10.618 INFO on - main: ASGI 'lifespan' protocol appears unsupported.
+2021-01-22 18:54:10.619 INFO on - shutdown: Application shutdown complete.
+2021-01-22 18:54:10.623 INFO main - serve: Finished server process [17940]
+2021-01-22 18:54:10.724 INFO basereload - shutdown: Stopping reloader process [23404]
+2021-01-22 18:54:13.884 INFO config - bind_socket: Uvicorn running on http://127.0.0.1:8000 (Press CTRL+C to quit)
+2021-01-22 18:54:13.885 INFO basereload - startup: Started reloader process [12892] using statreload
+2021-01-22 18:54:14.881 INFO main - serve: Started server process [22136]
+2021-01-22 18:54:14.882 INFO on - startup: Waiting for application startup.
+2021-01-22 18:54:14.886 INFO on - startup: Application startup complete.
+2021-01-22 18:54:20.623 WARNING pilot - add_process_time_header: Path is: /change_password
+execution time is 0.0020356178283691406
+2021-01-22 18:54:29.728 ERROR h11_impl - run_asgi: Exception in ASGI application
+Traceback (most recent call last):
+  File "C:\Users\krish\AppData\Roaming\Python\Python37\site-packages\uvicorn\protocols\http\h11_impl.py", line 389, in run_asgi
+    result = await app(self.scope, self.receive, self.send)
+  File "C:\Users\krish\AppData\Roaming\Python\Python37\site-packages\uvicorn\middleware\proxy_headers.py", line 45, in __call__
+    return await self.app(scope, receive, send)
+  File "C:\ProgramData\Anaconda3\lib\site-packages\fastapi\applications.py", line 199, in __call__
+    await super().__call__(scope, receive, send)
+  File "C:\Users\krish\AppData\Roaming\Python\Python37\site-packages\starlette\applications.py", line 111, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "C:\Users\krish\AppData\Roaming\Python\Python37\site-packages\starlette\middleware\errors.py", line 181, in __call__
+    raise exc from None
+  File "C:\Users\krish\AppData\Roaming\Python\Python37\site-packages\starlette\middleware\errors.py", line 159, in __call__
+    await self.app(scope, receive, _send)
+  File "C:\Users\krish\AppData\Roaming\Python\Python37\site-packages\starlette\middleware\base.py", line 25, in __call__
+    response = await self.dispatch_func(request, self.call_next)
+  File "C:\Users\krish\Documents\QRmenu\pilot.py", line 155, in add_process_time_header
+    response = await call_next(request)
+  File "C:\Users\krish\AppData\Roaming\Python\Python37\site-packages\starlette\middleware\base.py", line 45, in call_next
+    task.result()
+  File "C:\Users\krish\AppData\Roaming\Python\Python37\site-packages\starlette\middleware\base.py", line 38, in coro
+    await self.app(scope, receive, send)
+  File "C:\Users\krish\AppData\Roaming\Python\Python37\site-packages\starlette\exceptions.py", line 82, in __call__
+    raise exc from None
+  File "C:\Users\krish\AppData\Roaming\Python\Python37\site-packages\starlette\exceptions.py", line 71, in __call__
+    await self.app(scope, receive, sender)
+  File "C:\Users\krish\AppData\Roaming\Python\Python37\site-packages\starlette\routing.py", line 566, in __call__
+    await route.handle(scope, receive, send)
+  File "C:\Users\krish\AppData\Roaming\Python\Python37\site-packages\starlette\routing.py", line 227, in handle
+    await self.app(scope, receive, send)
+  File "C:\Users\krish\AppData\Roaming\Python\Python37\site-packages\starlette\routing.py", line 41, in app
+    response = await func(request)
+  File "C:\ProgramData\Anaconda3\lib\site-packages\fastapi\routing.py", line 202, in app
+    dependant=dependant, values=values, is_coroutine=is_coroutine
+  File "C:\ProgramData\Anaconda3\lib\site-packages\fastapi\routing.py", line 148, in run_endpoint_function
+    return await dependant.call(**values)
+  File "C:\Users\krish\Documents\QRmenu\security.py", line 534, in update_password
+    update_result = crud.update_user_password(db, "k@gmail.com", new_password_schema)
+  File "C:\Users\krish\Documents\QRmenu\crud.py", line 240, in update_user_password
+    details = db.query(models.Users).filter(Users.email == Email).update({'password': new_password_schema.password})
+AttributeError: 'NewPassword' object has no attribute 'password'
+2021-01-22 18:55:40.217 WARNING statreload - should_restart: Detected file change in 'crud.py'. Reloading...
+2021-01-22 18:55:41.245 INFO main - serve: Started server process [31232]
+2021-01-22 18:55:41.246 INFO on - startup: Waiting for application startup.
+2021-01-22 18:55:41.246 INFO on - startup: Application startup complete.
+2021-01-22 18:55:47.583 WARNING statreload - should_restart: Detected file change in 'crud.py'. Reloading...
+2021-01-22 18:55:48.619 INFO main - serve: Started server process [3188]
+2021-01-22 18:55:48.619 INFO on - startup: Waiting for application startup.
+2021-01-22 18:55:48.619 INFO on - startup: Application startup complete.
+2021-01-22 18:55:58.378 ERROR h11_impl - run_asgi: Exception in ASGI application
+Traceback (most recent call last):
+  File "C:\Users\krish\AppData\Roaming\Python\Python37\site-packages\uvicorn\protocols\http\h11_impl.py", line 389, in run_asgi
+    result = await app(self.scope, self.receive, self.send)
+  File "C:\Users\krish\AppData\Roaming\Python\Python37\site-packages\uvicorn\middleware\proxy_headers.py", line 45, in __call__
+    return await self.app(scope, receive, send)
+  File "C:\ProgramData\Anaconda3\lib\site-packages\fastapi\applications.py", line 199, in __call__
+    await super().__call__(scope, receive, send)
+  File "C:\Users\krish\AppData\Roaming\Python\Python37\site-packages\starlette\applications.py", line 111, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "C:\Users\krish\AppData\Roaming\Python\Python37\site-packages\starlette\middleware\errors.py", line 181, in __call__
+    raise exc from None
+  File "C:\Users\krish\AppData\Roaming\Python\Python37\site-packages\starlette\middleware\errors.py", line 159, in __call__
+    await self.app(scope, receive, _send)
+  File "C:\Users\krish\AppData\Roaming\Python\Python37\site-packages\starlette\middleware\base.py", line 25, in __call__
+    response = await self.dispatch_func(request, self.call_next)
+  File "C:\Users\krish\Documents\QRmenu\pilot.py", line 155, in add_process_time_header
+    response = await call_next(request)
+  File "C:\Users\krish\AppData\Roaming\Python\Python37\site-packages\starlette\middleware\base.py", line 45, in call_next
+    task.result()
+  File "C:\Users\krish\AppData\Roaming\Python\Python37\site-packages\starlette\middleware\base.py", line 38, in coro
+    await self.app(scope, receive, send)
+  File "C:\Users\krish\AppData\Roaming\Python\Python37\site-packages\starlette\exceptions.py", line 82, in __call__
+    raise exc from None
+  File "C:\Users\krish\AppData\Roaming\Python\Python37\site-packages\starlette\exceptions.py", line 71, in __call__
+    await self.app(scope, receive, sender)
+  File "C:\Users\krish\AppData\Roaming\Python\Python37\site-packages\starlette\routing.py", line 566, in __call__
+    await route.handle(scope, receive, send)
+  File "C:\Users\krish\AppData\Roaming\Python\Python37\site-packages\starlette\routing.py", line 227, in handle
+    await self.app(scope, receive, send)
+  File "C:\Users\krish\AppData\Roaming\Python\Python37\site-packages\starlette\routing.py", line 41, in app
+    response = await func(request)
+  File "C:\ProgramData\Anaconda3\lib\site-packages\fastapi\routing.py", line 202, in app
+    dependant=dependant, values=values, is_coroutine=is_coroutine
+  File "C:\ProgramData\Anaconda3\lib\site-packages\fastapi\routing.py", line 148, in run_endpoint_function
+    return await dependant.call(**values)
+  File "C:\Users\krish\Documents\QRmenu\security.py", line 534, in update_password
+    update_result = crud.update_user_password(db, "k@gmail.com", new_password_schema)
+  File "C:\Users\krish\Documents\QRmenu\crud.py", line 241, in update_user_password
+    details.commit()
+AttributeError: 'int' object has no attribute 'commit'
+2021-01-22 18:56:11.353 WARNING statreload - should_restart: Detected file change in 'crud.py'. Reloading...
+2021-01-22 18:56:12.395 INFO main - serve: Started server process [27708]
+2021-01-22 18:56:12.396 INFO on - startup: Waiting for application startup.
+2021-01-22 18:56:12.396 INFO on - startup: Application startup complete.
+2021-01-22 18:56:22.647 WARNING pilot - add_process_time_header: Path is: /update_user_password
+execution time is 0.0169980525970459
+2021-01-22 18:57:10.514 WARNING statreload - should_restart: Detected file change in 'security.py'. Reloading...
+2021-01-22 18:57:11.532 INFO main - serve: Started server process [28124]
+2021-01-22 18:57:11.532 INFO on - startup: Waiting for application startup.
+2021-01-22 18:57:11.533 INFO on - startup: Application startup complete.
+2021-01-22 18:57:15.077 WARNING statreload - should_restart: Detected file change in 'security.py'. Reloading...
+2021-01-22 18:57:16.102 INFO main - serve: Started server process [30648]
+2021-01-22 18:57:16.103 INFO on - startup: Waiting for application startup.
+2021-01-22 18:57:16.104 INFO on - startup: Application startup complete.
+2021-01-22 18:57:27.749 WARNING statreload - should_restart: Detected file change in 'crud.py'. Reloading...
+2021-01-22 18:57:28.838 INFO main - serve: Started server process [31116]
+2021-01-22 18:57:28.839 INFO on - startup: Waiting for application startup.
+2021-01-22 18:57:28.840 INFO on - startup: Application startup complete.
+2021-01-22 18:57:42.194 ERROR h11_impl - run_asgi: Exception in ASGI application
+Traceback (most recent call last):
+  File "C:\Users\krish\AppData\Roaming\Python\Python37\site-packages\uvicorn\protocols\http\h11_impl.py", line 389, in run_asgi
+    result = await app(self.scope, self.receive, self.send)
+  File "C:\Users\krish\AppData\Roaming\Python\Python37\site-packages\uvicorn\middleware\proxy_headers.py", line 45, in __call__
+    return await self.app(scope, receive, send)
+  File "C:\ProgramData\Anaconda3\lib\site-packages\fastapi\applications.py", line 199, in __call__
+    await super().__call__(scope, receive, send)
+  File "C:\Users\krish\AppData\Roaming\Python\Python37\site-packages\starlette\applications.py", line 111, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "C:\Users\krish\AppData\Roaming\Python\Python37\site-packages\starlette\middleware\errors.py", line 181, in __call__
+    raise exc from None
+  File "C:\Users\krish\AppData\Roaming\Python\Python37\site-packages\starlette\middleware\errors.py", line 159, in __call__
+    await self.app(scope, receive, _send)
+  File "C:\Users\krish\AppData\Roaming\Python\Python37\site-packages\starlette\middleware\base.py", line 25, in __call__
+    response = await self.dispatch_func(request, self.call_next)
+  File "C:\Users\krish\Documents\QRmenu\pilot.py", line 155, in add_process_time_header
+    response = await call_next(request)
+  File "C:\Users\krish\AppData\Roaming\Python\Python37\site-packages\starlette\middleware\base.py", line 45, in call_next
+    task.result()
+  File "C:\Users\krish\AppData\Roaming\Python\Python37\site-packages\starlette\middleware\base.py", line 38, in coro
+    await self.app(scope, receive, send)
+  File "C:\Users\krish\AppData\Roaming\Python\Python37\site-packages\starlette\exceptions.py", line 82, in __call__
+    raise exc from None
+  File "C:\Users\krish\AppData\Roaming\Python\Python37\site-packages\starlette\exceptions.py", line 71, in __call__
+    await self.app(scope, receive, sender)
+  File "C:\Users\krish\AppData\Roaming\Python\Python37\site-packages\starlette\routing.py", line 566, in __call__
+    await route.handle(scope, receive, send)
+  File "C:\Users\krish\AppData\Roaming\Python\Python37\site-packages\starlette\routing.py", line 227, in handle
+    await self.app(scope, receive, send)
+  File "C:\Users\krish\AppData\Roaming\Python\Python37\site-packages\starlette\routing.py", line 41, in app
+    response = await func(request)
+  File "C:\ProgramData\Anaconda3\lib\site-packages\fastapi\routing.py", line 202, in app
+    dependant=dependant, values=values, is_coroutine=is_coroutine
+  File "C:\ProgramData\Anaconda3\lib\site-packages\fastapi\routing.py", line 148, in run_endpoint_function
+    return await dependant.call(**values)
+  File "C:\Users\krish\Documents\QRmenu\security.py", line 535, in update_password
+    update_result = crud.update_user_password(db, "k@gmail.com", password)
+  File "C:\Users\krish\Documents\QRmenu\crud.py", line 240, in update_user_password
+    details = db.query(models.Users).filter(Users.email == Email).update({'password': password})
+NameError: name 'password' is not defined
+2021-01-22 18:57:58.883 WARNING statreload - should_restart: Detected file change in 'crud.py'. Reloading...
+2021-01-22 18:57:59.973 INFO main - serve: Started server process [24488]
+2021-01-22 18:57:59.974 INFO on - startup: Waiting for application startup.
+2021-01-22 18:57:59.975 INFO on - startup: Application startup complete.
+2021-01-22 18:58:10.965 WARNING pilot - add_process_time_header: Path is: /update_user_password
+execution time is 0.26503491401672363
+2021-01-22 18:58:29.945 WARNING statreload - should_restart: Detected file change in 'crud.py'. Reloading...
+2021-01-22 18:58:30.975 INFO main - serve: Started server process [25340]
+2021-01-22 18:58:30.976 INFO on - startup: Waiting for application startup.
+2021-01-22 18:58:30.977 INFO on - startup: Application startup complete.
+2021-01-22 18:58:41.449 WARNING pilot - add_process_time_header: Path is: /update_user_password
+execution time is 0.26117444038391113
+2021-01-22 18:59:04.380 WARNING statreload - should_restart: Detected file change in 'security.py'. Reloading...
+2021-01-22 18:59:05.426 INFO main - serve: Started server process [4424]
+2021-01-22 18:59:05.426 INFO on - startup: Waiting for application startup.
+2021-01-22 18:59:05.427 INFO on - startup: Application startup complete.
+2021-01-22 18:59:17.546 WARNING pilot - add_process_time_header: Path is: /update_user_password
+execution time is 0.2610759735107422
+2021-01-22 19:00:13.007 WARNING statreload - should_restart: Detected file change in 'crud.py'. Reloading...
+2021-01-22 19:00:14.067 INFO main - serve: Started server process [18976]
+2021-01-22 19:00:14.067 INFO on - startup: Waiting for application startup.
+2021-01-22 19:00:14.068 INFO on - startup: Application startup complete.
+2021-01-22 19:00:31.121 WARNING statreload - should_restart: Detected file change in 'security.py'. Reloading...
+2021-01-22 19:00:32.156 INFO main - serve: Started server process [18824]
+2021-01-22 19:00:32.157 INFO on - startup: Waiting for application startup.
+2021-01-22 19:00:32.158 INFO on - startup: Application startup complete.
+2021-01-22 19:00:41.800 WARNING pilot - add_process_time_header: Path is: /update_user_password
+execution time is 0.2611989974975586
+2021-01-22 19:07:28.236 WARNING statreload - should_restart: Detected file change in 'security.py'. Reloading...
+2021-01-22 19:07:29.301 INFO main - serve: Started server process [22048]
+2021-01-22 19:07:29.302 INFO on - startup: Waiting for application startup.
+2021-01-22 19:07:29.302 INFO on - startup: Application startup complete.
+2021-01-22 19:08:09.305 WARNING pilot - add_process_time_header: Path is: /enter_recovery_email
+execution time is 0.001997709274291992
+2021-01-22 19:08:25.161 WARNING pilot - add_process_time_header: Path is: /new_user_signup
+execution time is 0.0020341873168945312
+2021-01-22 19:08:34.771 WARNING pilot - add_process_time_header: Path is: /new_user/
+execution time is 0.26900243759155273
+2021-01-22 19:08:34.783 WARNING pilot - add_process_time_header: Path is: /login
+execution time is 0.004024028778076172
+2021-01-22 19:08:38.799 WARNING pilot - add_process_time_header: Path is: /enter_recovery_email
+execution time is 0.0
+2021-01-22 19:08:57.045 WARNING pilot - add_process_time_header: Path is: /api/v1/send_mail
+execution time is 0.0
+2021-01-22 19:09:59.679 WARNING pilot - add_process_time_header: Path is: /api/v1/send_mail
+execution time is 0.0
+2021-01-22 19:10:05.362 WARNING pilot - add_process_time_header: Path is: /enter_recovery_email
+execution time is 0.0009942054748535156
+2021-01-22 19:10:08.918 ERROR h11_impl - run_asgi: Exception in ASGI application
+Traceback (most recent call last):
+  File "C:\Users\krish\AppData\Roaming\Python\Python37\site-packages\uvicorn\protocols\http\h11_impl.py", line 389, in run_asgi
+    result = await app(self.scope, self.receive, self.send)
+  File "C:\Users\krish\AppData\Roaming\Python\Python37\site-packages\uvicorn\middleware\proxy_headers.py", line 45, in __call__
+    return await self.app(scope, receive, send)
+  File "C:\ProgramData\Anaconda3\lib\site-packages\fastapi\applications.py", line 199, in __call__
+    await super().__call__(scope, receive, send)
+  File "C:\Users\krish\AppData\Roaming\Python\Python37\site-packages\starlette\applications.py", line 111, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "C:\Users\krish\AppData\Roaming\Python\Python37\site-packages\starlette\middleware\errors.py", line 181, in __call__
+    raise exc from None
+  File "C:\Users\krish\AppData\Roaming\Python\Python37\site-packages\starlette\middleware\errors.py", line 159, in __call__
+    await self.app(scope, receive, _send)
+  File "C:\Users\krish\AppData\Roaming\Python\Python37\site-packages\starlette\middleware\base.py", line 25, in __call__
+    response = await self.dispatch_func(request, self.call_next)
+  File "C:\Users\krish\Documents\QRmenu\pilot.py", line 155, in add_process_time_header
+    response = await call_next(request)
+  File "C:\Users\krish\AppData\Roaming\Python\Python37\site-packages\starlette\middleware\base.py", line 45, in call_next
+    task.result()
+  File "C:\Users\krish\AppData\Roaming\Python\Python37\site-packages\starlette\middleware\base.py", line 38, in coro
+    await self.app(scope, receive, send)
+  File "C:\Users\krish\AppData\Roaming\Python\Python37\site-packages\starlette\exceptions.py", line 82, in __call__
+    raise exc from None
+  File "C:\Users\krish\AppData\Roaming\Python\Python37\site-packages\starlette\exceptions.py", line 71, in __call__
+    await self.app(scope, receive, sender)
+  File "C:\Users\krish\AppData\Roaming\Python\Python37\site-packages\starlette\routing.py", line 566, in __call__
+    await route.handle(scope, receive, send)
+  File "C:\Users\krish\AppData\Roaming\Python\Python37\site-packages\starlette\routing.py", line 227, in handle
+    await self.app(scope, receive, send)
+  File "C:\Users\krish\AppData\Roaming\Python\Python37\site-packages\starlette\routing.py", line 41, in app
+    response = await func(request)
+  File "C:\ProgramData\Anaconda3\lib\site-packages\fastapi\routing.py", line 202, in app
+    dependant=dependant, values=values, is_coroutine=is_coroutine
+  File "C:\ProgramData\Anaconda3\lib\site-packages\fastapi\routing.py", line 148, in run_endpoint_function
+    return await dependant.call(**values)
+  File "C:\Users\krish\Documents\QRmenu\security.py", line 447, in send_mail
+    code = get_random_alphanumeric_string(10)
+NameError: name 'get_random_alphanumeric_string' is not defined
+2021-01-22 19:11:52.039 WARNING statreload - should_restart: Detected file change in 'security.py'. Reloading...
+2021-01-22 19:11:53.098 INFO main - serve: Started server process [30580]
+2021-01-22 19:11:53.099 INFO on - startup: Waiting for application startup.
+2021-01-22 19:11:53.103 INFO on - startup: Application startup complete.
+2021-01-22 19:11:59.627 ERROR h11_impl - run_asgi: Exception in ASGI application
+Traceback (most recent call last):
+  File "C:\Users\krish\AppData\Roaming\Python\Python37\site-packages\uvicorn\protocols\http\h11_impl.py", line 389, in run_asgi
+    result = await app(self.scope, self.receive, self.send)
+  File "C:\Users\krish\AppData\Roaming\Python\Python37\site-packages\uvicorn\middleware\proxy_headers.py", line 45, in __call__
+    return await self.app(scope, receive, send)
+  File "C:\ProgramData\Anaconda3\lib\site-packages\fastapi\applications.py", line 199, in __call__
+    await super().__call__(scope, receive, send)
+  File "C:\Users\krish\AppData\Roaming\Python\Python37\site-packages\starlette\applications.py", line 111, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "C:\Users\krish\AppData\Roaming\Python\Python37\site-packages\starlette\middleware\errors.py", line 181, in __call__
+    raise exc from None
+  File "C:\Users\krish\AppData\Roaming\Python\Python37\site-packages\starlette\middleware\errors.py", line 159, in __call__
+    await self.app(scope, receive, _send)
+  File "C:\Users\krish\AppData\Roaming\Python\Python37\site-packages\starlette\middleware\base.py", line 25, in __call__
+    response = await self.dispatch_func(request, self.call_next)
+  File "C:\Users\krish\Documents\QRmenu\pilot.py", line 155, in add_process_time_header
+    response = await call_next(request)
+  File "C:\Users\krish\AppData\Roaming\Python\Python37\site-packages\starlette\middleware\base.py", line 45, in call_next
+    task.result()
+  File "C:\Users\krish\AppData\Roaming\Python\Python37\site-packages\starlette\middleware\base.py", line 38, in coro
+    await self.app(scope, receive, send)
+  File "C:\Users\krish\AppData\Roaming\Python\Python37\site-packages\starlette\exceptions.py", line 82, in __call__
+    raise exc from None
+  File "C:\Users\krish\AppData\Roaming\Python\Python37\site-packages\starlette\exceptions.py", line 71, in __call__
+    await self.app(scope, receive, sender)
+  File "C:\Users\krish\AppData\Roaming\Python\Python37\site-packages\starlette\routing.py", line 566, in __call__
+    await route.handle(scope, receive, send)
+  File "C:\Users\krish\AppData\Roaming\Python\Python37\site-packages\starlette\routing.py", line 227, in handle
+    await self.app(scope, receive, send)
+  File "C:\Users\krish\AppData\Roaming\Python\Python37\site-packages\starlette\routing.py", line 41, in app
+    response = await func(request)
+  File "C:\ProgramData\Anaconda3\lib\site-packages\fastapi\routing.py", line 202, in app
+    dependant=dependant, values=values, is_coroutine=is_coroutine
+  File "C:\ProgramData\Anaconda3\lib\site-packages\fastapi\routing.py", line 148, in run_endpoint_function
+    return await dependant.call(**values)
+  File "C:\Users\krish\Documents\QRmenu\security.py", line 471, in send_mail
+    return send_email(background_tasks, request)
+  File "C:\Users\krish\Documents\QRmenu\security.py", line 391, in send_email
+    email=company_email,
+NameError: name 'company_email' is not defined
+2021-01-22 19:13:03.731 WARNING statreload - should_restart: Detected file change in 'security.py'. Reloading...
+2021-01-22 19:13:04.746 INFO main - serve: Started server process [26440]
+2021-01-22 19:13:04.747 INFO on - startup: Waiting for application startup.
+2021-01-22 19:13:04.748 INFO on - startup: Application startup complete.
+2021-01-22 19:13:13.375 ERROR h11_impl - run_asgi: Exception in ASGI application
+Traceback (most recent call last):
+  File "C:\Users\krish\AppData\Roaming\Python\Python37\site-packages\uvicorn\protocols\http\h11_impl.py", line 389, in run_asgi
+    result = await app(self.scope, self.receive, self.send)
+  File "C:\Users\krish\AppData\Roaming\Python\Python37\site-packages\uvicorn\middleware\proxy_headers.py", line 45, in __call__
+    return await self.app(scope, receive, send)
+  File "C:\ProgramData\Anaconda3\lib\site-packages\fastapi\applications.py", line 199, in __call__
+    await super().__call__(scope, receive, send)
+  File "C:\Users\krish\AppData\Roaming\Python\Python37\site-packages\starlette\applications.py", line 111, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "C:\Users\krish\AppData\Roaming\Python\Python37\site-packages\starlette\middleware\errors.py", line 181, in __call__
+    raise exc from None
+  File "C:\Users\krish\AppData\Roaming\Python\Python37\site-packages\starlette\middleware\errors.py", line 159, in __call__
+    await self.app(scope, receive, _send)
+  File "C:\Users\krish\AppData\Roaming\Python\Python37\site-packages\starlette\middleware\base.py", line 25, in __call__
+    response = await self.dispatch_func(request, self.call_next)
+  File "C:\Users\krish\Documents\QRmenu\pilot.py", line 155, in add_process_time_header
+    response = await call_next(request)
+  File "C:\Users\krish\AppData\Roaming\Python\Python37\site-packages\starlette\middleware\base.py", line 45, in call_next
+    task.result()
+  File "C:\Users\krish\AppData\Roaming\Python\Python37\site-packages\starlette\middleware\base.py", line 38, in coro
+    await self.app(scope, receive, send)
+  File "C:\Users\krish\AppData\Roaming\Python\Python37\site-packages\starlette\exceptions.py", line 82, in __call__
+    raise exc from None
+  File "C:\Users\krish\AppData\Roaming\Python\Python37\site-packages\starlette\exceptions.py", line 71, in __call__
+    await self.app(scope, receive, sender)
+  File "C:\Users\krish\AppData\Roaming\Python\Python37\site-packages\starlette\routing.py", line 566, in __call__
+    await route.handle(scope, receive, send)
+  File "C:\Users\krish\AppData\Roaming\Python\Python37\site-packages\starlette\routing.py", line 227, in handle
+    await self.app(scope, receive, send)
+  File "C:\Users\krish\AppData\Roaming\Python\Python37\site-packages\starlette\routing.py", line 41, in app
+    response = await func(request)
+  File "C:\ProgramData\Anaconda3\lib\site-packages\fastapi\routing.py", line 202, in app
+    dependant=dependant, values=values, is_coroutine=is_coroutine
+  File "C:\ProgramData\Anaconda3\lib\site-packages\fastapi\routing.py", line 148, in run_endpoint_function
+    return await dependant.call(**values)
+  File "C:\Users\krish\Documents\QRmenu\security.py", line 471, in send_mail
+    return send_email(background_tasks, request)
+  File "C:\Users\krish\Documents\QRmenu\security.py", line 395, in send_email
+    service="gmail",
+TypeError: __init__() got an unexpected keyword argument 'email'
+2021-01-22 19:13:31.928 WARNING statreload - should_restart: Detected file change in 'security.py'. Reloading...
+2021-01-22 19:13:32.969 INFO main - serve: Started server process [30732]
+2021-01-22 19:13:32.970 INFO on - startup: Waiting for application startup.
+2021-01-22 19:13:32.971 INFO on - startup: Application startup complete.
+2021-01-22 19:13:48.825 ERROR h11_impl - run_asgi: Exception in ASGI application
+Traceback (most recent call last):
+  File "C:\Users\krish\AppData\Roaming\Python\Python37\site-packages\uvicorn\protocols\http\h11_impl.py", line 389, in run_asgi
+    result = await app(self.scope, self.receive, self.send)
+  File "C:\Users\krish\AppData\Roaming\Python\Python37\site-packages\uvicorn\middleware\proxy_headers.py", line 45, in __call__
+    return await self.app(scope, receive, send)
+  File "C:\ProgramData\Anaconda3\lib\site-packages\fastapi\applications.py", line 199, in __call__
+    await super().__call__(scope, receive, send)
+  File "C:\Users\krish\AppData\Roaming\Python\Python37\site-packages\starlette\applications.py", line 111, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "C:\Users\krish\AppData\Roaming\Python\Python37\site-packages\starlette\middleware\errors.py", line 181, in __call__
+    raise exc from None
+  File "C:\Users\krish\AppData\Roaming\Python\Python37\site-packages\starlette\middleware\errors.py", line 159, in __call__
+    await self.app(scope, receive, _send)
+  File "C:\Users\krish\AppData\Roaming\Python\Python37\site-packages\starlette\middleware\base.py", line 25, in __call__
+    response = await self.dispatch_func(request, self.call_next)
+  File "C:\Users\krish\Documents\QRmenu\pilot.py", line 155, in add_process_time_header
+    response = await call_next(request)
+  File "C:\Users\krish\AppData\Roaming\Python\Python37\site-packages\starlette\middleware\base.py", line 45, in call_next
+    task.result()
+  File "C:\Users\krish\AppData\Roaming\Python\Python37\site-packages\starlette\middleware\base.py", line 38, in coro
+    await self.app(scope, receive, send)
+  File "C:\Users\krish\AppData\Roaming\Python\Python37\site-packages\starlette\exceptions.py", line 82, in __call__
+    raise exc from None
+  File "C:\Users\krish\AppData\Roaming\Python\Python37\site-packages\starlette\exceptions.py", line 71, in __call__
+    await self.app(scope, receive, sender)
+  File "C:\Users\krish\AppData\Roaming\Python\Python37\site-packages\starlette\routing.py", line 566, in __call__
+    await route.handle(scope, receive, send)
+  File "C:\Users\krish\AppData\Roaming\Python\Python37\site-packages\starlette\routing.py", line 227, in handle
+    await self.app(scope, receive, send)
+  File "C:\Users\krish\AppData\Roaming\Python\Python37\site-packages\starlette\routing.py", line 41, in app
+    response = await func(request)
+  File "C:\ProgramData\Anaconda3\lib\site-packages\fastapi\routing.py", line 202, in app
+    dependant=dependant, values=values, is_coroutine=is_coroutine
+  File "C:\ProgramData\Anaconda3\lib\site-packages\fastapi\routing.py", line 148, in run_endpoint_function
+    return await dependant.call(**values)
+  File "C:\Users\krish\Documents\QRmenu\security.py", line 471, in send_mail
+    return send_email(background_tasks, request)
+  File "C:\Users\krish\Documents\QRmenu\security.py", line 395, in send_email
+    service="smtp.gmail.com",
+TypeError: __init__() got an unexpected keyword argument 'email'
+2021-01-22 19:21:47.877 WARNING statreload - should_restart: Detected file change in 'security.py'. Reloading...
+2021-01-22 19:21:52.291 INFO main - serve: Started server process [31000]
+2021-01-22 19:21:52.293 INFO on - startup: Waiting for application startup.
+2021-01-22 19:21:52.295 INFO on - startup: Application startup complete.
+2021-01-22 19:22:21.406 WARNING statreload - should_restart: Detected file change in 'security.py'. Reloading...
+2021-01-22 19:22:25.984 INFO main - serve: Started server process [23176]
+2021-01-22 19:22:25.987 INFO on - startup: Waiting for application startup.
+2021-01-22 19:22:25.990 INFO on - startup: Application startup complete.
+2021-01-22 19:22:29.735 ERROR h11_impl - run_asgi: Exception in ASGI application
+Traceback (most recent call last):
+  File "C:\Users\krish\AppData\Roaming\Python\Python37\site-packages\uvicorn\protocols\http\h11_impl.py", line 389, in run_asgi
+    result = await app(self.scope, self.receive, self.send)
+  File "C:\Users\krish\AppData\Roaming\Python\Python37\site-packages\uvicorn\middleware\proxy_headers.py", line 45, in __call__
+    return await self.app(scope, receive, send)
+  File "C:\ProgramData\Anaconda3\lib\site-packages\fastapi\applications.py", line 199, in __call__
+    await super().__call__(scope, receive, send)
+  File "C:\Users\krish\AppData\Roaming\Python\Python37\site-packages\starlette\applications.py", line 111, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "C:\Users\krish\AppData\Roaming\Python\Python37\site-packages\starlette\middleware\errors.py", line 181, in __call__
+    raise exc from None
+  File "C:\Users\krish\AppData\Roaming\Python\Python37\site-packages\starlette\middleware\errors.py", line 159, in __call__
+    await self.app(scope, receive, _send)
+  File "C:\Users\krish\AppData\Roaming\Python\Python37\site-packages\starlette\middleware\base.py", line 25, in __call__
+    response = await self.dispatch_func(request, self.call_next)
+  File "C:\Users\krish\Documents\QRmenu\pilot.py", line 155, in add_process_time_header
+    response = await call_next(request)
+  File "C:\Users\krish\AppData\Roaming\Python\Python37\site-packages\starlette\middleware\base.py", line 45, in call_next
+    task.result()
+  File "C:\Users\krish\AppData\Roaming\Python\Python37\site-packages\starlette\middleware\base.py", line 38, in coro
+    await self.app(scope, receive, send)
+  File "C:\Users\krish\AppData\Roaming\Python\Python37\site-packages\starlette\exceptions.py", line 82, in __call__
+    raise exc from None
+  File "C:\Users\krish\AppData\Roaming\Python\Python37\site-packages\starlette\exceptions.py", line 71, in __call__
+    await self.app(scope, receive, sender)
+  File "C:\Users\krish\AppData\Roaming\Python\Python37\site-packages\starlette\routing.py", line 566, in __call__
+    await route.handle(scope, receive, send)
+  File "C:\Users\krish\AppData\Roaming\Python\Python37\site-packages\starlette\routing.py", line 227, in handle
+    await self.app(scope, receive, send)
+  File "C:\Users\krish\AppData\Roaming\Python\Python37\site-packages\starlette\routing.py", line 41, in app
+    response = await func(request)
+  File "C:\ProgramData\Anaconda3\lib\site-packages\fastapi\routing.py", line 202, in app
+    dependant=dependant, values=values, is_coroutine=is_coroutine
+  File "C:\ProgramData\Anaconda3\lib\site-packages\fastapi\routing.py", line 148, in run_endpoint_function
+    return await dependant.call(**values)
+  File "C:\Users\krish\Documents\QRmenu\security.py", line 490, in send_mail
+    Email = email_schema.dict().get('email')
+AttributeError: 'EmailSchema' object has no attribute 'dict'
+2021-01-22 19:22:55.957 WARNING statreload - should_restart: Detected file change in 'security.py'. Reloading...
+2021-01-22 19:23:00.448 INFO main - serve: Started server process [24596]
+2021-01-22 19:23:00.450 INFO on - startup: Waiting for application startup.
+2021-01-22 19:23:00.453 INFO on - startup: Application startup complete.
+2021-01-22 19:23:05.671 ERROR h11_impl - run_asgi: Exception in ASGI application
+Traceback (most recent call last):
+  File "C:\Users\krish\AppData\Roaming\Python\Python37\site-packages\uvicorn\protocols\http\h11_impl.py", line 389, in run_asgi
+    result = await app(self.scope, self.receive, self.send)
+  File "C:\Users\krish\AppData\Roaming\Python\Python37\site-packages\uvicorn\middleware\proxy_headers.py", line 45, in __call__
+    return await self.app(scope, receive, send)
+  File "C:\ProgramData\Anaconda3\lib\site-packages\fastapi\applications.py", line 199, in __call__
+    await super().__call__(scope, receive, send)
+  File "C:\Users\krish\AppData\Roaming\Python\Python37\site-packages\starlette\applications.py", line 111, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "C:\Users\krish\AppData\Roaming\Python\Python37\site-packages\starlette\middleware\errors.py", line 181, in __call__
+    raise exc from None
+  File "C:\Users\krish\AppData\Roaming\Python\Python37\site-packages\starlette\middleware\errors.py", line 159, in __call__
+    await self.app(scope, receive, _send)
+  File "C:\Users\krish\AppData\Roaming\Python\Python37\site-packages\starlette\middleware\base.py", line 25, in __call__
+    response = await self.dispatch_func(request, self.call_next)
+  File "C:\Users\krish\Documents\QRmenu\pilot.py", line 155, in add_process_time_header
+    response = await call_next(request)
+  File "C:\Users\krish\AppData\Roaming\Python\Python37\site-packages\starlette\middleware\base.py", line 45, in call_next
+    task.result()
+  File "C:\Users\krish\AppData\Roaming\Python\Python37\site-packages\starlette\middleware\base.py", line 38, in coro
+    await self.app(scope, receive, send)
+  File "C:\Users\krish\AppData\Roaming\Python\Python37\site-packages\starlette\exceptions.py", line 82, in __call__
+    raise exc from None
+  File "C:\Users\krish\AppData\Roaming\Python\Python37\site-packages\starlette\exceptions.py", line 71, in __call__
+    await self.app(scope, receive, sender)
+  File "C:\Users\krish\AppData\Roaming\Python\Python37\site-packages\starlette\routing.py", line 566, in __call__
+    await route.handle(scope, receive, send)
+  File "C:\Users\krish\AppData\Roaming\Python\Python37\site-packages\starlette\routing.py", line 227, in handle
+    await self.app(scope, receive, send)
+  File "C:\Users\krish\AppData\Roaming\Python\Python37\site-packages\starlette\routing.py", line 41, in app
+    response = await func(request)
+  File "C:\ProgramData\Anaconda3\lib\site-packages\fastapi\routing.py", line 202, in app
+    dependant=dependant, values=values, is_coroutine=is_coroutine
+  File "C:\ProgramData\Anaconda3\lib\site-packages\fastapi\routing.py", line 148, in run_endpoint_function
+    return await dependant.call(**values)
+  File "C:\Users\krish\Documents\QRmenu\security.py", line 491, in send_mail
+    Email = email_schema.dict().get('email')
+AttributeError: 'EmailSchema' object has no attribute 'dict'
+2021-01-22 19:23:33.903 WARNING statreload - should_restart: Detected file change in 'security.py'. Reloading...
+2021-01-22 19:23:38.769 WARNING statreload - should_restart: Detected file change in 'security.py'. Reloading...
+2021-01-22 19:23:41.785 WARNING statreload - should_restart: Detected file change in 'security.py'. Reloading...
+2021-01-22 19:23:45.910 INFO main - serve: Started server process [27816]
+2021-01-22 19:23:45.913 INFO on - startup: Waiting for application startup.
+2021-01-22 19:23:45.915 INFO on - startup: Application startup complete.
+2021-01-22 19:23:54.239 WARNING statreload - should_restart: Detected file change in 'security.py'. Reloading...
+2021-01-22 19:23:58.383 INFO main - serve: Started server process [6552]
+2021-01-22 19:23:58.385 INFO on - startup: Waiting for application startup.
+2021-01-22 19:23:58.386 INFO on - startup: Application startup complete.
+2021-01-22 19:24:02.418 ERROR h11_impl - run_asgi: Exception in ASGI application
+Traceback (most recent call last):
+  File "C:\Users\krish\AppData\Roaming\Python\Python37\site-packages\uvicorn\protocols\http\h11_impl.py", line 389, in run_asgi
+    result = await app(self.scope, self.receive, self.send)
+  File "C:\Users\krish\AppData\Roaming\Python\Python37\site-packages\uvicorn\middleware\proxy_headers.py", line 45, in __call__
+    return await self.app(scope, receive, send)
+  File "C:\ProgramData\Anaconda3\lib\site-packages\fastapi\applications.py", line 199, in __call__
+    await super().__call__(scope, receive, send)
+  File "C:\Users\krish\AppData\Roaming\Python\Python37\site-packages\starlette\applications.py", line 111, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "C:\Users\krish\AppData\Roaming\Python\Python37\site-packages\starlette\middleware\errors.py", line 181, in __call__
+    raise exc from None
+  File "C:\Users\krish\AppData\Roaming\Python\Python37\site-packages\starlette\middleware\errors.py", line 159, in __call__
+    await self.app(scope, receive, _send)
+  File "C:\Users\krish\AppData\Roaming\Python\Python37\site-packages\starlette\middleware\base.py", line 25, in __call__
+    response = await self.dispatch_func(request, self.call_next)
+  File "C:\Users\krish\Documents\QRmenu\pilot.py", line 155, in add_process_time_header
+    response = await call_next(request)
+  File "C:\Users\krish\AppData\Roaming\Python\Python37\site-packages\starlette\middleware\base.py", line 45, in call_next
+    task.result()
+  File "C:\Users\krish\AppData\Roaming\Python\Python37\site-packages\starlette\middleware\base.py", line 38, in coro
+    await self.app(scope, receive, send)
+  File "C:\Users\krish\AppData\Roaming\Python\Python37\site-packages\starlette\exceptions.py", line 82, in __call__
+    raise exc from None
+  File "C:\Users\krish\AppData\Roaming\Python\Python37\site-packages\starlette\exceptions.py", line 71, in __call__
+    await self.app(scope, receive, sender)
+  File "C:\Users\krish\AppData\Roaming\Python\Python37\site-packages\starlette\routing.py", line 566, in __call__
+    await route.handle(scope, receive, send)
+  File "C:\Users\krish\AppData\Roaming\Python\Python37\site-packages\starlette\routing.py", line 227, in handle
+    await self.app(scope, receive, send)
+  File "C:\Users\krish\AppData\Roaming\Python\Python37\site-packages\starlette\routing.py", line 41, in app
+    response = await func(request)
+  File "C:\ProgramData\Anaconda3\lib\site-packages\fastapi\routing.py", line 202, in app
+    dependant=dependant, values=values, is_coroutine=is_coroutine
+  File "C:\ProgramData\Anaconda3\lib\site-packages\fastapi\routing.py", line 148, in run_endpoint_function
+    return await dependant.call(**values)
+  File "C:\Users\krish\Documents\QRmenu\security.py", line 494, in send_mail
+    return send_email(background_tasks, email, code)
+  File "C:\Users\krish\Documents\QRmenu\security.py", line 390, in send_email
+    conf = ConnectionConfig(
+NameError: name 'ConnectionConfig' is not defined
+2021-01-22 19:24:40.635 WARNING statreload - should_restart: Detected file change in 'security.py'. Reloading...
+2021-01-22 19:24:44.869 INFO main - serve: Started server process [13084]
+2021-01-22 19:24:44.871 INFO on - startup: Waiting for application startup.
+2021-01-22 19:24:44.872 INFO on - startup: Application startup complete.
+2021-01-22 19:24:51.404 ERROR h11_impl - run_asgi: Exception in ASGI application
+Traceback (most recent call last):
+  File "C:\Users\krish\AppData\Roaming\Python\Python37\site-packages\uvicorn\protocols\http\h11_impl.py", line 389, in run_asgi
+    result = await app(self.scope, self.receive, self.send)
+  File "C:\Users\krish\AppData\Roaming\Python\Python37\site-packages\uvicorn\middleware\proxy_headers.py", line 45, in __call__
+    return await self.app(scope, receive, send)
+  File "C:\ProgramData\Anaconda3\lib\site-packages\fastapi\applications.py", line 199, in __call__
+    await super().__call__(scope, receive, send)
+  File "C:\Users\krish\AppData\Roaming\Python\Python37\site-packages\starlette\applications.py", line 111, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "C:\Users\krish\AppData\Roaming\Python\Python37\site-packages\starlette\middleware\errors.py", line 181, in __call__
+    raise exc from None
+  File "C:\Users\krish\AppData\Roaming\Python\Python37\site-packages\starlette\middleware\errors.py", line 159, in __call__
+    await self.app(scope, receive, _send)
+  File "C:\Users\krish\AppData\Roaming\Python\Python37\site-packages\starlette\middleware\base.py", line 25, in __call__
+    response = await self.dispatch_func(request, self.call_next)
+  File "C:\Users\krish\Documents\QRmenu\pilot.py", line 155, in add_process_time_header
+    response = await call_next(request)
+  File "C:\Users\krish\AppData\Roaming\Python\Python37\site-packages\starlette\middleware\base.py", line 45, in call_next
+    task.result()
+  File "C:\Users\krish\AppData\Roaming\Python\Python37\site-packages\starlette\middleware\base.py", line 38, in coro
+    await self.app(scope, receive, send)
+  File "C:\Users\krish\AppData\Roaming\Python\Python37\site-packages\starlette\exceptions.py", line 82, in __call__
+    raise exc from None
+  File "C:\Users\krish\AppData\Roaming\Python\Python37\site-packages\starlette\exceptions.py", line 71, in __call__
+    await self.app(scope, receive, sender)
+  File "C:\Users\krish\AppData\Roaming\Python\Python37\site-packages\starlette\routing.py", line 566, in __call__
+    await route.handle(scope, receive, send)
+  File "C:\Users\krish\AppData\Roaming\Python\Python37\site-packages\starlette\routing.py", line 227, in handle
+    await self.app(scope, receive, send)
+  File "C:\Users\krish\AppData\Roaming\Python\Python37\site-packages\starlette\routing.py", line 41, in app
+    response = await func(request)
+  File "C:\ProgramData\Anaconda3\lib\site-packages\fastapi\routing.py", line 202, in app
+    dependant=dependant, values=values, is_coroutine=is_coroutine
+  File "C:\ProgramData\Anaconda3\lib\site-packages\fastapi\routing.py", line 148, in run_endpoint_function
+    return await dependant.call(**values)
+  File "C:\Users\krish\Documents\QRmenu\security.py", line 495, in send_mail
+    return send_email(background_tasks, email, code)
+  File "C:\Users\krish\Documents\QRmenu\security.py", line 392, in send_email
+    MAIL_USERNAME=krishnardt365@gmail.com,
+NameError: name 'krishnardt365' is not defined
+2021-01-22 19:25:16.881 WARNING statreload - should_restart: Detected file change in 'security.py'. Reloading...
+2021-01-22 19:25:21.296 INFO main - serve: Started server process [31640]
+2021-01-22 19:25:21.297 INFO on - startup: Waiting for application startup.
+2021-01-22 19:25:21.300 INFO on - startup: Application startup complete.
+2021-01-22 19:25:24.848 ERROR h11_impl - run_asgi: Exception in ASGI application
+Traceback (most recent call last):
+  File "C:\Users\krish\AppData\Roaming\Python\Python37\site-packages\uvicorn\protocols\http\h11_impl.py", line 389, in run_asgi
+    result = await app(self.scope, self.receive, self.send)
+  File "C:\Users\krish\AppData\Roaming\Python\Python37\site-packages\uvicorn\middleware\proxy_headers.py", line 45, in __call__
+    return await self.app(scope, receive, send)
+  File "C:\ProgramData\Anaconda3\lib\site-packages\fastapi\applications.py", line 199, in __call__
+    await super().__call__(scope, receive, send)
+  File "C:\Users\krish\AppData\Roaming\Python\Python37\site-packages\starlette\applications.py", line 111, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "C:\Users\krish\AppData\Roaming\Python\Python37\site-packages\starlette\middleware\errors.py", line 181, in __call__
+    raise exc from None
+  File "C:\Users\krish\AppData\Roaming\Python\Python37\site-packages\starlette\middleware\errors.py", line 159, in __call__
+    await self.app(scope, receive, _send)
+  File "C:\Users\krish\AppData\Roaming\Python\Python37\site-packages\starlette\middleware\base.py", line 25, in __call__
+    response = await self.dispatch_func(request, self.call_next)
+  File "C:\Users\krish\Documents\QRmenu\pilot.py", line 155, in add_process_time_header
+    response = await call_next(request)
+  File "C:\Users\krish\AppData\Roaming\Python\Python37\site-packages\starlette\middleware\base.py", line 45, in call_next
+    task.result()
+  File "C:\Users\krish\AppData\Roaming\Python\Python37\site-packages\starlette\middleware\base.py", line 38, in coro
+    await self.app(scope, receive, send)
+  File "C:\Users\krish\AppData\Roaming\Python\Python37\site-packages\starlette\exceptions.py", line 82, in __call__
+    raise exc from None
+  File "C:\Users\krish\AppData\Roaming\Python\Python37\site-packages\starlette\exceptions.py", line 71, in __call__
+    await self.app(scope, receive, sender)
+  File "C:\Users\krish\AppData\Roaming\Python\Python37\site-packages\starlette\routing.py", line 566, in __call__
+    await route.handle(scope, receive, send)
+  File "C:\Users\krish\AppData\Roaming\Python\Python37\site-packages\starlette\routing.py", line 227, in handle
+    await self.app(scope, receive, send)
+  File "C:\Users\krish\AppData\Roaming\Python\Python37\site-packages\starlette\routing.py", line 41, in app
+    response = await func(request)
+  File "C:\ProgramData\Anaconda3\lib\site-packages\fastapi\routing.py", line 202, in app
+    dependant=dependant, values=values, is_coroutine=is_coroutine
+  File "C:\ProgramData\Anaconda3\lib\site-packages\fastapi\routing.py", line 148, in run_endpoint_function
+    return await dependant.call(**values)
+  File "C:\Users\krish\Documents\QRmenu\security.py", line 495, in send_mail
+    return send_email(background_tasks, email, code)
+  File "C:\Users\krish\Documents\QRmenu\security.py", line 404, in send_email
+    recipients=email.dict().get("email"),  # List of recipients, as many as you can pass
+AttributeError: 'str' object has no attribute 'dict'
+2021-01-22 19:25:42.874 WARNING statreload - should_restart: Detected file change in 'security.py'. Reloading...
+2021-01-22 19:25:46.866 INFO main - serve: Started server process [15936]
+2021-01-22 19:25:46.868 INFO on - startup: Waiting for application startup.
+2021-01-22 19:25:46.870 INFO on - startup: Application startup complete.
+2021-01-22 19:26:10.074 WARNING statreload - should_restart: Detected file change in 'crud.py'. Reloading...
+2021-01-22 19:26:14.287 INFO main - serve: Started server process [30064]
+2021-01-22 19:26:14.289 INFO on - startup: Waiting for application startup.
+2021-01-22 19:26:14.291 INFO on - startup: Application startup complete.
+2021-01-22 19:26:19.658 ERROR h11_impl - run_asgi: Exception in ASGI application
+Traceback (most recent call last):
+  File "C:\Users\krish\AppData\Roaming\Python\Python37\site-packages\uvicorn\protocols\http\h11_impl.py", line 389, in run_asgi
+    result = await app(self.scope, self.receive, self.send)
+  File "C:\Users\krish\AppData\Roaming\Python\Python37\site-packages\uvicorn\middleware\proxy_headers.py", line 45, in __call__
+    return await self.app(scope, receive, send)
+  File "C:\ProgramData\Anaconda3\lib\site-packages\fastapi\applications.py", line 199, in __call__
+    await super().__call__(scope, receive, send)
+  File "C:\Users\krish\AppData\Roaming\Python\Python37\site-packages\starlette\applications.py", line 111, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "C:\Users\krish\AppData\Roaming\Python\Python37\site-packages\starlette\middleware\errors.py", line 181, in __call__
+    raise exc from None
+  File "C:\Users\krish\AppData\Roaming\Python\Python37\site-packages\starlette\middleware\errors.py", line 159, in __call__
+    await self.app(scope, receive, _send)
+  File "C:\Users\krish\AppData\Roaming\Python\Python37\site-packages\starlette\middleware\base.py", line 25, in __call__
+    response = await self.dispatch_func(request, self.call_next)
+  File "C:\Users\krish\Documents\QRmenu\pilot.py", line 155, in add_process_time_header
+    response = await call_next(request)
+  File "C:\Users\krish\AppData\Roaming\Python\Python37\site-packages\starlette\middleware\base.py", line 45, in call_next
+    task.result()
+  File "C:\Users\krish\AppData\Roaming\Python\Python37\site-packages\starlette\middleware\base.py", line 38, in coro
+    await self.app(scope, receive, send)
+  File "C:\Users\krish\AppData\Roaming\Python\Python37\site-packages\starlette\exceptions.py", line 82, in __call__
+    raise exc from None
+  File "C:\Users\krish\AppData\Roaming\Python\Python37\site-packages\starlette\exceptions.py", line 71, in __call__
+    await self.app(scope, receive, sender)
+  File "C:\Users\krish\AppData\Roaming\Python\Python37\site-packages\starlette\routing.py", line 566, in __call__
+    await route.handle(scope, receive, send)
+  File "C:\Users\krish\AppData\Roaming\Python\Python37\site-packages\starlette\routing.py", line 227, in handle
+    await self.app(scope, receive, send)
+  File "C:\Users\krish\AppData\Roaming\Python\Python37\site-packages\starlette\routing.py", line 41, in app
+    response = await func(request)
+  File "C:\ProgramData\Anaconda3\lib\site-packages\fastapi\routing.py", line 202, in app
+    dependant=dependant, values=values, is_coroutine=is_coroutine
+  File "C:\ProgramData\Anaconda3\lib\site-packages\fastapi\routing.py", line 148, in run_endpoint_function
+    return await dependant.call(**values)
+  File "C:\Users\krish\Documents\QRmenu\security.py", line 495, in send_mail
+    return send_email(background_tasks, email, code)
+  File "C:\Users\krish\Documents\QRmenu\security.py", line 408, in send_email
+    subtype="html"
+  File "pydantic\main.py", line 346, in pydantic.main.BaseModel.__init__
+pydantic.error_wrappers.ValidationError: 1 validation error for MessageSchema
+recipients
+  value is not a valid list (type=type_error.list)
+2021-01-22 19:26:54.359 WARNING statreload - should_restart: Detected file change in 'security.py'. Reloading...
+2021-01-22 19:26:58.544 INFO main - serve: Started server process [26752]
+2021-01-22 19:26:58.545 INFO on - startup: Waiting for application startup.
+2021-01-22 19:26:58.548 INFO on - startup: Application startup complete.
+2021-01-22 19:27:03.763 ERROR h11_impl - run_asgi: Exception in ASGI application
+Traceback (most recent call last):
+  File "C:\Users\krish\AppData\Roaming\Python\Python37\site-packages\uvicorn\protocols\http\h11_impl.py", line 389, in run_asgi
+    result = await app(self.scope, self.receive, self.send)
+  File "C:\Users\krish\AppData\Roaming\Python\Python37\site-packages\uvicorn\middleware\proxy_headers.py", line 45, in __call__
+    return await self.app(scope, receive, send)
+  File "C:\ProgramData\Anaconda3\lib\site-packages\fastapi\applications.py", line 199, in __call__
+    await super().__call__(scope, receive, send)
+  File "C:\Users\krish\AppData\Roaming\Python\Python37\site-packages\starlette\applications.py", line 111, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "C:\Users\krish\AppData\Roaming\Python\Python37\site-packages\starlette\middleware\errors.py", line 181, in __call__
+    raise exc from None
+  File "C:\Users\krish\AppData\Roaming\Python\Python37\site-packages\starlette\middleware\errors.py", line 159, in __call__
+    await self.app(scope, receive, _send)
+  File "C:\Users\krish\AppData\Roaming\Python\Python37\site-packages\starlette\middleware\base.py", line 25, in __call__
+    response = await self.dispatch_func(request, self.call_next)
+  File "C:\Users\krish\Documents\QRmenu\pilot.py", line 155, in add_process_time_header
+    response = await call_next(request)
+  File "C:\Users\krish\AppData\Roaming\Python\Python37\site-packages\starlette\middleware\base.py", line 45, in call_next
+    task.result()
+  File "C:\Users\krish\AppData\Roaming\Python\Python37\site-packages\starlette\middleware\base.py", line 38, in coro
+    await self.app(scope, receive, send)
+  File "C:\Users\krish\AppData\Roaming\Python\Python37\site-packages\starlette\exceptions.py", line 82, in __call__
+    raise exc from None
+  File "C:\Users\krish\AppData\Roaming\Python\Python37\site-packages\starlette\exceptions.py", line 71, in __call__
+    await self.app(scope, receive, sender)
+  File "C:\Users\krish\AppData\Roaming\Python\Python37\site-packages\starlette\routing.py", line 566, in __call__
+    await route.handle(scope, receive, send)
+  File "C:\Users\krish\AppData\Roaming\Python\Python37\site-packages\starlette\routing.py", line 227, in handle
+    await self.app(scope, receive, send)
+  File "C:\Users\krish\AppData\Roaming\Python\Python37\site-packages\starlette\routing.py", line 41, in app
+    response = await func(request)
+  File "C:\ProgramData\Anaconda3\lib\site-packages\fastapi\routing.py", line 202, in app
+    dependant=dependant, values=values, is_coroutine=is_coroutine
+  File "C:\ProgramData\Anaconda3\lib\site-packages\fastapi\routing.py", line 148, in run_endpoint_function
+    return await dependant.call(**values)
+  File "C:\Users\krish\Documents\QRmenu\security.py", line 495, in send_mail
+    return send_email(background_tasks, email, code)
+  File "C:\Users\krish\Documents\QRmenu\security.py", line 418, in send_email
+    service="smtp.gmail.com",
+TypeError: __init__() got an unexpected keyword argument 'email'
+2021-01-22 19:28:10.444 WARNING statreload - should_restart: Detected file change in 'security.py'. Reloading...
+2021-01-22 19:28:14.119 INFO main - serve: Started server process [30148]
+2021-01-22 19:28:14.121 INFO on - startup: Waiting for application startup.
+2021-01-22 19:28:14.124 INFO on - startup: Application startup complete.
+2021-01-22 19:28:20.657 WARNING statreload - should_restart: Detected file change in 'security.py'. Reloading...
+2021-01-22 19:28:25.126 INFO main - serve: Started server process [23656]
+2021-01-22 19:28:25.129 INFO on - startup: Waiting for application startup.
+2021-01-22 19:28:25.133 INFO on - startup: Application startup complete.
+2021-01-22 19:31:58.116 WARNING statreload - should_restart: Detected file change in 'security.py'. Reloading...
+2021-01-22 19:32:13.113 WARNING statreload - should_restart: Detected file change in 'security.py'. Reloading...
+2021-01-22 19:33:19.032 WARNING statreload - should_restart: Detected file change in 'security.py'. Reloading...
+2021-01-22 19:33:23.400 INFO main - serve: Started server process [26088]
+2021-01-22 19:33:23.402 INFO on - startup: Waiting for application startup.
+2021-01-22 19:33:23.405 INFO on - startup: Application startup complete.
+2021-01-22 19:33:23.434 ERROR h11_impl - run_asgi: Exception in ASGI application
+Traceback (most recent call last):
+  File "C:\Users\krish\AppData\Roaming\Python\Python37\site-packages\uvicorn\protocols\http\h11_impl.py", line 389, in run_asgi
+    result = await app(self.scope, self.receive, self.send)
+  File "C:\Users\krish\AppData\Roaming\Python\Python37\site-packages\uvicorn\middleware\proxy_headers.py", line 45, in __call__
+    return await self.app(scope, receive, send)
+  File "C:\ProgramData\Anaconda3\lib\site-packages\fastapi\applications.py", line 199, in __call__
+    await super().__call__(scope, receive, send)
+  File "C:\Users\krish\AppData\Roaming\Python\Python37\site-packages\starlette\applications.py", line 111, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "C:\Users\krish\AppData\Roaming\Python\Python37\site-packages\starlette\middleware\errors.py", line 181, in __call__
+    raise exc from None
+  File "C:\Users\krish\AppData\Roaming\Python\Python37\site-packages\starlette\middleware\errors.py", line 159, in __call__
+    await self.app(scope, receive, _send)
+  File "C:\Users\krish\AppData\Roaming\Python\Python37\site-packages\starlette\middleware\base.py", line 25, in __call__
+    response = await self.dispatch_func(request, self.call_next)
+  File "C:\Users\krish\Documents\QRmenu\pilot.py", line 155, in add_process_time_header
+    response = await call_next(request)
+  File "C:\Users\krish\AppData\Roaming\Python\Python37\site-packages\starlette\middleware\base.py", line 45, in call_next
+    task.result()
+  File "C:\Users\krish\AppData\Roaming\Python\Python37\site-packages\starlette\middleware\base.py", line 38, in coro
+    await self.app(scope, receive, send)
+  File "C:\Users\krish\AppData\Roaming\Python\Python37\site-packages\starlette\exceptions.py", line 82, in __call__
+    raise exc from None
+  File "C:\Users\krish\AppData\Roaming\Python\Python37\site-packages\starlette\exceptions.py", line 71, in __call__
+    await self.app(scope, receive, sender)
+  File "C:\Users\krish\AppData\Roaming\Python\Python37\site-packages\starlette\routing.py", line 566, in __call__
+    await route.handle(scope, receive, send)
+  File "C:\Users\krish\AppData\Roaming\Python\Python37\site-packages\starlette\routing.py", line 227, in handle
+    await self.app(scope, receive, send)
+  File "C:\Users\krish\AppData\Roaming\Python\Python37\site-packages\starlette\routing.py", line 41, in app
+    response = await func(request)
+  File "C:\ProgramData\Anaconda3\lib\site-packages\fastapi\routing.py", line 202, in app
+    dependant=dependant, values=values, is_coroutine=is_coroutine
+  File "C:\ProgramData\Anaconda3\lib\site-packages\fastapi\routing.py", line 148, in run_endpoint_function
+    return await dependant.call(**values)
+  File "C:\Users\krish\Documents\QRmenu\security.py", line 495, in send_mail
+    return send_email(background_tasks, email, code)
+  File "C:\Users\krish\Documents\QRmenu\security.py", line 425, in send_email
+    mail.send_message,
+NameError: name 'mail' is not defined
+2021-01-22 19:33:24.136 WARNING statreload - should_restart: Detected file change in 'security.py'. Reloading...
+2021-01-22 19:33:28.324 INFO main - serve: Started server process [28968]
+2021-01-22 19:33:28.326 INFO on - startup: Waiting for application startup.
+2021-01-22 19:33:28.329 INFO on - startup: Application startup complete.
+2021-01-22 19:33:37.633 ERROR h11_impl - run_asgi: Exception in ASGI application
+Traceback (most recent call last):
+  File "C:\Users\krish\AppData\Roaming\Python\Python37\site-packages\uvicorn\protocols\http\h11_impl.py", line 389, in run_asgi
+    result = await app(self.scope, self.receive, self.send)
+  File "C:\Users\krish\AppData\Roaming\Python\Python37\site-packages\uvicorn\middleware\proxy_headers.py", line 45, in __call__
+    return await self.app(scope, receive, send)
+  File "C:\ProgramData\Anaconda3\lib\site-packages\fastapi\applications.py", line 199, in __call__
+    await super().__call__(scope, receive, send)
+  File "C:\Users\krish\AppData\Roaming\Python\Python37\site-packages\starlette\applications.py", line 111, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "C:\Users\krish\AppData\Roaming\Python\Python37\site-packages\starlette\middleware\errors.py", line 181, in __call__
+    raise exc from None
+  File "C:\Users\krish\AppData\Roaming\Python\Python37\site-packages\starlette\middleware\errors.py", line 159, in __call__
+    await self.app(scope, receive, _send)
+  File "C:\Users\krish\AppData\Roaming\Python\Python37\site-packages\starlette\middleware\base.py", line 25, in __call__
+    response = await self.dispatch_func(request, self.call_next)
+  File "C:\Users\krish\Documents\QRmenu\pilot.py", line 155, in add_process_time_header
+    response = await call_next(request)
+  File "C:\Users\krish\AppData\Roaming\Python\Python37\site-packages\starlette\middleware\base.py", line 45, in call_next
+    task.result()
+  File "C:\Users\krish\AppData\Roaming\Python\Python37\site-packages\starlette\middleware\base.py", line 38, in coro
+    await self.app(scope, receive, send)
+  File "C:\Users\krish\AppData\Roaming\Python\Python37\site-packages\starlette\exceptions.py", line 82, in __call__
+    raise exc from None
+  File "C:\Users\krish\AppData\Roaming\Python\Python37\site-packages\starlette\exceptions.py", line 71, in __call__
+    await self.app(scope, receive, sender)
+  File "C:\Users\krish\AppData\Roaming\Python\Python37\site-packages\starlette\routing.py", line 566, in __call__
+    await route.handle(scope, receive, send)
+  File "C:\Users\krish\AppData\Roaming\Python\Python37\site-packages\starlette\routing.py", line 227, in handle
+    await self.app(scope, receive, send)
+  File "C:\Users\krish\AppData\Roaming\Python\Python37\site-packages\starlette\routing.py", line 41, in app
+    response = await func(request)
+  File "C:\ProgramData\Anaconda3\lib\site-packages\fastapi\routing.py", line 202, in app
+    dependant=dependant, values=values, is_coroutine=is_coroutine
+  File "C:\ProgramData\Anaconda3\lib\site-packages\fastapi\routing.py", line 148, in run_endpoint_function
+    return await dependant.call(**values)
+  File "C:\Users\krish\Documents\QRmenu\security.py", line 495, in send_mail
+    return send_email(background_tasks, email, code)
+  File "C:\Users\krish\Documents\QRmenu\security.py", line 430, in send_email
+    "after_email_sent_response.html", {"request": request}
+NameError: name 'request' is not defined
+2021-01-22 19:34:00.410 WARNING statreload - should_restart: Detected file change in 'security.py'. Reloading...
+2021-01-22 19:34:04.747 INFO main - serve: Started server process [27948]
+2021-01-22 19:34:04.749 INFO on - startup: Waiting for application startup.
+2021-01-22 19:34:04.751 INFO on - startup: Application startup complete.
+2021-01-22 19:34:08.293 ERROR h11_impl - run_asgi: Exception in ASGI application
+Traceback (most recent call last):
+  File "C:\Users\krish\AppData\Roaming\Python\Python37\site-packages\uvicorn\protocols\http\h11_impl.py", line 389, in run_asgi
+    result = await app(self.scope, self.receive, self.send)
+  File "C:\Users\krish\AppData\Roaming\Python\Python37\site-packages\uvicorn\middleware\proxy_headers.py", line 45, in __call__
+    return await self.app(scope, receive, send)
+  File "C:\ProgramData\Anaconda3\lib\site-packages\fastapi\applications.py", line 199, in __call__
+    await super().__call__(scope, receive, send)
+  File "C:\Users\krish\AppData\Roaming\Python\Python37\site-packages\starlette\applications.py", line 111, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "C:\Users\krish\AppData\Roaming\Python\Python37\site-packages\starlette\middleware\errors.py", line 181, in __call__
+    raise exc from None
+  File "C:\Users\krish\AppData\Roaming\Python\Python37\site-packages\starlette\middleware\errors.py", line 159, in __call__
+    await self.app(scope, receive, _send)
+  File "C:\Users\krish\AppData\Roaming\Python\Python37\site-packages\starlette\middleware\base.py", line 25, in __call__
+    response = await self.dispatch_func(request, self.call_next)
+  File "C:\Users\krish\Documents\QRmenu\pilot.py", line 155, in add_process_time_header
+    response = await call_next(request)
+  File "C:\Users\krish\AppData\Roaming\Python\Python37\site-packages\starlette\middleware\base.py", line 45, in call_next
+    task.result()
+  File "C:\Users\krish\AppData\Roaming\Python\Python37\site-packages\starlette\middleware\base.py", line 38, in coro
+    await self.app(scope, receive, send)
+  File "C:\Users\krish\AppData\Roaming\Python\Python37\site-packages\starlette\exceptions.py", line 82, in __call__
+    raise exc from None
+  File "C:\Users\krish\AppData\Roaming\Python\Python37\site-packages\starlette\exceptions.py", line 71, in __call__
+    await self.app(scope, receive, sender)
+  File "C:\Users\krish\AppData\Roaming\Python\Python37\site-packages\starlette\routing.py", line 566, in __call__
+    await route.handle(scope, receive, send)
+  File "C:\Users\krish\AppData\Roaming\Python\Python37\site-packages\starlette\routing.py", line 227, in handle
+    await self.app(scope, receive, send)
+  File "C:\Users\krish\AppData\Roaming\Python\Python37\site-packages\starlette\routing.py", line 41, in app
+    response = await func(request)
+  File "C:\ProgramData\Anaconda3\lib\site-packages\fastapi\routing.py", line 202, in app
+    dependant=dependant, values=values, is_coroutine=is_coroutine
+  File "C:\ProgramData\Anaconda3\lib\site-packages\fastapi\routing.py", line 148, in run_endpoint_function
+    return await dependant.call(**values)
+  File "C:\Users\krish\Documents\QRmenu\security.py", line 495, in send_mail
+    return send_email(background_tasks, email, code)
+  File "C:\Users\krish\Documents\QRmenu\security.py", line 430, in send_email
+    "after_email_sent_response.html"
+TypeError: TemplateResponse() missing 1 required positional argument: 'context'
+2021-01-22 19:34:26.053 WARNING statreload - should_restart: Detected file change in 'security.py'. Reloading...
+2021-01-22 19:34:30.391 INFO main - serve: Started server process [28124]
+2021-01-22 19:34:30.393 INFO on - startup: Waiting for application startup.
+2021-01-22 19:34:30.394 INFO on - startup: Application startup complete.
+2021-01-22 19:34:50.622 WARNING statreload - should_restart: Detected file change in 'security.py'. Reloading...
+2021-01-22 19:34:54.887 INFO main - serve: Started server process [26612]
+2021-01-22 19:34:54.889 INFO on - startup: Waiting for application startup.
+2021-01-22 19:34:54.889 INFO on - startup: Application startup complete.
+2021-01-22 19:34:59.928 ERROR h11_impl - run_asgi: Exception in ASGI application
+Traceback (most recent call last):
+  File "C:\Users\krish\AppData\Roaming\Python\Python37\site-packages\uvicorn\protocols\http\h11_impl.py", line 389, in run_asgi
+    result = await app(self.scope, self.receive, self.send)
+  File "C:\Users\krish\AppData\Roaming\Python\Python37\site-packages\uvicorn\middleware\proxy_headers.py", line 45, in __call__
+    return await self.app(scope, receive, send)
+  File "C:\ProgramData\Anaconda3\lib\site-packages\fastapi\applications.py", line 199, in __call__
+    await super().__call__(scope, receive, send)
+  File "C:\Users\krish\AppData\Roaming\Python\Python37\site-packages\starlette\applications.py", line 111, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "C:\Users\krish\AppData\Roaming\Python\Python37\site-packages\starlette\middleware\errors.py", line 181, in __call__
+    raise exc from None
+  File "C:\Users\krish\AppData\Roaming\Python\Python37\site-packages\starlette\middleware\errors.py", line 159, in __call__
+    await self.app(scope, receive, _send)
+  File "C:\Users\krish\AppData\Roaming\Python\Python37\site-packages\starlette\middleware\base.py", line 25, in __call__
+    response = await self.dispatch_func(request, self.call_next)
+  File "C:\Users\krish\Documents\QRmenu\pilot.py", line 155, in add_process_time_header
+    response = await call_next(request)
+  File "C:\Users\krish\AppData\Roaming\Python\Python37\site-packages\starlette\middleware\base.py", line 45, in call_next
+    task.result()
+  File "C:\Users\krish\AppData\Roaming\Python\Python37\site-packages\starlette\middleware\base.py", line 38, in coro
+    await self.app(scope, receive, send)
+  File "C:\Users\krish\AppData\Roaming\Python\Python37\site-packages\starlette\exceptions.py", line 82, in __call__
+    raise exc from None
+  File "C:\Users\krish\AppData\Roaming\Python\Python37\site-packages\starlette\exceptions.py", line 71, in __call__
+    await self.app(scope, receive, sender)
+  File "C:\Users\krish\AppData\Roaming\Python\Python37\site-packages\starlette\routing.py", line 566, in __call__
+    await route.handle(scope, receive, send)
+  File "C:\Users\krish\AppData\Roaming\Python\Python37\site-packages\starlette\routing.py", line 227, in handle
+    await self.app(scope, receive, send)
+  File "C:\Users\krish\AppData\Roaming\Python\Python37\site-packages\starlette\routing.py", line 41, in app
+    response = await func(request)
+  File "C:\ProgramData\Anaconda3\lib\site-packages\fastapi\routing.py", line 202, in app
+    dependant=dependant, values=values, is_coroutine=is_coroutine
+  File "C:\ProgramData\Anaconda3\lib\site-packages\fastapi\routing.py", line 148, in run_endpoint_function
+    return await dependant.call(**values)
+  File "C:\Users\krish\Documents\QRmenu\security.py", line 495, in send_mail
+    return send_email(background_tasks, email, code)
+TypeError: send_email() missing 1 required positional argument: 'request'
+2021-01-22 19:35:51.080 WARNING statreload - should_restart: Detected file change in 'security.py'. Reloading...
+2021-01-22 19:35:55.310 INFO main - serve: Started server process [4600]
+2021-01-22 19:35:55.312 INFO on - startup: Waiting for application startup.
+2021-01-22 19:35:55.313 INFO on - startup: Application startup complete.
+2021-01-22 19:36:00.125 WARNING pilot - add_process_time_header: Path is: /send_mail
+execution time is 0.9080486297607422
+2021-01-22 19:36:03.575 ERROR h11_impl - run_asgi: Exception in ASGI application
+Traceback (most recent call last):
+  File "C:\Users\krish\AppData\Roaming\Python\Python37\site-packages\uvicorn\protocols\http\h11_impl.py", line 389, in run_asgi
+    result = await app(self.scope, self.receive, self.send)
+  File "C:\Users\krish\AppData\Roaming\Python\Python37\site-packages\uvicorn\middleware\proxy_headers.py", line 45, in __call__
+    return await self.app(scope, receive, send)
+  File "C:\ProgramData\Anaconda3\lib\site-packages\fastapi\applications.py", line 199, in __call__
+    await super().__call__(scope, receive, send)
+  File "C:\Users\krish\AppData\Roaming\Python\Python37\site-packages\starlette\applications.py", line 111, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "C:\Users\krish\AppData\Roaming\Python\Python37\site-packages\starlette\middleware\errors.py", line 181, in __call__
+    raise exc from None
+  File "C:\Users\krish\AppData\Roaming\Python\Python37\site-packages\starlette\middleware\errors.py", line 159, in __call__
+    await self.app(scope, receive, _send)
+  File "C:\Users\krish\AppData\Roaming\Python\Python37\site-packages\starlette\middleware\base.py", line 26, in __call__
+    await response(scope, receive, send)
+  File "C:\Users\krish\AppData\Roaming\Python\Python37\site-packages\starlette\responses.py", line 230, in __call__
+    (self.listen_for_disconnect, {"receive": receive}),
+  File "C:\Users\krish\AppData\Roaming\Python\Python37\site-packages\starlette\concurrency.py", line 18, in run_until_first_complete
+    [task.result() for task in done]
+  File "C:\Users\krish\AppData\Roaming\Python\Python37\site-packages\starlette\concurrency.py", line 18, in <listcomp>
+    [task.result() for task in done]
+  File "C:\Users\krish\AppData\Roaming\Python\Python37\site-packages\starlette\responses.py", line 220, in stream_response
+    async for chunk in self.body_iterator:
+  File "C:\Users\krish\AppData\Roaming\Python\Python37\site-packages\starlette\middleware\base.py", line 56, in body_stream
+    task.result()
+  File "C:\Users\krish\AppData\Roaming\Python\Python37\site-packages\starlette\middleware\base.py", line 38, in coro
+    await self.app(scope, receive, send)
+  File "C:\Users\krish\AppData\Roaming\Python\Python37\site-packages\starlette\exceptions.py", line 82, in __call__
+    raise exc from None
+  File "C:\Users\krish\AppData\Roaming\Python\Python37\site-packages\starlette\exceptions.py", line 71, in __call__
+    await self.app(scope, receive, sender)
+  File "C:\Users\krish\AppData\Roaming\Python\Python37\site-packages\starlette\routing.py", line 566, in __call__
+    await route.handle(scope, receive, send)
+  File "C:\Users\krish\AppData\Roaming\Python\Python37\site-packages\starlette\routing.py", line 227, in handle
+    await self.app(scope, receive, send)
+  File "C:\Users\krish\AppData\Roaming\Python\Python37\site-packages\starlette\routing.py", line 44, in app
+    await response(scope, receive, send)
+  File "C:\Users\krish\AppData\Roaming\Python\Python37\site-packages\starlette\templating.py", line 41, in __call__
+    await super().__call__(scope, receive, send)
+  File "C:\Users\krish\AppData\Roaming\Python\Python37\site-packages\starlette\responses.py", line 142, in __call__
+    await self.background()
+  File "C:\Users\krish\AppData\Roaming\Python\Python37\site-packages\starlette\background.py", line 35, in __call__
+    await task()
+  File "C:\Users\krish\AppData\Roaming\Python\Python37\site-packages\starlette\background.py", line 18, in __call__
+    await self.func(*self.args, **self.kwargs)
+  File "C:\ProgramData\Anaconda3\lib\site-packages\fastapi_mail\fastmail.py", line 36, in send_message
+    async with Connection(self.config) as session:
+  File "C:\ProgramData\Anaconda3\lib\site-packages\fastapi_mail\connection.py", line 26, in __aenter__
+    await self._configure_connection()
+  File "C:\ProgramData\Anaconda3\lib\site-packages\fastapi_mail\connection.py", line 49, in _configure_connection
+    raise ConnectionErrors(f"Exception raised {error}, check your credentials or email service configuration")
+fastapi_mail.errors.ConnectionErrors: Exception raised (535, '5.7.8 Username and Password not accepted. Learn more at\n5.7.8  https://support.google.com/mail/?p=BadCredentials f7sm9297464pjs.25 - gsmtp'), check your credentials or email service configuration
+2021-01-22 19:38:03.942 WARNING pilot - add_process_time_header: Path is: /send_mail
+execution time is 0.8416109085083008
+2021-01-22 19:38:55.446 ERROR h11_impl - run_asgi: Exception in ASGI application
+Traceback (most recent call last):
+  File "C:\Users\krish\AppData\Roaming\Python\Python37\site-packages\uvicorn\protocols\http\h11_impl.py", line 389, in run_asgi
+    result = await app(self.scope, self.receive, self.send)
+  File "C:\Users\krish\AppData\Roaming\Python\Python37\site-packages\uvicorn\middleware\proxy_headers.py", line 45, in __call__
+    return await self.app(scope, receive, send)
+  File "C:\ProgramData\Anaconda3\lib\site-packages\fastapi\applications.py", line 199, in __call__
+    await super().__call__(scope, receive, send)
+  File "C:\Users\krish\AppData\Roaming\Python\Python37\site-packages\starlette\applications.py", line 111, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "C:\Users\krish\AppData\Roaming\Python\Python37\site-packages\starlette\middleware\errors.py", line 181, in __call__
+    raise exc from None
+  File "C:\Users\krish\AppData\Roaming\Python\Python37\site-packages\starlette\middleware\errors.py", line 159, in __call__
+    await self.app(scope, receive, _send)
+  File "C:\Users\krish\AppData\Roaming\Python\Python37\site-packages\starlette\middleware\base.py", line 25, in __call__
+    response = await self.dispatch_func(request, self.call_next)
+  File "C:\Users\krish\Documents\QRmenu\pilot.py", line 155, in add_process_time_header
+    response = await call_next(request)
+  File "C:\Users\krish\AppData\Roaming\Python\Python37\site-packages\starlette\middleware\base.py", line 45, in call_next
+    task.result()
+  File "C:\Users\krish\AppData\Roaming\Python\Python37\site-packages\starlette\middleware\base.py", line 38, in coro
+    await self.app(scope, receive, send)
+  File "C:\Users\krish\AppData\Roaming\Python\Python37\site-packages\starlette\exceptions.py", line 82, in __call__
+    raise exc from None
+  File "C:\Users\krish\AppData\Roaming\Python\Python37\site-packages\starlette\exceptions.py", line 71, in __call__
+    await self.app(scope, receive, sender)
+  File "C:\Users\krish\AppData\Roaming\Python\Python37\site-packages\starlette\routing.py", line 566, in __call__
+    await route.handle(scope, receive, send)
+  File "C:\Users\krish\AppData\Roaming\Python\Python37\site-packages\starlette\routing.py", line 227, in handle
+    await self.app(scope, receive, send)
+  File "C:\Users\krish\AppData\Roaming\Python\Python37\site-packages\starlette\routing.py", line 41, in app
+    response = await func(request)
+  File "C:\ProgramData\Anaconda3\lib\site-packages\fastapi\routing.py", line 202, in app
+    dependant=dependant, values=values, is_coroutine=is_coroutine
+  File "C:\ProgramData\Anaconda3\lib\site-packages\fastapi\routing.py", line 148, in run_endpoint_function
+    return await dependant.call(**values)
+  File "C:\Users\krish\Documents\QRmenu\security.py", line 524, in verify_passcode
+    if passcode_schema.passcode == code:
+NameError: name 'code' is not defined
+2021-01-22 19:43:47.055 WARNING statreload - should_restart: Detected file change in 'security.py'. Reloading...
+2021-01-22 19:43:51.489 INFO main - serve: Started server process [16664]
+2021-01-22 19:43:51.491 INFO on - startup: Waiting for application startup.
+2021-01-22 19:43:51.493 INFO on - startup: Application startup complete.
+2021-01-22 19:44:06.770 WARNING statreload - should_restart: Detected file change in 'security.py'. Reloading...
+2021-01-22 19:44:10.766 INFO main - serve: Started server process [16172]
+2021-01-22 19:44:10.768 INFO on - startup: Waiting for application startup.
+2021-01-22 19:44:10.769 INFO on - startup: Application startup complete.
+2021-01-22 19:44:12.076 INFO main - shutdown: Shutting down
+2021-01-22 19:44:12.177 INFO on - shutdown: Waiting for application shutdown.
+2021-01-22 19:44:12.178 ERROR qr_logger - log_warning: quitting the application now
+
+
+
+
+2021-01-22 19:44:12.178 INFO on - main: ASGI 'lifespan' protocol appears unsupported.
+2021-01-22 19:44:12.180 INFO on - shutdown: Application shutdown complete.
+2021-01-22 19:44:12.181 INFO main - serve: Finished server process [16172]
+2021-01-22 19:44:12.404 INFO basereload - shutdown: Stopping reloader process [12892]

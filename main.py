@@ -145,3 +145,12 @@ async def check_log():
         return JSONResponse(content={"code": 99, "message": repr(e)})
 
 
+@menu_router.get("/hotels/{location}")
+async def get_hotels_of_given_location(request: Request, location: str,  db: Session = Depends(get_db)):
+    print(location)
+    details = crud.get_hotels_of_given_location(db=db, location=location)
+    print(details)
+
+    return details
+
+

@@ -113,15 +113,6 @@ class RequestResponseDetails(Base):
     datetime = Column(String)
     execution_time = Column(String)
 
-    
-
-
-    
-    
-
-    
-    
-
 
 # Base.metadata.create_all(engine, Base.metadata.tables.values(),checkfirst=True)
 #Base.metadata.create_all(engine)

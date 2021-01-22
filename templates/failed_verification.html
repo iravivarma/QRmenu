@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>Verification Failed</title>
+        <script>
+            function enterAgainRedirect() {
+                window.location.href = '/re_enter_passcode';
+            }
+
+            function resendPageRedirect() {
+                window.location.href = '/send_mail_again';
+            }
+        </script>
+    </head>
+    <body>
+        <div>
+            <h3>Account verification {{ result }} </h3><br>
+        </div>
+
+
+        <button type="button" onclick="enterAgainRedirect()">Enter passcode again</button>
+
+        <button type="button" onclick="resendPageRedirect()">Send mail again</button>
+    </body>
+</html>

@@ -13,6 +13,9 @@ from fastapi.responses import Response
 import qrcode, os
 import models, schemas
 import qr_logger as qrl
+from sqlalchemy import and_, or_, not_
+from sqlalchemy.orm import load_only
+from models import Hotels, Menu, Users, CustomerFavHotel, RequestResponseDetails
 
 
 filename = 'crud.log'
@@ -97,7 +100,12 @@ def create_user_item(db: Session, item: schemas.HotelsCreate, user_name: str):
     except Exception as e:
         qrl.log_exception(logging, repr(e))
         return repr(e)
-    
+
+
+
+def get_hotels_of_given_location(db: Session, location):
+    hotels = db.query(models.Hotels, models.Menu).filter(or_(models.Hotels.location == location, models.Hotels.city == location)).join(models.Menu).with_entities(Hotels.name, Hotels.contact_email, Hotels.location, Hotels.city, Menu.items, Menu.qr_menu_path).all()
+    return hotels
 
 
 
@@ -224,3 +232,18 @@ def authenticate_user_email(db: Session, email: str):
 
     details = db.query(models.Users).filter(models.Users.email == email).first()
     return details
+
+
+
+
+def update_user_password(db: Session, Email, new_password_schema):
+    try:
+        details = db.query(models.Users).filter(Users.email == Email).update({'password': new_password_schema})
+        db.commit()
+        return True
+    except:
+        return False
+
+
+
+

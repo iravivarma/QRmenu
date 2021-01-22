@@ -1,0 +1,34 @@
+<html>
+    <head>
+        <title>
+            Submit Passcode
+        </title>
+    </head>
+    <body>
+        <h3>Enter the passcode mailed to you</h3>
+
+        <div>
+            <form method="post" action="/account_recovery/" id="passcode_form" name="passcode_form">
+                <label for="passcode_form">Passcode :</label><br>
+                <input type="text" name="passcode"><br>
+                <input type="submit" value="Submit">
+            </form>
+        </div>
+
+        <!-- <script>
+            $(function() {
+                $("#passcode_form").on("submit", function(e) {
+                    e.preventDefault();
+                    $.ajax({
+                        url: $(this).attr("action"),
+                        type: 'POST',
+                        contentType: 'application/json',
+                        data: JSON.stringify({"passcode": $(this)}),
+                        dataType: 'json'
+                    });
+                });
+            });
+        </script> -->
+
+    </body>
+</html>

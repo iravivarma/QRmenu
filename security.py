@@ -10,9 +10,10 @@ from urllib import parse
 
 # third party imports
 # -------------------
+from fastapi_mail import FastMail, MessageSchema,ConnectionConfig
 from fastapi import APIRouter, status
 from fastapi import BackgroundTasks, Request, Form, Depends
-from fastapi_mail.fastmail import FastMail
+#from fastapi_mail.fastmail import FastMail
 from fastapi import Header, File, Body, Query, UploadFile
 from fastapi.encoders import jsonable_encoder
 from fastapi.templating import Jinja2Templates
@@ -349,3 +350,254 @@ def create_access_token(*, data: dict, expires_delta: timedelta = None):
     to_encode.update({"exp": expire})
     encoded_jwt = jwt.encode(to_encode, SECRET_KEY, algorithm=ALGORITHM)
     return encoded_jwt
+
+
+
+##############################################################
+############reset or update password apis#####################
+
+def send_email(background_tasks: BackgroundTasks, email, code, request: Request):
+    """Sends an email with a defined template containing the passcode.
+
+    Email is intialized at '/enter_recovery_email' endpoint as global.
+    You have to fill in here your email and password from which you want
+    to send the mail (GMAIL).
+
+    Parameters
+    ----------
+    background_tasks : BackgroudTasks
+        For sending the mail in the background.
+    request : Request
+        For using JinJaTemplates as a response.
+
+    Returns
+    -------
+    template : Jinaja Template
+        Returns the template "after_email_sent_response.html".
+    """
+
+    template = """
+        <html>
+        <body>
+        <p>Hi !!!
+        <br>Thanks for using Workeeper</p>
+        <p> Your passcode is : %s </p>
+        </body>
+        </html>
+        """ % (
+        code
+    )
+
+    conf = ConnectionConfig(
+    MAIL_USERNAME='*************************',
+    MAIL_PASSWORD="**************",
+    MAIL_PORT=587,
+    MAIL_SERVER="smtp.gmail.com",
+    MAIL_TLS=True,
+    MAIL_SSL=False)
+
+
+    message = MessageSchema(
+
+        subject="password recovery",
+
+        recipients=[email],  # List of recipients, as many as you can pass  
+
+        body=template,
+
+        subtype="html"
+
+    )
+
+
+    
+    fm = FastMail(conf)
+
+    #await fm.send_message(message)
+
+    background_tasks.add_task(
+        fm.send_message,
+        message
+    )
+
+    return templates.TemplateResponse(
+        "after_email_sent_response.html", {"request": request}
+    )
+
+
+@security_router.get("/enter_recovery_email")
+async def get_email(request: Request):
+    """Returns the homepage template where you enter your email - 'enter_email_for_recovery.html'"""
+
+    return templates.TemplateResponse(
+        "enter_email_for_recovery.html", {"request": request}
+    )
+
+
+
+def get_random_alphanumeric_string(length):
+    """Generates a random alphanumeric string of given length.
+
+    Parameters
+    ----------
+    length : int
+        The length of random string to be generated.
+
+    Returns
+    -------
+    result_str : string
+        A random string of the length given.
+    """
+
+    letters_and_digits = string.ascii_letters + string.digits
+    result_str = "".join((random.choice(letters_and_digits) for i in range(length)))
+    return result_str
+
+
+
+
+@security_router.post("/send_mail")
+async def send_mail(
+    background_tasks: BackgroundTasks,
+    request: Request,
+    email_schema: schemas.EmailSchema = Depends(),
+):
+    """End-point to send the mail.
+
+    Generates the security-code and then calls the send_email function.
+
+    Parameters
+    ----------
+    background_tasks : BackgroudTasks
+        For sending the mail in the background.
+    request : Request
+        For using JinJaTemplates as a response.
+    email_schema : EmailSchema
+        Schema to get the email of user.
+
+    Returns
+    -------
+    template : Jinaja Template
+        Calls the send_email funtion which returns the template.
+    """
+
+    #global code, Email#
+    #print(email_schema.__dict__)
+    email = email_schema.__dict__['email']
+    code = get_random_alphanumeric_string(10)
+
+    return send_email(background_tasks, email, code, request)
+
+
+@security_router.get("/send_mail_again")
+def send_mail_again(background_tasks: BackgroundTasks, request: Request):
+    """Resends the mail when user clicks in the resend email button."""
+
+    return send_email(background_tasks, request)
+
+"""
+Have to linkup with database...
+users database has to be updated with new columns
+columns: is_active, recent_login, recovery_passcode, recovered_yn
+once the user asks for recovery_passcode, the recovered_yn has to be set as False
+and the new generated passcode will be updated at recovery_passcode field
+
+when user changes the password successfully, recovered_yn has to be True
+
+
+"""
+@security_router.post("/account_recovery/")
+async def verify_passcode(request: Request, passcode_schema: schemas.SentPasscode = Depends()):
+    """Checks if the passcode entered by the user is correct or not.
+
+    Parameters
+    ----------
+    request : Request
+        For using JinJaTemplates as a response.
+    passcode_schema : SentPasscode
+        schema to get the passcode entered by the user.
+
+    Returns
+    -------
+    template : Jinaja Template
+        Returns the "failed_verification.html" or
+        "successful_verification_result.html" templates.
+    """
+
+    result = ""
+    if passcode_schema.passcode == code:
+        result = "successful"
+
+        # give the result of passcode validation
+        return templates.TemplateResponse(
+            "successful_verification_result.html",
+            {"request": request, "result": result},
+        )
+    else:
+        result = "failed"
+
+        return templates.TemplateResponse(
+            "failed_verification.html", {"request": request, "result": result}
+        )
+
+
+@security_router.get("/re_enter_passcode")
+async def re_enter_passcode(request: Request):
+    """Redirects to "after_email_sent_response.html for re-entering of the passcode."""
+
+    return templates.TemplateResponse(
+        "after_email_sent_response.html", {"request": request}
+    )
+
+
+@security_router.get("/check_links")
+async def check_links():
+    return {"this is merge checking purpose"}
+
+
+
+###########################################################################
+'''
+change or update password is working fine..
+Except only thing has to be changed is get_current user...
+Once the custom login works fine...we can get the current active user..
+'''
+
+@security_router.get("/change_password")
+async def after_successful_verification(request: Request):
+    """Redirects to 'enter_new_password.html' for taking the new password
+        of the user after forgot password email verification successful"""
+
+    return templates.TemplateResponse("enter_new_password.html", {"request": request})
+
+
+@security_router.post("/update_user_password")
+async def update_password(new_password_schema: schemas.NewPassword = Depends(), db: Session = Depends(get_db)):
+    """Calls the update function for the password from the crud module.
+
+    Parameters
+    ----------
+    new_password_schema : NewPassword
+        schema to get the password entered by the user.
+
+    Returns
+    -------
+    For now just a json response to say updation successful.
+    Later will be used to redirect it to the HOME PAGE of
+    user's account at workeeper.
+    """
+    details = new_password_schema.__dict__
+    print(details)
+    if details['password1'] == details['password2']:
+        password = get_password_hash(details['password1'])
+        update_result = crud.update_user_password(db, "l@gmail.com", password)
+        return update_result
+    else:
+        return HTTPException(
+                    status_code=HTTP_403_FORBIDDEN,  detail="updated successfully"
+                )
+    #event_dict = {}
+    #event_dict['Email']=Email
+    #event_processor("PasswordUpdation",event_dict)
+
+    return {"password updation": "successful"}
