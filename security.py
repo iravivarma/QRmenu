@@ -485,7 +485,6 @@ async def send_mail(
     #print(email_schema.__dict__)
     email = email_schema.__dict__['email']
     code = get_random_alphanumeric_string(10)
-    request.state.code = code
     crud.update_code(db, email, code)
 
     return send_email(background_tasks, email, code, request)
@@ -495,7 +494,10 @@ async def send_mail(
 def send_mail_again(background_tasks: BackgroundTasks, request: Request):
     """Resends the mail when user clicks in the resend email button."""
 
-    return send_email(background_tasks, request)
+    code = get_random_alphanumeric_string(10)
+    crud.update_code(db, email, code)
+
+    return send_email(background_tasks, email, code, request)
 
 """
 Have to linkup with database...
