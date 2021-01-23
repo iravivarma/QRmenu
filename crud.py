@@ -59,7 +59,7 @@ def get_users(db: Session, skip: int = 0, limit: int = 100):
 def create_user(db: Session, user: schemas.NewUser):
     print(user.__dict__)
     secret_password = user.password
-    db_user = models.Users(name=user.name, email=user.email, password=secret_password)
+    db_user = models.Users(name=user.name, email=user.email, password=secret_password, mobile_no = user.mobile_no)
     db.add(db_user)
     db.commit()
     db.refresh(db_user)
@@ -245,5 +245,27 @@ def update_user_password(db: Session, Email, new_password_schema):
         return False
 
 
+def change_user_password(db: Session, Email, new_password_schema):
+    try:
+        details = db.query(models.Users).filter(Users.email == Email).update({'password': new_password_schema, 'recovered_yn': True, 'recovery_password':''})
+        db.commit()
+        return True
+    except:
+        return False
 
 
+
+def update_code(db: Session, email, code):
+    db.query(models.Users).filter(Users.email == email).update({'recovery_password':code, 'recovered_yn': False})
+    db.commit()
+
+
+def get_code(db: Session, email):
+    code = db.query(models.Users).filter(and_(Users.email == email, Users.recovered_yn == False)).first()
+    code = code.recovery_password
+    return code
+
+def get_recovery_status(db:Session, email):
+    code = db.query(models.Users).filter(Users.email == email).first()
+    code = code.recovered_yn
+    return code

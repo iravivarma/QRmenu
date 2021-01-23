@@ -45,6 +45,7 @@ class NewUser(BaseModel):
     name: str
     email: str
     password: str
+    mobile_no: str
 
 
 

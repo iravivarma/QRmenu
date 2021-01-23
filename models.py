@@ -33,6 +33,10 @@ class Users(Base):
     name = Column(String)
     email = Column(String, unique=True, index=True)
     password = Column(String)
+    active_yn = Column(Boolean, default=True)
+    recovery_password = Column(String, default='')
+    recovered_yn = Column(Boolean, default=True)
+    mobile_no = Column(String)
 
     hotels = relationship("Hotels", back_populates="owner")
     FavHotel = relationship("CustomerFavHotel", back_populates="owner")
@@ -45,6 +49,7 @@ class Hotels(Base):
     name = Column(String, unique=True, index=True)
     user_id = Column(Integer, ForeignKey("users.id"))
     contact_email = Column(String, unique=True, index=True)
+    contact_no = Column(String, unique=True, index=True)
     location = Column(String)
     pincode = Column(Integer)
     city = Column(String, index = True)

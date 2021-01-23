@@ -389,8 +389,8 @@ def send_email(background_tasks: BackgroundTasks, email, code, request: Request)
     )
 
     conf = ConnectionConfig(
-    MAIL_USERNAME='*************************',
-    MAIL_PASSWORD="**************",
+    MAIL_USERNAME='krishnardt365@gmail.com',
+    MAIL_PASSWORD="google@1A0",
     MAIL_PORT=587,
     MAIL_SERVER="smtp.gmail.com",
     MAIL_TLS=True,
@@ -460,7 +460,7 @@ def get_random_alphanumeric_string(length):
 async def send_mail(
     background_tasks: BackgroundTasks,
     request: Request,
-    email_schema: schemas.EmailSchema = Depends(),
+    email_schema: schemas.EmailSchema = Depends(), db: Session = Depends(get_db)
 ):
     """End-point to send the mail.
 
@@ -485,6 +485,8 @@ async def send_mail(
     #print(email_schema.__dict__)
     email = email_schema.__dict__['email']
     code = get_random_alphanumeric_string(10)
+    request.state.code = code
+    crud.update_code(db, email, code)
 
     return send_email(background_tasks, email, code, request)
 
@@ -507,7 +509,7 @@ when user changes the password successfully, recovered_yn has to be True
 
 """
 @security_router.post("/account_recovery/")
-async def verify_passcode(request: Request, passcode_schema: schemas.SentPasscode = Depends()):
+async def verify_passcode(request: Request, passcode_schema: schemas.SentPasscode = Depends(), db: Session = Depends(get_db)):
     """Checks if the passcode entered by the user is correct or not.
 
     Parameters
@@ -525,6 +527,8 @@ async def verify_passcode(request: Request, passcode_schema: schemas.SentPasscod
     """
 
     result = ""
+    email = 'krishnardt365@gmail.com'
+    code = crud.get_code(db, email)
     if passcode_schema.passcode == code:
         result = "successful"
 
@@ -555,15 +559,58 @@ async def check_links():
     return {"this is merge checking purpose"}
 
 
+@security_router.get("/change_password")
+async def after_successful_verification(request: Request):
+    """Redirects to 'enter_new_password.html' for taking the new password
+        of the user after forgot password email verification successful"""
+
+    return templates.TemplateResponse("enter_new_password.html", {"request": request})
+
+
+@security_router.post("/change_user_password")
+async def update_password(new_password_schema: schemas.NewPassword = Depends(), db: Session = Depends(get_db)):
+    """Calls the update function for the password from the crud module.
+
+    Parameters
+    ----------
+    new_password_schema : NewPassword
+        schema to get the password entered by the user.
+
+    Returns
+    -------
+    For now just a json response to say updation successful.
+    Later will be used to redirect it to the HOME PAGE of
+    user's account at workeeper.
+    """
+    details = new_password_schema.__dict__
+    print(details)
+    recovery_status = crud.get_recovery_status(db, "krishnardt365@gmail.com")
+    print(recovery_status)
+    if details['password1'] == details['password2'] and recovery_status==False:
+        password = get_password_hash(details['password1'])
+        update_result = crud.change_user_password(db, "krishnardt365@gmail.com", password)
+        return update_result
+    else:
+        return HTTPException(
+                    status_code=HTTP_403_FORBIDDEN,  detail="not updated successfully"
+                )
+    #event_dict = {}
+    #event_dict['Email']=Email
+    #event_processor("PasswordUpdation",event_dict)
+
+    return {"password updation": "successful"}
+
+
+
 
 ###########################################################################
 '''
-change or update password is working fine..
+update password is working fine..
 Except only thing has to be changed is get_current user...
 Once the custom login works fine...we can get the current active user..
 '''
 
-@security_router.get("/change_password")
+@security_router.get("/update_password")
 async def after_successful_verification(request: Request):
     """Redirects to 'enter_new_password.html' for taking the new password
         of the user after forgot password email verification successful"""
@@ -590,7 +637,7 @@ async def update_password(new_password_schema: schemas.NewPassword = Depends(), 
     print(details)
     if details['password1'] == details['password2']:
         password = get_password_hash(details['password1'])
-        update_result = crud.update_user_password(db, "l@gmail.com", password)
+        update_result = crud.update_user_password(db, "krishnardt365@gmail.com", password)
         return update_result
     else:
         return HTTPException(
