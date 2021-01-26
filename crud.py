@@ -23,7 +23,7 @@ logging = qrl.create_or_get_logger(filename)
 
 
 def get_user(db: Session, user_name: str):
-    return db.query(models.Users).filter(models.Users.name == user_name)
+    return db.query(models.Users).filter(or_(models.Users.name == user_name, models.Users.email == user_name))
 
 def get_hotels(db: Session, name: str):
     return db.query(models.Hotels).filter(models.Hotels.name == name)
@@ -230,7 +230,7 @@ def authenticate_user_email(db: Session, email: str):
     useful when authenticating email to identify if the user is already present or not
     """
 
-    details = db.query(models.Users).filter(models.Users.email == email).first()
+    details = db.query(models.Users).filter(or_(models.Users.name == email, models.Users.email == email)).first()
     return details
 
 

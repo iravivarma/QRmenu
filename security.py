@@ -49,6 +49,12 @@ from models import Users
 from sqlalchemy.orm import Session
 from database import SessionLocal, engine
 import crud, models, schemas
+import qr_logger as qrl
+from qr_logger import create_or_get_logger, log_warning, log_info
+
+
+filename = 'security.log'
+logging = qrl.create_or_get_logger(filename)
 
 
 security_router = APIRouter()
@@ -67,7 +73,7 @@ SECRET_KEY = "7ff8f44c419861f95ff39d0f157d41f2446b92a9868df2501c2e66061cdd8c74"
 ALGORITHM = "HS256"
 ACCESS_TOKEN_EXPIRE_HOURS = 3
 COOKIE_AUTHORIZATION_NAME = "Authorization"
-COOKIE_DOMAIN = 'http://127.0.0.1:8000'
+COOKIE_DOMAIN = '127.0.0.1'
 
 # give the time for each token.
 # Note: it is in minutes.
@@ -114,19 +120,26 @@ class OAuth2PasswordBearerCookie(OAuth2):
         cookie_scheme, cookie_param = get_authorization_scheme_param(
             cookie_authorization
         )
+        print(" -----------------------------------")
+        print(header_scheme)
+        print(cookie_scheme)
+        print(" -----------------------------------")
 
         if header_scheme.lower() == "bearer":
             authorization = True
             scheme = header_scheme
             param = header_param
+            print("the authorization in the url is {}".format("header"))
 
         elif cookie_scheme.lower() == "bearer":
             authorization = True
             scheme = cookie_scheme
             param = cookie_param
+            print("the authorization in the url is {}".format("cookie"))
 
         else:
             authorization = False
+            print("the authorization in the url is {}".format(False))
 
         if not authorization or scheme.lower() != "bearer":
             if self.auto_error:
@@ -160,7 +173,7 @@ async def login_for_access_token(
         )
     access_token_expires = timedelta(minutes=ACCESS_TOKEN_EXPIRE_MINUTES)
     access_token = create_access_token(
-        data={"sub": user.name}, expires_delta=access_token_expires
+        data={"sub": user.email}, expires_delta=access_token_expires
     )
     
     return {"access_token": access_token, "token_type": "bearer"}
@@ -170,24 +183,33 @@ async def login_for_access_token(
 
 
 
-async def get_current_google_user(token: str = Depends(oauth2_scheme)):
+async def get_current_google_user(token: str = Depends(oauth2_scheme), db: Session = Depends(get_db)):
     credentials_exception = HTTPException(
         status_code=HTTP_403_FORBIDDEN, detail="Could not validate credentials"
     )
-    db = get_db()
+    #db = get_db()
     print(token)
+    qrl.log_info(logging, db)
+    qrl.log_info(logging, token)
     if token is not None:
         try:
             payload = jwt.decode(token, SECRET_KEY, algorithms=[ALGORITHM])
+            print("the payload is.................")
+            print(payload)
+            print("-----------------------------------")
+            #qrl.log_info(logging, payload.__dict__)
             email: str = payload.get("sub")
+            
             if email is None:
                 raise credentials_exception
         except:
             return None
+        print(email)
         if email is not None:
             authenticated_user = crud.authenticate_user_email(db, email)
             user = authenticated_user
-            return crud.get_user(user.name)
+            print(user.__dict__)
+            return user#crud.get_user(db, user.name).first()
 
 
 pwd_context = CryptContext(schemes=["bcrypt"], deprecated="auto")
@@ -233,11 +255,13 @@ def authenticate_user(db, username: str, password: str):
 
 
 
-async def get_current_active_user(current_user: schemas.NewUser = Depends(get_current_google_user)):
+def get_current_active_user(current_user: schemas.NewUser = Depends(get_current_google_user)):
     # , current_google_user: User = Depends(get_current_google_user)
     """
     """
+    print("the current active user is.......")
     print(current_user)
+    qrl.log_info(logging,current_user)
     return current_user
 
 
@@ -275,9 +299,10 @@ async def check_user_and_make_token(request: Request, db: Session = Depends(get_
         raise HTTPException(status_code=401, detail="Invalid username or password")
 
     access_token_expires = timedelta(hours=ACCESS_TOKEN_EXPIRE_HOURS)
+    log_info(logging, authenticated_user.email)
     
     access_token = create_access_token(
-        data={"sub": authenticated_user.id}, expires_delta=access_token_expires
+        data={"sub": authenticated_user.email}, expires_delta=access_token_expires
     )
 
     #################### SUCCESSFULLY LOGED IN USING CUSTOM DETAILS ######################
@@ -309,13 +334,15 @@ async def logout_and_remove_cookie(request: Request, current_user: schemas.NewUs
     #     return templates.TemplateResponse("google_signout.html", {"request": request})
     # else:
     response.delete_cookie(key=COOKIE_AUTHORIZATION_NAME, domain=COOKIE_DOMAIN)
-    crud.logged_out(current_user.email)
+    #crud.logged_out(current_user.email)
     # return templates.TemplateResponse("logout.html",{"request":request, "instanceid":"13917092-3f6f-49e5-b39b-e21c89f24565"})
     return response
 
 
 @security_router.get("/me")
 async def get_mine(request: Request, current_user: schemas.NewUser = Depends(get_current_active_user), db: Session = Depends(get_db) ):
+    log_info(logging, "hello please loge me in..........")
+    log_info(logging, current_user)
     return current_user
 
 
@@ -328,16 +355,20 @@ async def enter_new_user(request: Request):
 
 @security_router.post("/new_user/")
 async def newUser(user: schemas.user_item = Depends(), redirect_url:Optional[str]=None, db: Session = Depends(get_db)):
-    try:
-        user.password = get_password_hash(user.password)
-        inserted_user = crud.create_user(db, user)
-        #return inserted_user
-    except:
-        raise HTTPException(status_code=409, detail="Invalid username/password or user already exists")
-    #event_processor("SignUp",inserted_user)
-    if redirect_url:
-        return RedirectResponse(url=f"/login?redirect_url={redirect_url}", status_code=status.HTTP_303_SEE_OTHER)
-    return RedirectResponse(url="/login", status_code=status.HTTP_303_SEE_OTHER)
+    #try:
+    user.password = get_password_hash(user.password)
+    print("printing the hashed_password")
+    print(get_password_hash(user.password))
+    print("print the nortmal details")
+    print(user.__dict__)
+    inserted_user = crud.create_user(db, user)
+    #return inserted_user
+    # except:
+    #     raise HTTPException(status_code=409, detail="Invalid username/password or user already exists")
+    # #event_processor("SignUp",inserted_user)
+    # if redirect_url:
+    #     return RedirectResponse(url=f"/login?redirect_url={redirect_url}", status_code=status.HTTP_303_SEE_OTHER)
+    # return RedirectResponse(url="/login", status_code=status.HTTP_303_SEE_OTHER)
 
 
 

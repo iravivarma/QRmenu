@@ -74,11 +74,13 @@ class user_item:
                  name: str = Form(...),
                  email: EmailStr = Form(...),
                  password: str = Form(...),
+                 mobile_no: str = Form(...),
                  ):
 
         self.name = name
         self.email = email
         self.password = password
+        self.mobile_no = mobile_no
 
 
 ######################################################
@@ -177,3 +179,4 @@ class SentPasscode:
         """
 
         self.passcode = passcode
+

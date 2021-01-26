@@ -154,3 +154,4 @@ async def get_hotels_of_given_location(request: Request, location: str,  db: Ses
     return details
 
 
+
