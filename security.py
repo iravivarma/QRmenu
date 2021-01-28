@@ -420,8 +420,8 @@ def send_email(background_tasks: BackgroundTasks, email, code, request: Request)
     )
 
     conf = ConnectionConfig(
-    MAIL_USERNAME='krishnardt365@gmail.com',
-    MAIL_PASSWORD="google@1A0",
+    MAIL_USERNAME='*********************',
+    MAIL_PASSWORD="****************",
     MAIL_PORT=587,
     MAIL_SERVER="smtp.gmail.com",
     MAIL_TLS=True,
