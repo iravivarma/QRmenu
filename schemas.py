@@ -7,7 +7,7 @@ Created on Sat Jan  2 17:43:53 2021
 
 from typing import List, Optional, Dict
 
-from pydantic import BaseModel, EmailStr
+from pydantic import BaseModel, EmailStr, ValidationError, validator
 from fastapi import Form
 
 
@@ -46,6 +46,7 @@ class NewUser(BaseModel):
     email: str
     password: str
     mobile_no: str
+    ownership: str
 
 
 
@@ -66,6 +67,13 @@ class MenuItems(BaseModel):
         return items.__dict__
 
 
+class HotelScope(BaseModel):
+    email: str
+    position: str
+    hotels: List = None
+
+
+
 class user_item:
     """
     pydantic schema for new user sign-up
@@ -75,12 +83,25 @@ class user_item:
                  email: EmailStr = Form(...),
                  password: str = Form(...),
                  mobile_no: str = Form(...),
+                 ownership: str = Form(...),
                  ):
 
         self.name = name
         self.email = email
         self.password = password
         self.mobile_no = mobile_no
+        self.ownership = ownership
+
+
+    # def __call__(self):
+    #     print("print the following tables")
+    #     print(self.name, self.email, self.password, self.mobile_no)
+
+    # @validator('name')
+    # def name_must_contain_space(cls, v):
+    #     if ' ' not in v:
+    #         raise ValueError('must contain a space')
+    #     return v.title()
 
 
 ######################################################
@@ -102,6 +123,11 @@ class Token(BaseModel):
     """    
     access_token: str
     token_type: str
+
+
+class TokenData(BaseModel):
+    username: Optional[str] = None
+    scopes : str = None#List[str] = []
 
 
 class EmailSchema:

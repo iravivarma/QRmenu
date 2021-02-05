@@ -9,6 +9,8 @@ from database import SessionLocal, engine
 from fastapi import Request, Depends
 #import logging
 from qr_logger import create_or_get_logger, log_warning
+from fastapi.middleware.cors import CORSMiddleware#, SessionMiddleware
+from starlette.middleware.gzip import GZipMiddleware
 
 
 filename = "pilot.log"
@@ -19,7 +21,7 @@ logging.debug('This will get logged to a file')
 
 app = FastAPI(title='workpeer',
         description='workpeer API',
-        version='1.0.0',)
+        version='1.0.0', redoc_url = None,)
 
 
 def init_routers(app: FastAPI) -> None:
@@ -42,6 +44,22 @@ def create_app() -> FastAPI:
 
 
 app = create_app()
+
+
+
+origins = [
+    "*",
+]
+
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=origins,
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
+#app.add_middleware(SessionMiddleware,)
+#app.middleware(GZipMiddleware, minimum_size=100000000000)
 
 
 @app.on_event("shutdown")
@@ -96,6 +114,7 @@ same_origin_yn = Column(Boolean)
     datetime = Column(DateTime)
     execution_time = Column(Integer)
 """
+
 async def get_request_data(request, response, db: Session = Depends(get_db)):
     
     #db = get_db()
@@ -152,6 +171,7 @@ async def add_process_time_header(request: Request, call_next):
     response: just returns the api response and its execution time appended
     """
     start_time = time.time()
+    request.headers.set_name = "krishna's page"
     response = await call_next(request)
     # print(await request.body())
     # print(request.headers)
@@ -165,6 +185,8 @@ async def add_process_time_header(request: Request, call_next):
     logging.warning(f'Path is: {path}\nexecution time is {process_time}')
     #print("###########################################################")
     #print(process_time)
+    print(request.headers)
+
     response.headers["X-Process-Time"] = str(process_time)
     #await get_request_data(request, response)
     #adds the total execution time to the response

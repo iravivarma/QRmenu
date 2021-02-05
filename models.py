@@ -37,6 +37,7 @@ class Users(Base):
     recovery_password = Column(String, default='')
     recovered_yn = Column(Boolean, default=True)
     mobile_no = Column(String)
+    position = Column(String)
 
     hotels = relationship("Hotels", back_populates="owner")
     FavHotel = relationship("CustomerFavHotel", back_populates="owner")

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>My Profile</title>
+<script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
+</head>
+<body>
+<form id="myform" method="POST" action="/updateprofile"  enctype="multipart/form-data" style="display: inline-flex; width: 100vw;">
+<div style="width: 50%;">
+<h3>Personal</h3>
+<!-- First name: <input type="text" name="first_name" value="{{ fname }}" required disabled /><br/>
+Last name: <input type="text" name="last_name" value="{{ lname }}" required disabled /><br/> -->
+Username: <input type="text" name="username" value="{{ username }}" required disabled /><br/>
+<!-- Contact no.: <input type="tel" name="mobile_no" value="{{ mob }}" pattern="[0-9]{10}" required disabled /><br/> -->
+Email Id: <input id="email" type="email" name="email_id" value="{{ email }}" required disabled /><br/>
+</div>
+<div style="width: 50%;">
+<h3>About</h3>
+Upload Profile Picture:<br/>
+<!-- Date of birth: <input type="date" name="dob" value="{{ dob }}" disabled /><br/> -->
+<input name="files" type="file" multiple>
+Company: <input type="text" name="institution" value="{{ company }}" disabled /><br/>
+Position: <input type="text" id="position" name="position" value="{{ position }}" disabled /><br/>
+Location: <input type="textarea" id="location" name="location" value="{{ location }}" disabled /><br/>
+<input id="submit" hidden="True" type="submit" value="Submit">
+</div>
+</form>
+<button id="edit">Edit Profile</button>
+</div>
+</body>
+<script type="text/javascript">
+$(document).ready(function(){
+$("#edit").click(function() {
+ $("#submit").show()
+ $("#edit").hide()
+ $("form *").prop('disabled',false)
+ $("#email").prop('disabled',true)
+});
+});
+$("#myform").submit(function() {
+if ($('#position').val().length < 1) {
+       $('#position').prop('value','NULL');
+   }
+   if ($('#location').val().length < 1) {
+       $('#location').prop('value','NULL');
+   }
+alert("Your Profile has been updated!");
+});
+</script>
+</html>

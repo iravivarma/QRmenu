@@ -25,9 +25,12 @@ logging = qrl.create_or_get_logger(filename)
 def get_user(db: Session, user_name: str):
     return db.query(models.Users).filter(or_(models.Users.name == user_name, models.Users.email == user_name))
 
+
 def get_hotels(db: Session, name: str):
     return db.query(models.Hotels).filter(models.Hotels.name == name)
 
+def get_hotels_by_username(db:Session, userid: int):
+    return db.query(models.Hotels).filter(models.Hotels.user_id == userid).with_entities(Hotels.name).all()
 
 
 ###may not work for HTTP 2 versions and above
@@ -47,7 +50,6 @@ def insert_request_response_data(db: Session, analysis_dict: dict):
     return analysis_data
     
 
-
 def get_user_by_email(db: Session, email: str):
     return db.query(models.Users).filter(models.Users.email == email).first()
 
@@ -59,14 +61,14 @@ def get_users(db: Session, skip: int = 0, limit: int = 100):
 def create_user(db: Session, user: schemas.NewUser):
     print(user.__dict__)
     secret_password = user.password
-    db_user = models.Users(name=user.name, email=user.email, password=secret_password, mobile_no = user.mobile_no)
+    db_user = models.Users(name=user.name, email=user.email, password=secret_password, mobile_no = user.mobile_no, position=user.ownership)
     db.add(db_user)
     db.commit()
     db.refresh(db_user)
     return db_user
 
 
-def get_items(db: Session, skip: int = 0, limit: int = 100):
+def get_hotels(db: Session, skip: int = 0, limit: int = 100):
     return db.query(models.Hotels).offset(skip).limit(limit).all()
 
 
@@ -77,13 +79,10 @@ def get_qr_image(db: Session, hotel_id):
     return menu_details
 
 
-
-def create_user_item(db: Session, item: schemas.HotelsCreate, user_name: str):
+def create_hotel(db: Session, item: schemas.HotelsCreate, user_name: str):
     
-    get_id = get_user(db, user_name)
-    my_id = 0
-    for ids in get_id:
-        my_id = ids.id
+    get_id = get_user(db, user_name).first()
+    my_id = get_id.id
     #print(db_item)
     #item.user_id = my_id
     #print(item.dict())
@@ -102,15 +101,12 @@ def create_user_item(db: Session, item: schemas.HotelsCreate, user_name: str):
         return repr(e)
 
 
-
 def get_hotels_of_given_location(db: Session, location):
     hotels = db.query(models.Hotels, models.Menu).filter(or_(models.Hotels.location == location, models.Hotels.city == location)).join(models.Menu).with_entities(Hotels.name, Hotels.contact_email, Hotels.location, Hotels.city, Menu.items, Menu.qr_menu_path).all()
     return hotels
 
 
-
 def insert_into_hotel_menu(db: Session, menu_items, user_id: int):
-
 
     print(menu_items)
     item = {}
@@ -155,22 +151,18 @@ def add_hotel_to_favourite(db: Session, user_id, hotel_id):
         db.commit()
         db.refresh(db_fav_hotel)
         return db_fav_hotel
-
     except Exception as e:
         qrl_log_exception(logging, repr(e))
         return repr(e)
 
 
-
 def delete_hotel(db: Session, hotel_name):
     result = db.query(models.Hotels).filter(models.Hotels.name==hotel_name).first()
     #print(result.id)
-
     if result is None:
         qrl.log_exception(logging, status.HTTP_404_NOT_FOUND)
         return HTTPException(status.HTTP_404_NOT_FOUND)
     else:
-
         print(result)
         print(result.id)
         db.delete(result)
@@ -185,7 +177,6 @@ def delete_hotel(db: Session, hotel_name):
         else:
             #db.delete(del_menu)
             result = db.commit()
-
     return status.HTTP_200_OK
 
 
@@ -195,27 +186,20 @@ def delete_menu(db: Session, menu_id):
         db.commit()
         qrl.log_info(logging, f'deleted records of menu records :{menu_id}')
         return status.HTTP_200_OK
-
     except:
         qrl.log_exception(logging, status.HTTP_404_NOT_FOUND)
         return HTTPException(status.HTTP_404_NOT_FOUND)
-
-
 
 
 def authenticate_user_username_password(db: Session, username: str,password: str):
     """
     Authenticate user using username and password
     """
-
     get_my_details = get_user(db, username).first()
-    
     if get_my_details is not None:
         my_username = get_my_details.name
         my_password = get_my_details.password
-
         print(my_password, password)
-
         if my_password == password:
             return get_my_details.__dict__
         else:
@@ -224,16 +208,14 @@ def authenticate_user_username_password(db: Session, username: str,password: str
         return HTTPException(status=status.HTTP_404_NOT_FOUND, details='username not found')
 
 
-
 def authenticate_user_email(db: Session, email: str):
     """
     useful when authenticating email to identify if the user is already present or not
     """
-
     details = db.query(models.Users).filter(or_(models.Users.name == email, models.Users.email == email)).first()
+    print("the authenticated user email is...")
+    print(details.__dict__)
     return details
-
-
 
 
 def update_user_password(db: Session, Email, new_password_schema):
@@ -254,7 +236,6 @@ def change_user_password(db: Session, Email, new_password_schema):
         return False
 
 
-
 def update_code(db: Session, email, code):
     db.query(models.Users).filter(Users.email == email).update({'recovery_password':code, 'recovered_yn': False})
     db.commit()
@@ -265,7 +246,31 @@ def get_code(db: Session, email):
     code = code.recovery_password
     return code
 
+
 def get_recovery_status(db:Session, email):
     code = db.query(models.Users).filter(Users.email == email).first()
     code = code.recovered_yn
     return code
+
+
+def get_all_users(db: Session):
+    result = db.query(models.Users).all()
+    return result
+
+
+def insert_hotel_menu(db, username, item):
+    get_id = get_user(db, username).first()
+    my_id = get_id.id
+    print(item.__dict__)
+    try:
+        db_item = models.Hotels(name = item.name, user_id = my_id, contact_email = item.contact_email,
+            location = item.location, pincode = item.pincode, city = item.city)
+        
+        print(item.dict())
+        db.add(db_item)
+        db.commit()
+        db.refresh(db_item)
+        return db_item
+    except Exception as e:
+        qrl.log_exception(logging, repr(e))
+        return repr(e)

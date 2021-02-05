@@ -65,10 +65,10 @@ async def create_user(user: schemas.NewUser, db: Session = Depends(get_db)):
     
 
 @menu_router.post("/users/{user_name}/hotels/", response_model=schemas.Hotels)
-async def create_item_for_user(
+async def create_hotel_for_user(
     user_name: str, item: schemas.HotelsCreate, db: Session = Depends(get_db)
 ):
-    return crud.create_user_item(db=db, item=item, user_name=user_name)
+    return crud.create_hotel(db=db, item=item, user_name=user_name)
 
 
 
@@ -95,8 +95,8 @@ async def read_users(skip: int = 0, limit: int = 100, db: Session = Depends(get_
     return users
 
 @menu_router.get("/hotels/", response_model=List[schemas.Hotels])
-async def read_items(skip: int = 0, limit: int = 100, db: Session = Depends(get_db)):
-    items = crud.get_items(db, skip=skip, limit=limit)
+async def get_hotels(skip: int = 0, limit: int = 100, db: Session = Depends(get_db)):
+    items = crud.get_hotels(db, skip=skip, limit=limit)
     return items
 
 @menu_router.get("/users/{user_name}", response_model=schemas.Users)
@@ -152,6 +152,29 @@ async def get_hotels_of_given_location(request: Request, location: str,  db: Ses
     print(details)
 
     return details
+
+
+
+@menu_router.get("/get_users")
+async def get_all_users(request: Request,  db: Session = Depends(get_db)):
+    print("getting all users.............")
+    print(request.headers)
+    print(await request.body())
+    print(await request.form())
+    all_users = crud.get_all_users(db = db)
+    return None
+
+
+
+
+@menu_router.post("/insert_hotel/{username}")
+async def insert_hotel(username: str, item: schemas.HotelsCreate, db: Session = Depends(get_db)):
+    crud.insert_hotel_menu(db, username, item)
+
+
+
+
+
 
 
 
