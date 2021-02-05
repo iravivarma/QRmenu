@@ -11,16 +11,16 @@ from urllib import parse
 # third party imports
 # -------------------
 from fastapi_mail import FastMail, MessageSchema,ConnectionConfig
-from fastapi import APIRouter, status
+from fastapi import APIRouter, status, Security
 from fastapi import BackgroundTasks, Request, Form, Depends
 #from fastapi_mail.fastmail import FastMail
 from fastapi import Header, File, Body, Query, UploadFile
 from fastapi.encoders import jsonable_encoder
 from fastapi.templating import Jinja2Templates
-from typing import Optional
+from typing import Optional, List
 from fastapi.staticfiles import StaticFiles
 from fastapi import Depends, HTTPException, status
-from fastapi.security import OAuth2PasswordBearer, OAuth2PasswordRequestForm
+from fastapi.security import OAuth2PasswordBearer, OAuth2PasswordRequestForm, SecurityScopes
 from fastapi.encoders import jsonable_encoder
 from fastapi.security.oauth2 import (
     OAuth2,
@@ -38,7 +38,7 @@ from jose import JWTError, jwt
 
 from starlette.responses import JSONResponse, RedirectResponse, HTMLResponse
 
-from pydantic import BaseModel, EmailStr
+from pydantic import BaseModel, EmailStr, ValidationError
 
 from passlib.context import CryptContext
 import requests as rq
@@ -152,7 +152,8 @@ class OAuth2PasswordBearerCookie(OAuth2):
 
 
 
-oauth2_scheme = OAuth2PasswordBearerCookie(tokenUrl="/token")
+oauth2_scheme = OAuth2PasswordBearerCookie(tokenUrl="/token",
+    scopes={"owner": "can do anything", "user": "can view menus"},)
 
 
 
@@ -171,9 +172,12 @@ async def login_for_access_token(
             detail="Incorrect username or password",
             headers={"WWW-Authenticate": "Bearer"},
         )
+    user_scope = user.position# if isinstance(user.position, list) else [user.position]
+    print("the user scope is........")
+    print(user_scope)
     access_token_expires = timedelta(minutes=ACCESS_TOKEN_EXPIRE_MINUTES)
     access_token = create_access_token(
-        data={"sub": user.email}, expires_delta=access_token_expires
+        data={"sub": user.email, "scopes": user_scope}, expires_delta=access_token_expires
     )
     
     return {"access_token": access_token, "token_type": "bearer"}
@@ -183,7 +187,7 @@ async def login_for_access_token(
 
 
 
-async def get_current_google_user(token: str = Depends(oauth2_scheme), db: Session = Depends(get_db)):
+async def get_current_google_user(security_scopes: SecurityScopes, token: str = Depends(oauth2_scheme), db: Session = Depends(get_db)):
     credentials_exception = HTTPException(
         status_code=HTTP_403_FORBIDDEN, detail="Could not validate credentials"
     )
@@ -191,6 +195,18 @@ async def get_current_google_user(token: str = Depends(oauth2_scheme), db: Sessi
     print(token)
     qrl.log_info(logging, db)
     qrl.log_info(logging, token)
+
+    if security_scopes.scopes:
+        authenticate_value = f'Bearer scope="{security_scopes.scope_str}"'
+    else:
+        authenticate_value = f"Bearer"
+    credentials_exception = HTTPException(
+        status_code=status.HTTP_401_UNAUTHORIZED,
+        detail="Could not validate credentials",
+        headers={"WWW-Authenticate": authenticate_value},
+    )
+
+
     if token is not None:
         try:
             payload = jwt.decode(token, SECRET_KEY, algorithms=[ALGORITHM])
@@ -199,17 +215,51 @@ async def get_current_google_user(token: str = Depends(oauth2_scheme), db: Sessi
             print("-----------------------------------")
             #qrl.log_info(logging, payload.__dict__)
             email: str = payload.get("sub")
-            
             if email is None:
                 raise credentials_exception
-        except:
-            return None
+            token_scopes = payload.get("scopes", [])
+            print(token_scopes)
+            print(payload.get('scopes'))
+            token_data = schemas.TokenData(scopes=token_scopes, username=email)
+        except (JWTError, ValidationError):
+            return credentials_exception
+        print("I am the current_user")
         print(email)
         if email is not None:
             authenticated_user = crud.authenticate_user_email(db, email)
-            user = authenticated_user
-            print(user.__dict__)
-            return user#crud.get_user(db, user.name).first()
+            print(authenticated_user.id)
+            if authenticated_user.position == 'owner':
+                hotel_names = crud.get_hotels_by_username(db, authenticated_user.id)
+                print(hotel_names)
+                return schemas.HotelScope(email = authenticated_user.email, position=authenticated_user.position, hotels = hotel_names)
+            else:
+                return schemas.HotelScope(email = authenticated_user.email, position = authenticated_user.position, hotels=[])
+            # user = authenticated_user
+            # print(user.__dict__)
+            # print("printing the scopes...............")
+
+            # scope_status = False
+            
+            # if len(token_data.scopes) >= 1 :
+            #     scope_status = all(i in security_scopes.scopes for i in token_data.scopes)
+
+
+            #if scope_status == False:
+                
+
+
+            # for scope in security_scopes.scopes:
+            #     print(scope)
+            #     print(security_scopes.scopes)
+            #     print(token_data.scopes)
+            #     if scope not in token_data.scopes:
+            #         raise HTTPException(
+            #             status_code=status.HTTP_401_UNAUTHORIZED,
+            #             detail="Not enough permissions",
+            #             headers={"WWW-Authenticate": authenticate_value},
+            #         )
+                    
+            #return user#crud.get_user(db, user.name).first()
 
 
 pwd_context = CryptContext(schemes=["bcrypt"], deprecated="auto")
@@ -255,7 +305,7 @@ def authenticate_user(db, username: str, password: str):
 
 
 
-def get_current_active_user(current_user: schemas.NewUser = Depends(get_current_google_user)):
+def get_current_active_user(current_user: schemas.HotelScope = Security(get_current_google_user, scopes=["user", "owner"])):
     # , current_google_user: User = Depends(get_current_google_user)
     """
     """
@@ -279,12 +329,13 @@ def login_user_page(request: Request, redirect_url: Optional[str]=None, db: Sess
 
 
 @security_router.get("/profile")
-async def get_profile(request : Request, username: str, current_user: schemas.NewUser = Depends(get_current_active_user), db: Session = Depends(get_db)):
+async def get_profile(request : Request, current_user: schemas.HotelScope = Depends(get_current_active_user), db: Session = Depends(get_db)):
     if not current_user:
         return "Not authorized"
-    data = current_user
-    return templates.TemplateResponse("User_Profile.html", {"request": request, "username": username, "position": data["position"],
-                                        "location": data["location"], "email": data["email"], "company": data["company"]})
+    data = crud.get_user_by_email(db, current_user.email).__dict__
+    print(data)
+    return templates.TemplateResponse("User_Profile.html", {"request": request, "username": data['name'], "position": data["position"],
+                                         "email": data["email"], "mobile": data['mobile_no']})
 
 
 @security_router.post("/authenticate", response_model=schemas.Token)
@@ -292,6 +343,8 @@ async def check_user_and_make_token(request: Request, db: Session = Depends(get_
     formdata = await request.form()
     print(request)
     print(formdata)
+    print("the scopes are .......")
+    #print(formdata.scopes)
     print(formdata["username"],formdata["password"])
     authenticated_user = authenticate_user(db, formdata["username"],formdata["password"])
     print(authenticated_user)
@@ -300,9 +353,12 @@ async def check_user_and_make_token(request: Request, db: Session = Depends(get_
 
     access_token_expires = timedelta(hours=ACCESS_TOKEN_EXPIRE_HOURS)
     log_info(logging, authenticated_user.email)
-    
+
+    user_scope = authenticated_user.position# if isinstance(authenticated_user.position, list) else [authenticated_user.position]
+    print("the user scope is........")
+    print(user_scope)
     access_token = create_access_token(
-        data={"sub": authenticated_user.email}, expires_delta=access_token_expires
+        data={"sub": authenticated_user.email,"scopes": user_scope}, expires_delta=access_token_expires
     )
 
     #################### SUCCESSFULLY LOGED IN USING CUSTOM DETAILS ######################
@@ -340,7 +396,7 @@ async def logout_and_remove_cookie(request: Request, current_user: schemas.NewUs
 
 
 @security_router.get("/me")
-async def get_mine(request: Request, current_user: schemas.NewUser = Depends(get_current_active_user), db: Session = Depends(get_db) ):
+async def get_mine(request: Request, current_user: schemas.HotelScope = Depends(get_current_active_user), db: Session = Depends(get_db) ):
     log_info(logging, "hello please loge me in..........")
     log_info(logging, current_user)
     return current_user
@@ -420,8 +476,8 @@ def send_email(background_tasks: BackgroundTasks, email, code, request: Request)
     )
 
     conf = ConnectionConfig(
-    MAIL_USERNAME='*********************',
-    MAIL_PASSWORD="****************",
+    MAIL_USERNAME='krishnardt365@gmail.com',
+    MAIL_PASSWORD="google@1A0",
     MAIL_PORT=587,
     MAIL_SERVER="smtp.gmail.com",
     MAIL_TLS=True,
@@ -542,7 +598,7 @@ when user changes the password successfully, recovered_yn has to be True
 
 """
 @security_router.post("/account_recovery/")
-async def verify_passcode(request: Request, passcode_schema: schemas.SentPasscode = Depends(), db: Session = Depends(get_db)):
+async def verify_passcode(request: Request, passcode_schema: schemas.SentPasscode = Depends(), current_user: schemas.NewUser = Depends(get_current_active_user), db: Session = Depends(get_db)):
     """Checks if the passcode entered by the user is correct or not.
 
     Parameters
@@ -560,7 +616,7 @@ async def verify_passcode(request: Request, passcode_schema: schemas.SentPasscod
     """
 
     result = ""
-    email = 'krishnardt365@gmail.com'
+    email = current_user.email
     code = crud.get_code(db, email)
     if passcode_schema.passcode == code:
         result = "successful"
@@ -652,7 +708,7 @@ async def after_successful_verification(request: Request):
 
 
 @security_router.post("/update_user_password")
-async def update_password(new_password_schema: schemas.NewPassword = Depends(), db: Session = Depends(get_db)):
+async def update_password(new_password_schema: schemas.NewPassword = Depends(), current_user: schemas.NewUser = Depends(get_current_active_user), db: Session = Depends(get_db)):
     """Calls the update function for the password from the crud module.
 
     Parameters
@@ -670,7 +726,7 @@ async def update_password(new_password_schema: schemas.NewPassword = Depends(), 
     print(details)
     if details['password1'] == details['password2']:
         password = get_password_hash(details['password1'])
-        update_result = crud.update_user_password(db, "krishnardt365@gmail.com", password)
+        update_result = crud.update_user_password(db, current_user.email, password)
         return update_result
     else:
         return HTTPException(

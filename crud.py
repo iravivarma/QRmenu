@@ -22,6 +22,13 @@ filename = 'crud.log'
 logging = qrl.create_or_get_logger(filename)
 
 
+
+def get_hotels_by_username_email(username):
+    hotels = db.query(models.Hotels, models.Users).filter(or_( models.Users.email == username, models.Users.name == username)).join(models.Users).with_entities(Hotels.name).all()
+    return hotels
+
+
+
 def get_user(db: Session, user_name: str):
     return db.query(models.Users).filter(or_(models.Users.name == user_name, models.Users.email == user_name))
 
