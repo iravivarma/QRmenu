@@ -122,8 +122,8 @@ class RequestResponseDetails(Base):
 
 # Base.metadata.create_all(engine, Base.metadata.tables.values(),checkfirst=True)
 #Base.metadata.create_all(engine)
-Users.__table__.create(bind=engine, checkfirst=True)
-Hotels.__table__.create(bind=engine, checkfirst=True)
-Menu.__table__.create(bind=engine, checkfirst=True)
-CustomerFavHotel.__table__.create(bind=engine, checkfirst=True)
-RequestResponseDetails.__table__.create(bind=engine, checkfirst=True)
+# Users.__table__.create(bind=engine, checkfirst=True)
+# Hotels.__table__.create(bind=engine, checkfirst=True)
+# Menu.__table__.create(bind=engine, checkfirst=True)
+# CustomerFavHotel.__table__.create(bind=engine, checkfirst=True)
+# RequestResponseDetails.__table__.create(bind=engine, checkfirst=True)
