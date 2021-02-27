@@ -13,7 +13,7 @@ click==7.1.2
 colorama==0.4.4
 contextvars==2.4
 cryptography==3.4.6
-dataclasses==0.8
+dataclasses==0.6
 dnspython==2.1.0
 ecdsa==0.14.1
 email-validator==1.1.2
@@ -58,3 +58,4 @@ toml==0.10.2
 typing-extensions==3.7.4.3
 urllib3==1.26.3
 uvicorn==0.13.4
+uvloop==0.15.2
