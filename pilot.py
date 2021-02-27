@@ -35,6 +35,9 @@ def create_app() -> FastAPI:
     # app = FastAPI(
         
     # )
+    # app = FastAPI(title='workpeer',
+    #     description='workpeer API',
+    #     version='1.0.0',)
     init_routers(app=app)
     # init_listeners(app=app)
     # check_vertexes(app=app)
@@ -58,6 +61,8 @@ app.add_middleware(
     allow_methods=["*"],
     allow_headers=["*"],
 )
+
+app.debug = True
 #app.add_middleware(SessionMiddleware,)
 #app.middleware(GZipMiddleware, minimum_size=100000000000)
 
