@@ -62,7 +62,6 @@ security_router = APIRouter()
 template_dir = os.path.dirname(
     os.path.dirname(os.path.abspath(os.path.dirname(__file__)))
 )
-template_dir = os.path.join(template_dir, "Documents")
 template_dir = os.path.join(template_dir, "QRmenu")
 template_dir = os.path.join(template_dir, "templates")
 print(template_dir)

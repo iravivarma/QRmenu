@@ -17,7 +17,7 @@ from database import SessionLocal, engine
 from fastapi import Request, APIRouter
 import time
 import qrcode
-import io, cv2
+import io
 from starlette.responses import StreamingResponse, JSONResponse
 from fastapi.responses import FileResponse
 from PIL import Image
