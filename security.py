@@ -72,7 +72,7 @@ SECRET_KEY = "7ff8f44c419861f95ff39d0f157d41f2446b92a9868df2501c2e66061cdd8c74"
 ALGORITHM = "HS256"
 ACCESS_TOKEN_EXPIRE_HOURS = 3
 COOKIE_AUTHORIZATION_NAME = "Authorization"
-COOKIE_DOMAIN = '127.0.0.1'
+COOKIE_DOMAIN = 'https://qrmenu-api.herokuapp.com/'
 
 # give the time for each token.
 # Note: it is in minutes.
