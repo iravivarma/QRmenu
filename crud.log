@@ -5374,3 +5374,347 @@ execution time is 0.005051374435424805
 2021-01-23 08:22:16.504 INFO on - shutdown: Application shutdown complete.
 2021-01-23 08:22:16.505 INFO main - serve: Finished server process [31876]
 2021-01-23 08:22:16.689 INFO basereload - shutdown: Stopping reloader process [19404]
+2021-02-27 13:43:38.870 INFO config - bind_socket: Uvicorn running on http://127.0.0.1:8000 (Press CTRL+C to quit)
+2021-02-27 13:43:38.873 INFO basereload - startup: Started reloader process [25776] using statreload
+2021-02-27 13:43:41.619 INFO server - serve: Started server process [3684]
+2021-02-27 13:43:41.621 INFO on - startup: Waiting for application startup.
+2021-02-27 13:43:41.623 INFO on - startup: Application startup complete.
+2021-02-27 13:44:00.043 WARNING statreload - should_restart: StatReload detected file change in 'security.py'. Reloading...
+2021-02-27 13:44:03.055 INFO server - serve: Started server process [3312]
+2021-02-27 13:44:03.057 INFO on - startup: Waiting for application startup.
+2021-02-27 13:44:03.059 INFO on - startup: Application startup complete.
+2021-02-27 13:44:54.224 WARNING pilot - add_process_time_header: Path is: /new_user_signup
+execution time is 0.01575160026550293
+2021-02-27 13:45:14.065 WARNING pilot - add_process_time_header: Path is: /new_user/
+execution time is 0.06947684288024902
+2021-02-27 13:45:39.685 INFO server - shutdown: Shutting down
+2021-02-27 13:45:39.793 INFO on - shutdown: Waiting for application shutdown.
+2021-02-27 13:45:39.794 ERROR qr_logger - log_warning: quitting the application now
+
+
+
+
+2021-02-27 13:45:39.794 INFO on - main: ASGI 'lifespan' protocol appears unsupported.
+2021-02-27 13:45:39.797 INFO on - shutdown: Application shutdown complete.
+2021-02-27 13:45:39.801 INFO server - serve: Finished server process [3312]
+2021-02-27 13:45:39.993 INFO basereload - shutdown: Stopping reloader process [25776]
+2021-02-27 13:45:44.661 INFO config - bind_socket: Uvicorn running on http://127.0.0.1:8000 (Press CTRL+C to quit)
+2021-02-27 13:45:44.661 INFO basereload - startup: Started reloader process [411424] using statreload
+2021-02-27 13:45:47.277 INFO server - serve: Started server process [27460]
+2021-02-27 13:45:47.278 INFO on - startup: Waiting for application startup.
+2021-02-27 13:45:47.280 INFO on - startup: Application startup complete.
+2021-02-27 13:45:57.702 WARNING pilot - add_process_time_header: Path is: /new_user/
+execution time is 0.08822393417358398
+2021-02-27 13:46:38.194 WARNING statreload - should_restart: StatReload detected file change in 'security.py'. Reloading...
+2021-02-27 13:46:41.701 INFO server - serve: Started server process [413152]
+2021-02-27 13:46:41.702 INFO on - startup: Waiting for application startup.
+2021-02-27 13:46:41.705 INFO on - startup: Application startup complete.
+2021-02-27 13:47:25.606 WARNING pilot - add_process_time_header: Path is: /new_user_signup
+execution time is 0.015604019165039062
+2021-02-27 13:47:48.399 ERROR h11_impl - run_asgi: Exception in ASGI application
+Traceback (most recent call last):
+  File "C:\Users\ASUS\qr-env\lib\site-packages\uvicorn\protocols\http\h11_impl.py", line 396, in run_asgi
+    result = await app(self.scope, self.receive, self.send)
+  File "C:\Users\ASUS\qr-env\lib\site-packages\uvicorn\middleware\proxy_headers.py", line 45, in __call__
+    return await self.app(scope, receive, send)
+  File "C:\Users\ASUS\qr-env\lib\site-packages\fastapi\applications.py", line 199, in __call__
+    await super().__call__(scope, receive, send)
+  File "C:\Users\ASUS\qr-env\lib\site-packages\starlette\applications.py", line 111, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "C:\Users\ASUS\qr-env\lib\site-packages\starlette\middleware\errors.py", line 181, in __call__
+    raise exc from None
+  File "C:\Users\ASUS\qr-env\lib\site-packages\starlette\middleware\errors.py", line 159, in __call__
+    await self.app(scope, receive, _send)
+  File "C:\Users\ASUS\qr-env\lib\site-packages\starlette\middleware\base.py", line 25, in __call__
+    response = await self.dispatch_func(request, self.call_next)
+  File "C:\QRmenu\pilot.py", line 175, in add_process_time_header
+    response = await call_next(request)
+  File "C:\Users\ASUS\qr-env\lib\site-packages\starlette\middleware\base.py", line 45, in call_next
+    task.result()
+  File "C:\Users\ASUS\qr-env\lib\site-packages\starlette\middleware\base.py", line 38, in coro
+    await self.app(scope, receive, send)
+  File "C:\Users\ASUS\qr-env\lib\site-packages\starlette\middleware\cors.py", line 86, in __call__
+    await self.simple_response(scope, receive, send, request_headers=headers)
+  File "C:\Users\ASUS\qr-env\lib\site-packages\starlette\middleware\cors.py", line 142, in simple_response
+    await self.app(scope, receive, send)
+  File "C:\Users\ASUS\qr-env\lib\site-packages\starlette\exceptions.py", line 82, in __call__
+    raise exc from None
+  File "C:\Users\ASUS\qr-env\lib\site-packages\starlette\exceptions.py", line 71, in __call__
+    await self.app(scope, receive, sender)
+  File "C:\Users\ASUS\qr-env\lib\site-packages\starlette\routing.py", line 566, in __call__
+    await route.handle(scope, receive, send)
+  File "C:\Users\ASUS\qr-env\lib\site-packages\starlette\routing.py", line 227, in handle
+    await self.app(scope, receive, send)
+  File "C:\Users\ASUS\qr-env\lib\site-packages\starlette\routing.py", line 41, in app
+    response = await func(request)
+  File "C:\Users\ASUS\qr-env\lib\site-packages\fastapi\routing.py", line 202, in app
+    dependant=dependant, values=values, is_coroutine=is_coroutine
+  File "C:\Users\ASUS\qr-env\lib\site-packages\fastapi\routing.py", line 148, in run_endpoint_function
+    return await dependant.call(**values)
+  File "C:\QRmenu\security.py", line 414, in newUser
+    user.password = get_password_hash(user.password)
+  File "C:\QRmenu\security.py", line 273, in get_password_hash
+    return pwd_context.hash(password)
+  File "C:\Users\ASUS\qr-env\lib\site-packages\passlib\context.py", line 2258, in hash
+    return record.hash(secret, **kwds)
+  File "C:\Users\ASUS\qr-env\lib\site-packages\passlib\utils\handlers.py", line 779, in hash
+    self.checksum = self._calc_checksum(secret)
+  File "C:\Users\ASUS\qr-env\lib\site-packages\passlib\handlers\bcrypt.py", line 591, in _calc_checksum
+    self._stub_requires_backend()
+  File "C:\Users\ASUS\qr-env\lib\site-packages\passlib\utils\handlers.py", line 2254, in _stub_requires_backend
+    cls.set_backend()
+  File "C:\Users\ASUS\qr-env\lib\site-packages\passlib\utils\handlers.py", line 2156, in set_backend
+    return owner.set_backend(name, dryrun=dryrun)
+  File "C:\Users\ASUS\qr-env\lib\site-packages\passlib\utils\handlers.py", line 2176, in set_backend
+    raise default_error
+passlib.exc.MissingBackendError: bcrypt: no backends available -- recommend you install one (e.g. 'pip install bcrypt')
+2021-02-27 13:48:08.298 INFO server - shutdown: Shutting down
+2021-02-27 13:48:08.409 INFO on - shutdown: Waiting for application shutdown.
+2021-02-27 13:48:08.409 ERROR qr_logger - log_warning: quitting the application now
+
+
+
+
+2021-02-27 13:48:08.409 INFO on - main: ASGI 'lifespan' protocol appears unsupported.
+2021-02-27 13:48:08.412 INFO on - shutdown: Application shutdown complete.
+2021-02-27 13:48:08.416 INFO server - serve: Finished server process [413152]
+2021-02-27 13:48:08.600 INFO basereload - shutdown: Stopping reloader process [411424]
+2021-02-27 13:48:25.620 INFO config - bind_socket: Uvicorn running on http://127.0.0.1:8000 (Press CTRL+C to quit)
+2021-02-27 13:48:25.624 INFO basereload - startup: Started reloader process [37704] using statreload
+2021-02-27 13:48:28.235 INFO server - serve: Started server process [349252]
+2021-02-27 13:48:28.238 INFO on - startup: Waiting for application startup.
+2021-02-27 13:48:28.241 INFO on - startup: Application startup complete.
+2021-02-27 13:48:37.649 ERROR h11_impl - run_asgi: Exception in ASGI application
+Traceback (most recent call last):
+  File "C:\Users\ASUS\qr-env\lib\site-packages\uvicorn\protocols\http\h11_impl.py", line 396, in run_asgi
+    result = await app(self.scope, self.receive, self.send)
+  File "C:\Users\ASUS\qr-env\lib\site-packages\uvicorn\middleware\proxy_headers.py", line 45, in __call__
+    return await self.app(scope, receive, send)
+  File "C:\Users\ASUS\qr-env\lib\site-packages\fastapi\applications.py", line 199, in __call__
+    await super().__call__(scope, receive, send)
+  File "C:\Users\ASUS\qr-env\lib\site-packages\starlette\applications.py", line 111, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "C:\Users\ASUS\qr-env\lib\site-packages\starlette\middleware\errors.py", line 181, in __call__
+    raise exc from None
+  File "C:\Users\ASUS\qr-env\lib\site-packages\starlette\middleware\errors.py", line 159, in __call__
+    await self.app(scope, receive, _send)
+  File "C:\Users\ASUS\qr-env\lib\site-packages\starlette\middleware\base.py", line 25, in __call__
+    response = await self.dispatch_func(request, self.call_next)
+  File "C:\QRmenu\pilot.py", line 175, in add_process_time_header
+    response = await call_next(request)
+  File "C:\Users\ASUS\qr-env\lib\site-packages\starlette\middleware\base.py", line 45, in call_next
+    task.result()
+  File "C:\Users\ASUS\qr-env\lib\site-packages\starlette\middleware\base.py", line 38, in coro
+    await self.app(scope, receive, send)
+  File "C:\Users\ASUS\qr-env\lib\site-packages\starlette\middleware\cors.py", line 86, in __call__
+    await self.simple_response(scope, receive, send, request_headers=headers)
+  File "C:\Users\ASUS\qr-env\lib\site-packages\starlette\middleware\cors.py", line 142, in simple_response
+    await self.app(scope, receive, send)
+  File "C:\Users\ASUS\qr-env\lib\site-packages\starlette\exceptions.py", line 82, in __call__
+    raise exc from None
+  File "C:\Users\ASUS\qr-env\lib\site-packages\starlette\exceptions.py", line 71, in __call__
+    await self.app(scope, receive, sender)
+  File "C:\Users\ASUS\qr-env\lib\site-packages\starlette\routing.py", line 566, in __call__
+    await route.handle(scope, receive, send)
+  File "C:\Users\ASUS\qr-env\lib\site-packages\starlette\routing.py", line 227, in handle
+    await self.app(scope, receive, send)
+  File "C:\Users\ASUS\qr-env\lib\site-packages\starlette\routing.py", line 41, in app
+    response = await func(request)
+  File "C:\Users\ASUS\qr-env\lib\site-packages\fastapi\routing.py", line 202, in app
+    dependant=dependant, values=values, is_coroutine=is_coroutine
+  File "C:\Users\ASUS\qr-env\lib\site-packages\fastapi\routing.py", line 148, in run_endpoint_function
+    return await dependant.call(**values)
+  File "C:\QRmenu\security.py", line 419, in newUser
+    inserted_user = crud.create_user(db, user)
+  File "C:\QRmenu\crud.py", line 73, in create_user
+    db.commit()
+  File "C:\Users\ASUS\qr-env\lib\site-packages\sqlalchemy\orm\session.py", line 1046, in commit
+    self.transaction.commit()
+  File "C:\Users\ASUS\qr-env\lib\site-packages\sqlalchemy\orm\session.py", line 504, in commit
+    self._prepare_impl()
+  File "C:\Users\ASUS\qr-env\lib\site-packages\sqlalchemy\orm\session.py", line 483, in _prepare_impl
+    self.session.flush()
+  File "C:\Users\ASUS\qr-env\lib\site-packages\sqlalchemy\orm\session.py", line 2540, in flush
+    self._flush(objects)
+  File "C:\Users\ASUS\qr-env\lib\site-packages\sqlalchemy\orm\session.py", line 2682, in _flush
+    transaction.rollback(_capture_exception=True)
+  File "C:\Users\ASUS\qr-env\lib\site-packages\sqlalchemy\util\langhelpers.py", line 70, in __exit__
+    with_traceback=exc_tb,
+  File "C:\Users\ASUS\qr-env\lib\site-packages\sqlalchemy\util\compat.py", line 182, in raise_
+    raise exception
+  File "C:\Users\ASUS\qr-env\lib\site-packages\sqlalchemy\orm\session.py", line 2642, in _flush
+    flush_context.execute()
+  File "C:\Users\ASUS\qr-env\lib\site-packages\sqlalchemy\orm\unitofwork.py", line 422, in execute
+    rec.execute(self)
+  File "C:\Users\ASUS\qr-env\lib\site-packages\sqlalchemy\orm\unitofwork.py", line 589, in execute
+    uow,
+  File "C:\Users\ASUS\qr-env\lib\site-packages\sqlalchemy\orm\persistence.py", line 245, in save_obj
+    insert,
+  File "C:\Users\ASUS\qr-env\lib\site-packages\sqlalchemy\orm\persistence.py", line 1136, in _emit_insert_statements
+    statement, params
+  File "C:\Users\ASUS\qr-env\lib\site-packages\sqlalchemy\engine\base.py", line 1011, in execute
+    return meth(self, multiparams, params)
+  File "C:\Users\ASUS\qr-env\lib\site-packages\sqlalchemy\sql\elements.py", line 298, in _execute_on_connection
+    return connection._execute_clauseelement(self, multiparams, params)
+  File "C:\Users\ASUS\qr-env\lib\site-packages\sqlalchemy\engine\base.py", line 1130, in _execute_clauseelement
+    distilled_params,
+  File "C:\Users\ASUS\qr-env\lib\site-packages\sqlalchemy\engine\base.py", line 1317, in _execute_context
+    e, statement, parameters, cursor, context
+  File "C:\Users\ASUS\qr-env\lib\site-packages\sqlalchemy\engine\base.py", line 1511, in _handle_dbapi_exception
+    sqlalchemy_exception, with_traceback=exc_info[2], from_=e
+  File "C:\Users\ASUS\qr-env\lib\site-packages\sqlalchemy\util\compat.py", line 182, in raise_
+    raise exception
+  File "C:\Users\ASUS\qr-env\lib\site-packages\sqlalchemy\engine\base.py", line 1277, in _execute_context
+    cursor, statement, parameters, context
+  File "C:\Users\ASUS\qr-env\lib\site-packages\sqlalchemy\engine\default.py", line 608, in do_execute
+    cursor.execute(statement, parameters)
+sqlalchemy.exc.ProgrammingError: (psycopg2.errors.UndefinedColumn) column "mobile_no" of relation "users" does not exist
+LINE 1: ...word, active_yn, recovery_password, recovered_yn, mobile_no,...
+                                                             ^
+
+[SQL: INSERT INTO users (name, email, password, active_yn, recovery_password, recovered_yn, mobile_no, position) VALUES (%(name)s, %(email)s, %(password)s, %(active_yn)s, %(recovery_password)s, %(recovered_yn)s, %(mobile_no)s, %(position)s) RETURNING users.id]
+[parameters: {'name': 'krishna', 'email': 'krishnamohan541@gmail.com', 'password': '$2b$12$PLBryCT/NeCQMUvZpyg/7eXshw6mkFs61Bda.UbDzCip036becrHS', 'active_yn': True, 'recovery_password': '', 'recovered_yn': True, 'mobile_no': '9493086033', 'position': 'owner'}]
+(Background on this error at: http://sqlalche.me/e/13/f405)
+2021-02-27 13:50:13.120 WARNING pilot - add_process_time_header: Path is: /new_user_signup
+execution time is 0.026951074600219727
+2021-02-27 13:50:30.343 ERROR h11_impl - run_asgi: Exception in ASGI application
+Traceback (most recent call last):
+  File "C:\Users\ASUS\qr-env\lib\site-packages\uvicorn\protocols\http\h11_impl.py", line 396, in run_asgi
+    result = await app(self.scope, self.receive, self.send)
+  File "C:\Users\ASUS\qr-env\lib\site-packages\uvicorn\middleware\proxy_headers.py", line 45, in __call__
+    return await self.app(scope, receive, send)
+  File "C:\Users\ASUS\qr-env\lib\site-packages\fastapi\applications.py", line 199, in __call__
+    await super().__call__(scope, receive, send)
+  File "C:\Users\ASUS\qr-env\lib\site-packages\starlette\applications.py", line 111, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "C:\Users\ASUS\qr-env\lib\site-packages\starlette\middleware\errors.py", line 181, in __call__
+    raise exc from None
+  File "C:\Users\ASUS\qr-env\lib\site-packages\starlette\middleware\errors.py", line 159, in __call__
+    await self.app(scope, receive, _send)
+  File "C:\Users\ASUS\qr-env\lib\site-packages\starlette\middleware\base.py", line 25, in __call__
+    response = await self.dispatch_func(request, self.call_next)
+  File "C:\QRmenu\pilot.py", line 175, in add_process_time_header
+    response = await call_next(request)
+  File "C:\Users\ASUS\qr-env\lib\site-packages\starlette\middleware\base.py", line 45, in call_next
+    task.result()
+  File "C:\Users\ASUS\qr-env\lib\site-packages\starlette\middleware\base.py", line 38, in coro
+    await self.app(scope, receive, send)
+  File "C:\Users\ASUS\qr-env\lib\site-packages\starlette\middleware\cors.py", line 86, in __call__
+    await self.simple_response(scope, receive, send, request_headers=headers)
+  File "C:\Users\ASUS\qr-env\lib\site-packages\starlette\middleware\cors.py", line 142, in simple_response
+    await self.app(scope, receive, send)
+  File "C:\Users\ASUS\qr-env\lib\site-packages\starlette\exceptions.py", line 82, in __call__
+    raise exc from None
+  File "C:\Users\ASUS\qr-env\lib\site-packages\starlette\exceptions.py", line 71, in __call__
+    await self.app(scope, receive, sender)
+  File "C:\Users\ASUS\qr-env\lib\site-packages\starlette\routing.py", line 566, in __call__
+    await route.handle(scope, receive, send)
+  File "C:\Users\ASUS\qr-env\lib\site-packages\starlette\routing.py", line 227, in handle
+    await self.app(scope, receive, send)
+  File "C:\Users\ASUS\qr-env\lib\site-packages\starlette\routing.py", line 41, in app
+    response = await func(request)
+  File "C:\Users\ASUS\qr-env\lib\site-packages\fastapi\routing.py", line 202, in app
+    dependant=dependant, values=values, is_coroutine=is_coroutine
+  File "C:\Users\ASUS\qr-env\lib\site-packages\fastapi\routing.py", line 148, in run_endpoint_function
+    return await dependant.call(**values)
+  File "C:\QRmenu\security.py", line 419, in newUser
+    inserted_user = crud.create_user(db, user)
+  File "C:\QRmenu\crud.py", line 73, in create_user
+    db.commit()
+  File "C:\Users\ASUS\qr-env\lib\site-packages\sqlalchemy\orm\session.py", line 1046, in commit
+    self.transaction.commit()
+  File "C:\Users\ASUS\qr-env\lib\site-packages\sqlalchemy\orm\session.py", line 504, in commit
+    self._prepare_impl()
+  File "C:\Users\ASUS\qr-env\lib\site-packages\sqlalchemy\orm\session.py", line 483, in _prepare_impl
+    self.session.flush()
+  File "C:\Users\ASUS\qr-env\lib\site-packages\sqlalchemy\orm\session.py", line 2540, in flush
+    self._flush(objects)
+  File "C:\Users\ASUS\qr-env\lib\site-packages\sqlalchemy\orm\session.py", line 2682, in _flush
+    transaction.rollback(_capture_exception=True)
+  File "C:\Users\ASUS\qr-env\lib\site-packages\sqlalchemy\util\langhelpers.py", line 70, in __exit__
+    with_traceback=exc_tb,
+  File "C:\Users\ASUS\qr-env\lib\site-packages\sqlalchemy\util\compat.py", line 182, in raise_
+    raise exception
+  File "C:\Users\ASUS\qr-env\lib\site-packages\sqlalchemy\orm\session.py", line 2642, in _flush
+    flush_context.execute()
+  File "C:\Users\ASUS\qr-env\lib\site-packages\sqlalchemy\orm\unitofwork.py", line 422, in execute
+    rec.execute(self)
+  File "C:\Users\ASUS\qr-env\lib\site-packages\sqlalchemy\orm\unitofwork.py", line 589, in execute
+    uow,
+  File "C:\Users\ASUS\qr-env\lib\site-packages\sqlalchemy\orm\persistence.py", line 245, in save_obj
+    insert,
+  File "C:\Users\ASUS\qr-env\lib\site-packages\sqlalchemy\orm\persistence.py", line 1136, in _emit_insert_statements
+    statement, params
+  File "C:\Users\ASUS\qr-env\lib\site-packages\sqlalchemy\engine\base.py", line 1011, in execute
+    return meth(self, multiparams, params)
+  File "C:\Users\ASUS\qr-env\lib\site-packages\sqlalchemy\sql\elements.py", line 298, in _execute_on_connection
+    return connection._execute_clauseelement(self, multiparams, params)
+  File "C:\Users\ASUS\qr-env\lib\site-packages\sqlalchemy\engine\base.py", line 1130, in _execute_clauseelement
+    distilled_params,
+  File "C:\Users\ASUS\qr-env\lib\site-packages\sqlalchemy\engine\base.py", line 1317, in _execute_context
+    e, statement, parameters, cursor, context
+  File "C:\Users\ASUS\qr-env\lib\site-packages\sqlalchemy\engine\base.py", line 1511, in _handle_dbapi_exception
+    sqlalchemy_exception, with_traceback=exc_info[2], from_=e
+  File "C:\Users\ASUS\qr-env\lib\site-packages\sqlalchemy\util\compat.py", line 182, in raise_
+    raise exception
+  File "C:\Users\ASUS\qr-env\lib\site-packages\sqlalchemy\engine\base.py", line 1277, in _execute_context
+    cursor, statement, parameters, context
+  File "C:\Users\ASUS\qr-env\lib\site-packages\sqlalchemy\engine\default.py", line 608, in do_execute
+    cursor.execute(statement, parameters)
+sqlalchemy.exc.ProgrammingError: (psycopg2.errors.UndefinedColumn) column "mobile_no" of relation "users" does not exist
+LINE 1: ...word, active_yn, recovery_password, recovered_yn, mobile_no,...
+                                                             ^
+
+[SQL: INSERT INTO users (name, email, password, active_yn, recovery_password, recovered_yn, mobile_no, position) VALUES (%(name)s, %(email)s, %(password)s, %(active_yn)s, %(recovery_password)s, %(recovered_yn)s, %(mobile_no)s, %(position)s) RETURNING users.id]
+[parameters: {'name': 'krishna', 'email': 'krishnamohan541@gmail.com', 'password': '$2b$12$FfzHz/eiDUaZZYjd97x/fu9cTdUJOzxbwToknpze56Z8N0reB9Ru.', 'active_yn': True, 'recovery_password': '', 'recovered_yn': True, 'mobile_no': '9493086033', 'position': 'owner'}]
+(Background on this error at: http://sqlalche.me/e/13/f405)
+2021-02-27 13:51:44.615 INFO server - shutdown: Shutting down
+2021-02-27 13:51:44.721 INFO on - shutdown: Waiting for application shutdown.
+2021-02-27 13:51:44.722 ERROR qr_logger - log_warning: quitting the application now
+
+
+
+
+2021-02-27 13:51:44.722 INFO on - main: ASGI 'lifespan' protocol appears unsupported.
+2021-02-27 13:51:44.726 INFO on - shutdown: Application shutdown complete.
+2021-02-27 13:51:44.730 INFO server - serve: Finished server process [349252]
+2021-02-27 13:51:44.945 INFO basereload - shutdown: Stopping reloader process [37704]
+2021-02-27 13:52:09.297 INFO config - bind_socket: Uvicorn running on http://127.0.0.1:8000 (Press CTRL+C to quit)
+2021-02-27 13:52:09.299 INFO basereload - startup: Started reloader process [42468] using statreload
+2021-02-27 13:52:12.525 INFO server - serve: Started server process [403096]
+2021-02-27 13:52:12.528 INFO on - startup: Waiting for application startup.
+2021-02-27 13:52:12.530 INFO on - startup: Application startup complete.
+2021-02-27 13:52:32.453 WARNING pilot - add_process_time_header: Path is: /new_user/
+execution time is 1.5850343704223633
+2021-02-27 13:52:42.849 WARNING pilot - add_process_time_header: Path is: /login
+execution time is 0.012900352478027344
+2021-02-27 13:52:53.396 WARNING pilot - add_process_time_header: Path is: /authenticate
+execution time is 0.7221200466156006
+2021-02-27 13:52:53.433 WARNING pilot - add_process_time_header: Path is: /userbase/
+execution time is 0.0009965896606445312
+2021-02-27 13:52:53.451 WARNING pilot - add_process_time_header: Path is: /userbase
+execution time is 0.005980968475341797
+2021-02-27 13:53:11.791 INFO server - shutdown: Shutting down
+2021-02-27 13:53:11.895 INFO on - shutdown: Waiting for application shutdown.
+2021-02-27 13:53:11.897 ERROR qr_logger - log_warning: quitting the application now
+
+
+
+
+2021-02-27 13:53:11.897 INFO on - main: ASGI 'lifespan' protocol appears unsupported.
+2021-02-27 13:53:11.901 INFO on - shutdown: Application shutdown complete.
+2021-02-27 13:53:11.904 INFO server - serve: Finished server process [403096]
+2021-02-27 13:53:12.126 INFO basereload - shutdown: Stopping reloader process [42468]
+2021-02-27 14:42:07.721 INFO server - serve: Started server process [221424]
+2021-02-27 14:42:07.723 INFO on - startup: Waiting for application startup.
+2021-02-27 14:42:07.725 INFO on - startup: Application startup complete.
+2021-02-27 14:42:11.464 INFO server - shutdown: Shutting down
+2021-02-27 14:42:11.568 INFO on - shutdown: Waiting for application shutdown.
+2021-02-27 14:42:11.570 ERROR qr_logger - log_warning: quitting the application now
+
+
+
+
+2021-02-27 14:42:11.570 INFO on - main: ASGI 'lifespan' protocol appears unsupported.
+2021-02-27 14:42:11.573 INFO on - shutdown: Application shutdown complete.
+2021-02-27 14:42:11.576 INFO server - serve: Finished server process [221424]
