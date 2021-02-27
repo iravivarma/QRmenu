@@ -59,14 +59,15 @@ logging = qrl.create_or_get_logger(filename)
 
 security_router = APIRouter()
 
-template_dir = os.path.dirname(
-    os.path.dirname(os.path.abspath(os.path.dirname(__file__)))
-)
-template_dir = os.path.join(template_dir, "QRmenu")
-template_dir = os.path.join(template_dir, "templates")
-print(template_dir)
+# template_dir = os.path.dirname(
+#     os.path.dirname(os.path.abspath(os.path.dirname(__file__)))
+# )
+# template_dir = os.path.join(template_dir, "QRmenu")
+# template_dir = os.path.join(template_dir, "templates")
+# print(template_dir)
 
-templates = Jinja2Templates(directory=template_dir)
+# templates = Jinja2Templates(directory=template_dir)
+templates = Jinja2Templates(directory='templates')
 
 SECRET_KEY = "7ff8f44c419861f95ff39d0f157d41f2446b92a9868df2501c2e66061cdd8c74"
 ALGORITHM = "HS256"
