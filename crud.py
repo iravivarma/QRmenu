@@ -85,6 +85,10 @@ def get_qr_image(db: Session, hotel_id):
 
     return menu_details
 
+def get_menu_by_hotelid(db: Session, hotel_id):
+    return db.query(models.Menu).filter(Models.Menu.hotel_id == hotel_id).first()
+
+
 
 def create_hotel(db: Session, item: schemas.HotelsCreate, user_name: str):
     
