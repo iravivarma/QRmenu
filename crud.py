@@ -80,13 +80,13 @@ def get_hotels(db: Session, skip: int = 0, limit: int = 100):
 
 
 def get_qr_image(db: Session, hotel_id):
-    menu_details= db.query(models.Menu).filter(models.Menu.hotel_id == hotel_id).first()
+    menu_details= db.query(models.Menu).filter(models.Menu.hotel_id == int(hotel_id)).first()
     menu_details = menu_details.qr_menu_path
 
     return menu_details
 
 def get_menu_by_hotelid(db: Session, hotel_id):
-    return db.query(models.Menu).filter(Models.Menu.hotel_id == hotel_id).first()
+    return db.query(models.Menu).filter(Models.Menu.hotel_id == int(hotel_id)).first()
 
 
 
