@@ -87,6 +87,9 @@ async def delete_hotel(hotel_name: str, db: Session = Depends(get_db)):
 async def delete_menu(menu_id: str, db: Session = Depends(get_db)):
     return crud.delete_menu(db=db, menu_id = menu_id)
 
+@menu_router.get('/{hotel_id}/menu')
+async def get_menu_by_hotel_id(hotel_id: str, db: Session = Depends(get_db)):
+    return crud.get_menu_by_hotelid(db = db, hotel_id = hotel_id)
 
 
 @menu_router.get("/userbase", response_model=List[schemas.Users])
