@@ -172,7 +172,15 @@ async def get_all_users(request: Request,  db: Session = Depends(get_db)):
 
 @menu_router.post("/insert_hotel/{username}")
 async def insert_hotel(username: str, item: schemas.HotelsCreate, db: Session = Depends(get_db)):
-    crud.insert_hotel_menu(db, username, item)
+    return crud.insert_hotel_menu(db, username, item)
+    
+    
+    
+@menu_router.get("/{hotel_name}/menu")
+async def get_menu_by_HotelName(hotel_name: str, db: Session = Depends(get_db)):
+    return crud.get_menu_by_hotel_name(db = db, hotel_name = hotel_name)
+    
+    
 
 
 
