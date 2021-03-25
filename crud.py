@@ -289,5 +289,5 @@ def insert_hotel_menu(db, username, item):
         return repr(e)
     
 def get_menu_by_hotel_name(db: Session, hotel_name):
-    hotel_details = db.query(models.Hotels).filter(model.Hotels.name == hotel_name).first()
-    return hotel_details
+    hotel_id = get_hotel(db, hotel_name).first().id
+    return db.query(models.Menu).filter(models.Menu.hotel_id == hotel_id).first()
