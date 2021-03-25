@@ -287,3 +287,7 @@ def insert_hotel_menu(db, username, item):
     except Exception as e:
         qrl.log_exception(logging, repr(e))
         return repr(e)
+    
+def get_hotel_name(db: Session, hotel_name):
+    hotel_details = db.query(models.Hotels).filter(model.Hotels.name == hotel_name).first()
+    return hotel_details
